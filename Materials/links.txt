@@ -1,0 +1,9 @@
+http://www.authorstream.com/Presentation/meet.hak-844395-facebook-technology-stack/
+
+http://www.infoq.com/presentations/Facebook-Software-Stack;jsessionid=CF65DF56AF97A13BD9BE5A74720C17C0
+Facebook: Science and the Social Graph
+facebook architecture
+
+http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/
+
+http://www.cs.cmu.edu/~vsam

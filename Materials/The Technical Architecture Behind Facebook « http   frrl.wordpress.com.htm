@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0080)http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>The Technical Architecture Behind Facebook «  http://frrl.wordpress.com</title>
+
+<link rel="stylesheet" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/style.css" type="text/css" media="screen">
+<!--[if IE 6]>
+<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/journalist/ie6.css?m=1270837707g" type="text/css" media="screen" />
+<![endif]-->
+<link rel="pingback" href="http://frrl.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="http://frrl.wordpress.com » Feed" href="http://frrl.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="http://frrl.wordpress.com » Comments Feed" href="http://frrl.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="http://frrl.wordpress.com » The Technical Architecture Behind Facebook Comments Feed" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/global.css" type="text/css">
+<link rel="stylesheet" id="sharedaddy-css" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/sharing.css" type="text/css" media="all">
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/l10n.js"></script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/jquery.js"></script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/comment-reply.js"></script>
+<link rel="stylesheet" id="highlander-comments-css" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1307172283g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://frrl.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://frrl.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="http://frrl.wordpress.com" href="http://frrl.wordpress.com/">
+<link rel="prev" title="America vs Japan – Does culture matter when it comes to looting?" href="http://frrl.wordpress.com/2011/03/19/america-vs-japan-does-culture-matter-when-it-comes-to-looting/">
+<link rel="next" title="Movie Review: The Social Network" href="http://frrl.wordpress.com/2011/03/27/movie-review-the-social-network/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/The Technical Architecture Behind Facebook « http   frrl.wordpress.com.htm">
+<link rel="shortlink" href="http://wp.me/pipkz-2DV">
+<link rel="shortcut icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s1.wp.com/i/favicon-stacked.ico?m=1284002170g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon" href="http://s0.wp.com/wp-content/themes/h4/i/webclip.png?m=1250548519g">
+	<style type="text/css">
+	/* <![CDATA[ */
+				div#likes { margin-top: 15px; }
+		.like-button { border: 1px solid #eee; padding: 2px 6px; font-size: 13px; font-family: arial, tahoma, sans-serif; }
+		#wpl-likebox { clear: left; font-size: 11px; font-family: arial, tahoma, verdana, sans-serif !important; min-height: 30px; margin: 10px 0 !important; padding: 5px 0 10px 0 !important; }
+		#wpl-button { float: left; background: url( http://s2.wp.com/i/buttonbg.png ) top left repeat-x; margin-right: 7px; border: 1px solid #d4d4d4; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-button a { border-bottom: none !important; color: #666 !important; line-height: 130% !important; text-decoration: none !important; outline: none; float: left; padding: 3px 6px 2px 24px !important; font-size: 11px !important; background: url( http://s1.wp.com/i/likestar.png ) 6px 49.8% no-repeat; }
+		#wpl-button a:hover { border-bottom: none !important; }
+		#wpl-button.liked { background: #feffce; border: 1px solid #f3e389; }
+		#wpl-button.liked a { color: #ba871b !important; }
+		#wpl-likebox #wpl-count { min-height: 25px; line-height: 130% !important; float: left; padding-top: 4px; }
+		#wpl-likebox #wpl-avatars { clear: left; max-height: 98px; overflow: hidden; margin-top: 15px; line-height: 130% !important; }
+		#wpl-likebox #wpl-avatars img { border: none !important; }
+		#wpl-likebox #wpl-mustlogin { line-height: 14px !important; font-size: 11px; clear: left; margin-top: 5px; background: #f0f0f0; padding: 10px; width: 65%; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+		#wpl-likebox #wpl-mustlogin a { color: #888; text-decoration: underline; }
+		#wpl-likebox #wpl-mustlogin p { margin: 5px 0; padding: 0 }
+		#wpl-likebox #wpl-mustlogin input.input { padding: 2px; background: #fff; font-size: 11px; font-family: inherit; border: 1px solid #ccc; -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1) inset; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin input#wp-submit { border: 1px solid #ccc; font-size: 11px; background: #fafafa; repeat-x; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; padding: 2px 4px !important; line-height: 12px; }
+		#wpl-likebox #wpl-mustlogin label { position: relative; cursor: text; }
+		#wpl-likebox #wpl-mustlogin label span { position: absolute; top: 0px; left: 5px; padding: 0 !important; }
+		#wpl-likebox #wpl-mustlogin label span { top /*\**/: -10px\9; }
+	/* ]]> */
+	</style>
+	<link rel="openid.server" href="http://frrl.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://frrl.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://frrl.wordpress.com/osd.xml" title="http://frrl.wordpress.com">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+	<script type="text/javascript" charset="utf-8">
+		try{
+			var id = location.hash.match( /\#\!\/entry\/(\d+)/ )[1];
+			if ( id ) {
+				window.location = "http://frrl.wordpress.com?p=" + id;
+			};
+		}catch( error ){
+		}
+	</script>		
+<style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
+<meta name="application-name" content="http://frrl.wordpress.com"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="A site of endless curiosity"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://frrl.wordpress.com/feed/;icon-uri=http://s1.wp.com/i/favicon-stacked.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico">
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/google_service.js">
+</script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-3443918307802676");
+GS_googleEnableAllServices();
+</script><script src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/google_ads.js"></script>
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post");
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script><script type="text/javascript"> 
+	window.google_analytics_uacct = "UA-52447-2"; 
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/ga.js"></script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/osd.js"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/services.css"><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="string_finder.js"><link rel="stylesheet" type="text/css" href="chrome-extension://cmmijkjjmhpknehddkdfcombbcfcepme/css/about.css"></head><style type="text/css">html { padding-top: 34px !important; } body { position:relative !important; }</style>
+
+<body class="single single-post postid-10163 single-format-standard highlander-enabled highlander-light backgroundPositionTuned" style="position: relative !important; background-position: 0% 34px; ">
+<div id="container" class="group">
+
+<h1><a href="http://frrl.wordpress.com/">http://frrl.wordpress.com</a></h1>
+<div id="bubble"><p>A site of endless curiosity</p></div> <!-- erase this line if you want to turn the bubble off -->
+
+<div id="content" class="group">
+
+<h2 id="post-10163">The Technical Architecture Behind&nbsp;Facebook</h2>
+	<p class="comments"><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comments">with 2 comments</a></p>
+
+<div class="main">
+	<p style="text-align:center;"><a href="http://frrl.files.wordpress.com/2011/03/logo_facebook.jpg" target="_blank"><img class="aligncenter size-full wp-image-10166" style="border:0;" title="logo_facebook" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/logo_facebook.jpg" alt="" width="630" height="237"></a></p>
+<p>There is a lot of different elements behind the success of Facebook.&nbsp; Of course it’s mostly about vision, timing, the right people, venture capital, good judgements at critical&nbsp;points in the history of Facebook, and so on.&nbsp; It’s also about the availability of readily available technology and excellent technical architecture and engineering by talented people – Mark Zuckerberg playing a major role in the original programming and technical design of (the)Facebook.com from the beginning.</p>
+<p>(the)Facebook.com also benefited from a history of the failure of other social networking&nbsp;systems that preceded&nbsp; (the)Facebook.com.&nbsp; One of the failures clearly in the mind of the architects, developers, and technical engineers&nbsp;of (the)Facebook was the failure of the social networking system Friendster.&nbsp; Friendster may have been more successful had it been able to scale properly to meet the demand of the user base.&nbsp; Friendster did not scale.</p>
+<p>(the)Facebook.com was careful to ensure that before another segment of users was invited to register for the service (at the beginning they added schools in a very controlled process) there was sufficient capacity to handle the projected number of new users.</p>
+<h3>The Scale of Facebook</h3>
+<p>At the time of this writing there are about 400 million active users Facebook.&nbsp; Facebook delivers 200 billion page views per month and the service is distributed across 30,000 servers.</p>
+<p>So, from a technology perspective, how do you architect such a system?&nbsp; What is the technology and architecture behind Facebook that can deliver 200 billion pages per month to 400 million active users with good response time?</p>
+<h3>The success of Open Source</h3>
+<p>There are many success cases that can be developed from Facebook.&nbsp; The Open Source community is a clear beneficiary of the success of Facebook.&nbsp; Facebook is written in open source software.&nbsp; Enhancements, extensions, and innovations that Facebook made to improve performance and scalability of this open source software has been given back by Facebook to the Open Source Community.&nbsp;</p>
+<p>The Facebook presentation layer is written in PHP – 3 million&nbsp;lines of code.&nbsp; The database tier is MySQL.&nbsp; If anything validates the Open Source community its the ability of these open source tools to be able to deliver a high performance massively scalable system like Facebook.</p>
+<h3>The Technical Architecture behind Facebook</h3>
+<p>Jeff Rothschild is Vice President of Technology at Facebook.&nbsp; He gave a&nbsp;presentation&nbsp;to the UC San Diego Center for Networked Systems.&nbsp; In this webcast Jeff goes into detail about the technology&nbsp;behind Facebook – the architecture, the challenges they faced in building a high performance massively scalable system, how they solved these problems, the innovations and extensions they made to Open Source code (and gave back to the community), and those challenges for the Facebook technology that still exist and for which they are seeking solutions.</p>
+<blockquote><p>Abstract: Facebook has grown into one of the largest sites on the Internet today serving over 200 billion pages per month. The nature of social data makes engineering a site for this level of scale a particularly challenging proposition. In this presentation, I will discuss the aspects of social data that present challenges for scalability and will describe the core architectural components and design principles that Facebook has used to address these challenges. In addition, I will discuss emerging technologies that offer new opportunities for building cost-effective high performance web architectures.</p></blockquote>
+<p>You can find the links to this webcast, and a summary of the technology at the links below</p>
+<p><span id="more-10163"></span></p>
+<p>The UC San Diego Center for Networked Systems<br>
+<a href="http://cns.ucsd.edu/lecturearchive09.shtml" target="_blank">http://cns.ucsd.edu/lecturearchive09.shtml</a></p>
+<p>The&nbsp;Webcast is here<br>
+<a href="http://cns.ucsd.edu/lecturearchive09.shtml#Roth" target="_blank">http://cns.ucsd.edu/lecturearchive09.shtml#Roth</a></p>
+<p>Direct Video Link<br>
+<a href="http://video-jsoe.ucsd.edu/asx/JeffRothschildFacebook.asx" target="_blank">http://video-jsoe.ucsd.edu/asx/JeffRothschildFacebook.asx</a></p>
+<p>This is a summary of the technical aspects of the webcast<br>
+<a href="http://frrl.files.wordpress.com/2011/03/summary_facebooktechnology.pdf" target="_blank">http://frrl.files.wordpress.com/2011/03/summary_facebooktechnology.pdf</a></p>
+<h3>Building the Facebook team of executives</h3>
+<p>It can’t be stated enough.&nbsp; Success is about getting the right people on the team and the wrong people off the team.&nbsp; Every successful Venture Capital firm knows that they are investing in people&nbsp;- not ideas.&nbsp; If you have the right people for your entrepreneurial venture&nbsp;VC’s know that, even if the idea is in need of refinement, the right people will get it right.&nbsp; When you pitch a VC you are really pitching yourself and the team as much (or more) than the idea itself.</p>
+<p>Who is the VP of Technology at Facebook</p>
+<blockquote><p>Jeff Rothschild is Vice President of Technology at Facebook, where he focuses on scalability and performance. Prior to Facebook, Jeff focused on storage management and Internet services as an investor and entrepreneur. He previously co-founded Veritas Software, where he was responsible for product strategy and architecture. Jeff also co-founded Mpath&nbsp;Interactive/Hearme, the Internet multiplayer games and voice chat service, where he served as Vice President of Engineering. He is also a consulting partner with Accel Partners and during his tenure has worked with Walmart.com, Rhapsody Networks and Mendocino Software. Jeff holds a bachelor’s degree in psychology and a master’s degree in computer science from Vanderbilt University.</p></blockquote>
+<p>Bingo !!</p>
+<h2>Resources</h2>
+<p>Friendster founder on the rise and fall of America’s first big social network<br>
+<a href="http://latimesblogs.latimes.com/technology/2009/07/friendster.html" target="_blank">http://latimesblogs.latimes.com/technology/2009/07/friendster.html</a>
+</p><div class="snap_nopreview sharing robots-nocontent">
+<ul>
+<li class="sharing_label">Share this:</li>
+<li class="share-twitter share-regular">
+<div class="twitter_button"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwp.me%2Fpipkz-2DV&counturl=http%3A%2F%2Ffrrl.wordpress.com%2F2011%2F03%2F22%2Fthe-technical-architecture-behind-facebook%2F&count=horizontal&text=The%20Technical%20Architecture%20Behind%20Facebook:" style="width:97px; height:20px;"></iframe></div>
+</li>
+<li class="share-stumbleupon share-regular"><a rel="nofollow" class="share-stumbleupon share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?share=stumbleupon&nb=1" target="_blank" title="Click to share on StumbleUpon">StumbleUpon</a></li>
+<li class="share-reddit share-regular"><a rel="nofollow" class="share-reddit share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?share=reddit&nb=1" target="_blank" title="Click to share on Reddit">Reddit</a></li>
+<li class="share-digg share-regular"><a rel="nofollow" class="share-digg share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?share=digg&nb=1" target="_blank" title="Click to Digg this post">Digg</a></li>
+<li class="share-facebook share-regular"><a rel="nofollow" class="share-facebook share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?share=facebook&nb=1" target="_blank" title="Share on Facebook">Facebook</a></li>
+<li class="share-email share-regular share-service-visible"><a rel="nofollow" class="share-email share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?share=email&nb=1" target="_blank" title="Click to email this to a friend">Email</a></li>
+<li class="share-print share-regular"><a rel="nofollow" class="share-print share-icon" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#print" target="_blank" title="Click to print">Print</a></li>
+<li class="share-end"></li>
+</ul>
+<div class="sharing-clear"></div>
+</div>
+
+<!-- wpcom_below_post -->
+<div align="center" style="margin-bottom: 10px;">
+<script type="text/javascript">
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("theme_bg", "fff"); GA_googleAddAttr("theme_border", "777"); GA_googleAddAttr("theme_text", "1c1c1c"); GA_googleAddAttr("theme_link", "004276"); GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Autotag", "technology"); GA_googleAddAttr("Tag", "facebook"); GA_googleAddAttr("Tag", "mark-zuckerberg"); 
+GA_googleFillSlot("wpcom_below_post");
+</script><script src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/ads"></script><div id="google_ads_div_wpcom_below_post_ad_container">
+<ins style="width: 300px; height: 250px; display: inline-table; position: relative; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; "><ins style="width: 300px; height: 250px; display: block; position: relative; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; "><iframe id="google_ads_iframe_wpcom_below_post" name="google_ads_iframe_wpcom_below_post" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; position: absolute; top: 0px; left: 0px; "></iframe></ins></ins></div>
+<script>GA_googleCreateDomIframe("google_ads_div_wpcom_below_post_ad_container" ,"wpcom_below_post");</script>
+</div>	</div>
+
+<div class="meta group">
+<div class="signature">
+    <p>Written by frrl <span class="edit"></span></p>
+    <p>March 22, 2011 at 2:38 am</p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://frrl.wordpress.com/category/uncategorized/" title="View all posts in Uncategorized" rel="category tag">Uncategorized</a></p>
+    <p>Tagged with <a href="http://en.wordpress.com/tag/facebook/" rel="tag">Facebook</a>, <a href="http://en.wordpress.com/tag/mark-zuckerberg/" rel="tag">Mark Zuckerberg</a></p></div>
+</div>
+
+<div class="navigation group">
+	<div class="alignleft">« <a href="http://frrl.wordpress.com/2011/03/19/america-vs-japan-does-culture-matter-when-it-comes-to-looting/" rel="prev">America vs Japan – Does culture matter when it comes to&nbsp;looting?</a></div>
+	<div class="alignright"><a href="http://frrl.wordpress.com/2011/03/27/movie-review-the-social-network/" rel="next">Movie Review: The Social&nbsp;Network</a> »</div>
+</div>
+
+<div id="wpl-likebox"><div id="wpl-button"><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?like=1&_wpnonce=74e9aa60f9" title="I like this post" class="like needs-login" rel="nofollow"><span>Like</span></a></div><div id="wpl-count">Be the first to like this post.</div></div>
+<a name="comments" id="comments"></a>
+
+<h3 class="reply">2 Responses</h3> 
+<p class="comment_meta">Subscribe to comments with <a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/feed/">RSS</a>.</p>
+
+<ol class="commentlist">
+<li id="comment-4857" class="pingback even thread-even depth-1 pingback highlander-comment highlander-comment">
+	<div id="div-comment-4857">
+	<div class="comment_mod">
+		</div>
+	
+	<div class="comment_text">
+	<p>[...] Nathan  1:06 pm on April 7, 2011  Log in to leave a Comment   Tags: Generic ( 24 ) &nbsp;&nbsp;     <a href="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/The Technical Architecture Behind Facebook « http   frrl.wordpress.com.htm" rel="nofollow">http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/</a> No TweetBacks yet. (Be the first to Tweet this post)  [...]</p>
+	</div>
+	
+	<div class="comment_author vcard">
+		<p><strong class="fn"><a href="http://develog.realtasia.com/2011/04/07/discovery-consists-of-seeing-what-everyb/" rel="external nofollow" class="url">http://frrl.wordpress.com/2011/03/22/the… « Develog @ RTA</a></strong></p>
+	<p><small>
+		April 7, 2011 at <a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-4857">5:21 am</a>			</small></p>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="reply">
+		<a class="comment-reply-link" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?replytocom=4857#respond" onclick="return addComment.moveForm(&quot;div-comment-4857&quot;, &quot;4857&quot;, &quot;respond&quot;, &quot;10163&quot;)">Reply</a>	</div>
+	</div>
+</li>
+<li id="comment-4816" class="pingback odd alt thread-odd thread-alt depth-1 pingback highlander-comment highlander-comment">
+	<div id="div-comment-4816">
+	<div class="comment_mod">
+		</div>
+	
+	<div class="comment_text">
+	<p>[...] Continued here: The Technical Architecture Behind Facebook « <a href="http://frrl.wordpress.com/" rel="nofollow">http://frrl.wordpress.com</a> [...]</p>
+	</div>
+	
+	<div class="comment_author vcard">
+		<p><strong class="fn"><a href="http://midiasocial.org/social-media-2/the-technical-architecture-behind-facebook-%c2%ab-httpfrrl-wordpress-com" rel="external nofollow" class="url">The Technical Architecture Behind Facebook « http://frrl.wordpress.com | Midia Social</a></strong></p>
+	<p><small>
+		March 22, 2011 at <a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-4816">2:52 am</a>			</small></p>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="reply">
+		<a class="comment-reply-link" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?replytocom=4816#respond" onclick="return addComment.moveForm(&quot;div-comment-4816&quot;, &quot;4816&quot;, &quot;respond&quot;, &quot;10163&quot;)">Reply</a>	</div>
+	</div>
+</li>
+</ol>
+<div class="navigation">
+	<div class="alignleft"></div>
+	<div class="alignright"></div>
+</div>
+<br>
+
+	
+
+
+								<div id="respond" class="js">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://frrl.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																										
+
+
+												
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea style="resize: none; overflow-y: hidden; position: absolute; top: 0px; left: -9999px; width: 678px; line-height: normal; text-decoration: none; letter-spacing: normal; height: 145px; " tabindex="-1"></textarea><textarea id="comment" name="comment" style="resize: none; overflow-y: hidden; height: 145px; "></textarea></div>
+</div>
+
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+ 
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<ul>
+			<li class="selected"><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-form-guest" title="Guest" id="postas-guest" class="social_buttons sb_24 sb_guest"><span>Guest</span></a></li>
+			<li><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-form-wordpress" title="Log In" id="postas-wordpress" class="social_buttons sb_24 sb_wordpress"><span>Log In</span></a></li>
+			<li><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-form-load-service:Twitter" title="Log In" id="postas-twitter" class="social_buttons sb_24 sb_twitter"><span>Log In</span></a></li>
+			<li><a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-form-load-service:Facebook" title="Log In" id="postas-facebook" class="social_buttons sb_24 sb_facebook"><span>Log In</span></a></li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-avatar">
+			<img src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="69" class="no-grav">
+		</div>
+
+		<div class="comment-form-fields">
+			<div class="comment-form-field comment-form-email">
+				<label for="email">Email <span class="nopublish">Your email address will not be published.</span></label>
+				<div class="comment-form-input"><input id="email" name="email" type="text" value=""></div>
+			</div>
+			<div class="comment-form-field comment-form-author">
+				<label for="author">Name</label>
+				<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+			</div>
+			<div class="comment-form-field comment-form-url">
+				<label for="url">Website</label>
+				<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+			</div> 
+		</div>
+
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-avatar">
+			<img src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/wplogo.png" alt="WordPress.com Logo" width="69" class="no-grav">
+		</div>
+
+		<div class="comment-form-fields">
+			<iframe id="wordpress-login-iframe" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/wp-login.htm"></iframe>
+		</div>
+
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-avatar">
+			<img src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="69" class="no-grav">
+		</div>
+
+		<div class="comment-form-fields">
+			<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+			<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+			<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+			<h5></h5>
+			<p class="comment-form-posting-as">You are commenting using your<br>Twitter account. <span class="comment-form-log-out">(<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log Out</a>)</span></p>
+		</div>
+
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-avatar">
+			<img src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="69" class="no-grav">
+		</div>
+
+		<div class="comment-form-fields">
+			<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+			<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+			<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+			<h5></h5>
+			<p class="comment-form-posting-as">You are commenting using your<br>Facebook account. <span class="comment-form-log-out">(<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log Out</a>)</span></p>
+		</div>
+
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service"> 
+		<p>Connecting to %s</p> 
+	</div>
+</div>
+
+
+<div id="comment-form-subscribe"> 
+<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe">Notify me of follow-up comments via email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts via email.</label></p></div>
+												<p class="form-submit">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="10163" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						
+<input type="hidden" name="genseq" value="1307490693">
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fa638e683f"></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>			
+
+
+</div> 
+
+<div id="sidebar">
+<form role="search" method="get" id="searchform" action="http://frrl.wordpress.com/">
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="Search">
+	</div>
+	</form>				<h3>Recent Posts</h3>		<ul>
+				<li><a href="http://frrl.wordpress.com/2011/06/07/sarah-palin-on-paul-revere-why-some-people-cant-admit-mistakes-and-the-damage-it-does/" title="Sarah Palin on Paul Revere – Why some people can’t admit mistakes and the damage it does">Sarah Palin on Paul Revere – Why some people can’t admit mistakes and the damage it&nbsp;does</a></li>
+				<li><a href="http://frrl.wordpress.com/2011/06/05/ubeam-a-new-take-on-wireless-electricity-tesla-100-years-later/" title="uBeam – a new take on Wireless Electricity.  Tesla 100 years later">uBeam – a new take on Wireless Electricity.  Tesla 100 years&nbsp;later</a></li>
+				<li><a href="http://frrl.wordpress.com/2011/06/05/qr-codes-the-new-artwork-of-digital-information-encoding/" title="QR Codes: The new artwork of digital information encoding">QR Codes: The new artwork of digital information&nbsp;encoding</a></li>
+				<li><a href="http://frrl.wordpress.com/2011/06/01/some-thoughts-on-apple-and-average-products-for-average-people/" title="Some thoughts on Apple and average products for average people">Some thoughts on Apple and average products for average&nbsp;people</a></li>
+				<li><a href="http://frrl.wordpress.com/2011/05/29/welcome-to-macintosh-20-years-later/" title="Welcome to Macintosh – 20 years later">Welcome to Macintosh – 20 years&nbsp;later</a></li>
+				</ul>
+		<h3>Tag Cloud</h3><div style="overflow:hidden"><a href="http://frrl.wordpress.com/tag/advertising-marketing/" class="tag-link-69812" title="2 topics" style="font-size: 8pt;">advertising &amp; marketing</a>
+<a href="http://frrl.wordpress.com/tag/amateur-radio/" class="tag-link-156583" title="69 topics" style="font-size: 22pt;">amateur radio</a>
+<a href="http://frrl.wordpress.com/tag/antennas/" class="tag-link-14179" title="9 topics" style="font-size: 13.313868613139pt;">antennas</a>
+<a href="http://frrl.wordpress.com/tag/arrl/" class="tag-link-720789" title="18 topics" style="font-size: 16.175182481752pt;">ARRL</a>
+<a href="http://frrl.wordpress.com/tag/books/" class="tag-link-178" title="21 topics" style="font-size: 16.788321167883pt;">books</a>
+<a href="http://frrl.wordpress.com/tag/burt-fisher-k1oik/" class="tag-link-37131011" title="11 topics" style="font-size: 14.131386861314pt;">Burt Fisher K1OIK</a>
+<a href="http://frrl.wordpress.com/tag/career/" class="tag-link-14560" title="29 topics" style="font-size: 18.21897810219pt;">career</a>
+<a href="http://frrl.wordpress.com/tag/computers/" class="tag-link-1169" title="38 topics" style="font-size: 19.343065693431pt;">computers</a>
+<a href="http://frrl.wordpress.com/tag/culture/" class="tag-link-1098" title="41 topics" style="font-size: 19.649635036496pt;">culture</a>
+<a href="http://frrl.wordpress.com/tag/dilbert/" class="tag-link-82814" title="5 topics" style="font-size: 11.065693430657pt;">dilbert</a>
+<a href="http://frrl.wordpress.com/tag/ebooks/" class="tag-link-6725" title="6 topics" style="font-size: 11.78102189781pt;">ebooks</a>
+<a href="http://frrl.wordpress.com/tag/education/" class="tag-link-1342" title="11 topics" style="font-size: 14.131386861314pt;">education</a>
+<a href="http://frrl.wordpress.com/tag/electronics/" class="tag-link-7334" title="25 topics" style="font-size: 17.503649635036pt;">electronics</a>
+<a href="http://frrl.wordpress.com/tag/entrepreneurship/" class="tag-link-183" title="10 topics" style="font-size: 13.722627737226pt;">Entrepreneurship</a>
+<a href="http://frrl.wordpress.com/tag/facebook/" class="tag-link-81819" title="2 topics" style="font-size: 8pt;">Facebook</a>
+<a href="http://frrl.wordpress.com/tag/fun/" class="tag-link-272" title="36 topics" style="font-size: 19.138686131387pt;">fun</a>
+<a href="http://frrl.wordpress.com/tag/hamfests/" class="tag-link-69272" title="6 topics" style="font-size: 11.78102189781pt;">hamfests</a>
+<a href="http://frrl.wordpress.com/tag/heathkit/" class="tag-link-3830837" title="6 topics" style="font-size: 11.78102189781pt;">heathkit</a>
+<a href="http://frrl.wordpress.com/tag/history-of-radio/" class="tag-link-14554490" title="36 topics" style="font-size: 19.138686131387pt;">history of radio</a>
+<a href="http://frrl.wordpress.com/tag/how-to/" class="tag-link-2708" title="27 topics" style="font-size: 17.912408759124pt;">how-to</a>
+<a href="http://frrl.wordpress.com/tag/innovation/" class="tag-link-186" title="33 topics" style="font-size: 18.729927007299pt;">innovation</a>
+<a href="http://frrl.wordpress.com/tag/kindle/" class="tag-link-1017603" title="3 topics" style="font-size: 9.2262773722628pt;">kindle</a>
+<a href="http://frrl.wordpress.com/tag/kit-building/" class="tag-link-1933745" title="4 topics" style="font-size: 10.248175182482pt;">kit building</a>
+<a href="http://frrl.wordpress.com/tag/lady-gaga/" class="tag-link-6254056" title="3 topics" style="font-size: 9.2262773722628pt;">lady gaga</a>
+<a href="http://frrl.wordpress.com/tag/linux/" class="tag-link-610" title="4 topics" style="font-size: 10.248175182482pt;">Linux</a>
+<a href="http://frrl.wordpress.com/tag/mark-zuckerberg/" class="tag-link-341024" title="3 topics" style="font-size: 9.2262773722628pt;">Mark Zuckerberg</a>
+<a href="http://frrl.wordpress.com/tag/military-radio/" class="tag-link-38400977" title="3 topics" style="font-size: 9.2262773722628pt;">military radio</a>
+<a href="http://frrl.wordpress.com/tag/morse-code/" class="tag-link-119278" title="3 topics" style="font-size: 9.2262773722628pt;">Morse code</a>
+<a href="http://frrl.wordpress.com/tag/organizational-behavior/" class="tag-link-31678" title="42 topics" style="font-size: 19.751824817518pt;">organizational behavior</a>
+<a href="http://frrl.wordpress.com/tag/politics/" class="tag-link-398" title="32 topics" style="font-size: 18.627737226277pt;">politics</a>
+<a href="http://frrl.wordpress.com/tag/quotes/" class="tag-link-755" title="11 topics" style="font-size: 14.131386861314pt;">quotes</a>
+<a href="http://frrl.wordpress.com/tag/radio/" class="tag-link-275" title="33 topics" style="font-size: 18.729927007299pt;">Radio</a>
+<a href="http://frrl.wordpress.com/tag/reviews/" class="tag-link-309" title="28 topics" style="font-size: 18.014598540146pt;">reviews</a>
+<a href="http://frrl.wordpress.com/tag/science/" class="tag-link-173" title="3 topics" style="font-size: 9.2262773722628pt;">science</a>
+<a href="http://frrl.wordpress.com/tag/science-technology/" class="tag-link-1749" title="4 topics" style="font-size: 10.248175182482pt;">science &amp; technology</a>
+<a href="http://frrl.wordpress.com/tag/scott-adams/" class="tag-link-432477" title="4 topics" style="font-size: 10.248175182482pt;">Scott Adams</a>
+<a href="http://frrl.wordpress.com/tag/sdr/" class="tag-link-643563" title="2 topics" style="font-size: 8pt;">SDR</a>
+<a href="http://frrl.wordpress.com/tag/seth-godin/" class="tag-link-16711" title="5 topics" style="font-size: 11.065693430657pt;">seth godin</a>
+<a href="http://frrl.wordpress.com/tag/social-media/" class="tag-link-49818" title="12 topics" style="font-size: 14.43795620438pt;">social media</a>
+<a href="http://frrl.wordpress.com/tag/software-defined-radio/" class="tag-link-2633459" title="5 topics" style="font-size: 11.065693430657pt;">software defined radio</a>
+<a href="http://frrl.wordpress.com/tag/steve-jobs/" class="tag-link-38983" title="3 topics" style="font-size: 9.2262773722628pt;">Steve jobs</a>
+<a href="http://frrl.wordpress.com/tag/ted/" class="tag-link-37208" title="8 topics" style="font-size: 12.802919708029pt;">TED</a>
+<a href="http://frrl.wordpress.com/tag/the-singularity-is-near/" class="tag-link-110423" title="2 topics" style="font-size: 8pt;">The Singularity is Near</a>
+<a href="http://frrl.wordpress.com/tag/twitter/" class="tag-link-599182" title="6 topics" style="font-size: 11.78102189781pt;">Twitter</a>
+<a href="http://frrl.wordpress.com/tag/virtualization/" class="tag-link-40559" title="5 topics" style="font-size: 11.065693430657pt;">virtualization</a></div>
+					<h3>Readers Comments</h3>			<ul id="recentcomments"><li class="recentcomments"><a href="http://ke9v.net/" rel="external nofollow" class="url">Jeff, KE9V</a> on <a href="http://frrl.wordpress.com/2011/05/16/hawking-heaven-is-a-fairy-story-for-people-afraid-of-the-dark/#comment-4964">Hawking: Heaven is a fairy story for people afraid of the&nbsp;dark</a></li><li class="recentcomments">Elwood Downey on <a href="http://frrl.wordpress.com/2011/05/12/tools-for-building-your-ebook-library-of-classic-books/#comment-4957">Tools for building your ebook library of classic&nbsp;books</a></li><li class="recentcomments"><a href="http://www.ledecolighting.com.au/" rel="external nofollow" class="url">James</a> on <a href="http://frrl.wordpress.com/2009/02/02/product-reviewlights-of-america-led-light-bulb/#comment-4955">Product Review:Lights of America LED&nbsp;Light&nbsp;Bulb</a></li><li class="recentcomments">Jesse the Scout on <a href="http://frrl.wordpress.com/2010/08/02/in-corporate-america-powerlessness-corrupts/#comment-4938">In Corporate America Powerlessness&nbsp;Corrupts</a></li><li class="recentcomments">Jake on <a href="http://frrl.wordpress.com/2011/03/27/fcc-chairman-newton-minow-50-years-later-a-vaster-wasteland/#comment-4906">FCC Chairman Newton Minow 50 years later: a vaster&nbsp;wasteland</a></li><li class="recentcomments">frrl on <a href="http://frrl.wordpress.com/2009/03/21/limited-space-antennas-the-small-transmitting-loop-antenna/#comment-4886">Limited Space Antennas – The Small&nbsp;Transmitting&nbsp;Loop&nbsp;Antenna</a></li><li class="recentcomments"><a href="http://9w2pju.hamradio.my/" rel="external nofollow" class="url">Faizul</a> on <a href="http://frrl.wordpress.com/2009/03/21/limited-space-antennas-the-small-transmitting-loop-antenna/#comment-4882">Limited Space Antennas – The Small&nbsp;Transmitting&nbsp;Loop&nbsp;Antenna</a></li><li class="recentcomments"><a href="http://9w2pju.hamradio.my/" rel="external nofollow" class="url">Faizul</a> on <a href="http://frrl.wordpress.com/2009/03/21/limited-space-antennas-the-small-transmitting-loop-antenna/#comment-4881">Limited Space Antennas – The Small&nbsp;Transmitting&nbsp;Loop&nbsp;Antenna</a></li><li class="recentcomments"><a href="http://coolinformation4all.blogspot.com/" rel="external nofollow" class="url">raj</a> on <a href="http://frrl.wordpress.com/2011/03/27/movie-review-the-social-network/#comment-4867">Movie Review: The Social&nbsp;Network</a></li><li class="recentcomments">Ron Hyatt on <a href="http://frrl.wordpress.com/2011/04/08/radio-is-dead-long-live-radio/#comment-4862">Radio is dead; Long live&nbsp;radio</a></li><li class="recentcomments"><a href="http://develog.realtasia.com/2011/04/07/discovery-consists-of-seeing-what-everyb/" rel="external nofollow" class="url">http://frrl.wordpress.com/2011/03/22/the… « Develog @ RTA</a> on <a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#comment-4857">The Technical Architecture Behind&nbsp;Facebook</a></li><li class="recentcomments">alan lemaitre on <a href="http://frrl.wordpress.com/2009/09/14/how-to-make-a-cheap-wifi-antenna-booster/#comment-4855">How to make a Cheap WiFi&nbsp;Antenna&nbsp;Booster</a></li><li class="recentcomments">Justin Reed on <a href="http://frrl.wordpress.com/2008/08/03/review-of-the-ldg-pro-200-autotuner/#comment-4838">Review of the LDG&nbsp;PRO-200&nbsp;Autotuner</a></li><li class="recentcomments"><a href="http://frrl.wordpress.com/2011/03/27/movie-review-the-social-network/" rel="external nofollow" class="url">Movie Review: The Social Network « http://frrl.wordpress.com</a> on <a href="http://frrl.wordpress.com/2010/01/02/the-accidental-billionaires-the-founding-of-facebook-a-tale-of-sex-money-genius-and-betrayal/#comment-4834">The Accidental Billionaires: The Founding of Facebook A Tale of Sex, Money, Genius&nbsp;and&nbsp;Betrayal</a></li><li class="recentcomments">Justin Reed on <a href="http://frrl.wordpress.com/2008/08/03/review-of-the-ldg-pro-200-autotuner/#comment-4832">Review of the LDG&nbsp;PRO-200&nbsp;Autotuner</a></li></ul>
+		<h3>Archives</h3>		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;"> <option value="">Select Month</option> 	<option value="http://frrl.wordpress.com/2011/06/"> June 2011 </option>
+	<option value="http://frrl.wordpress.com/2011/05/"> May 2011 </option>
+	<option value="http://frrl.wordpress.com/2011/04/"> April 2011 </option>
+	<option value="http://frrl.wordpress.com/2011/03/"> March 2011 </option>
+	<option value="http://frrl.wordpress.com/2011/02/"> February 2011 </option>
+	<option value="http://frrl.wordpress.com/2011/01/"> January 2011 </option>
+	<option value="http://frrl.wordpress.com/2010/12/"> December 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/11/"> November 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/10/"> October 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/09/"> September 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/08/"> August 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/07/"> July 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/06/"> June 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/05/"> May 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/04/"> April 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/03/"> March 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/02/"> February 2010 </option>
+	<option value="http://frrl.wordpress.com/2010/01/"> January 2010 </option>
+	<option value="http://frrl.wordpress.com/2009/12/"> December 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/11/"> November 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/10/"> October 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/09/"> September 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/08/"> August 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/07/"> July 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/06/"> June 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/05/"> May 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/04/"> April 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/03/"> March 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/02/"> February 2009 </option>
+	<option value="http://frrl.wordpress.com/2009/01/"> January 2009 </option>
+	<option value="http://frrl.wordpress.com/2008/12/"> December 2008 </option>
+	<option value="http://frrl.wordpress.com/2008/11/"> November 2008 </option>
+	<option value="http://frrl.wordpress.com/2008/10/"> October 2008 </option>
+	<option value="http://frrl.wordpress.com/2008/09/"> September 2008 </option>
+	<option value="http://frrl.wordpress.com/2008/08/"> August 2008 </option>
+	<option value="http://frrl.wordpress.com/2000/03/"> March 2000 </option>
+	<option value="http://frrl.wordpress.com/2000/02/"> February 2000 </option>
+	<option value="http://frrl.wordpress.com/2000/01/"> January 2000 </option>
+ </select>
+<h3>Blogroll</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://citizenagency.com/" title="Internet consultancy that specializes in developing community-centric strategies around product research, design, development and marketing.">http://citizenagency.com</a>
+Internet consultancy that specializes in developing community-centric strategies around product research, design, development and marketing.</li>
+<li><a href="http://www.fistfuloftalent.com/" title="Recruiters, HR, Consultants and Corporate Types on all things Talent">http://www.fistfuloftalent.com/</a>
+Recruiters, HR, Consultants and Corporate Types on all things Talent</li>
+<li><a href="http://www.horsepigcow.com/" title="Social Spelunking with Tara Hunt">http://www.horsepigcow.com</a>
+Social Spelunking with Tara Hunt</li>
+<li><a href="http://wordpress.com/">WordPress.org</a></li>
+
+	</ul>
+
+<h3>&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>March 2011</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://frrl.wordpress.com/2011/02/" title="View posts for February 2011">« Feb</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="http://frrl.wordpress.com/2011/04/" title="View posts for April 2011">Apr »</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="1" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td><a href="http://frrl.wordpress.com/2011/03/05/" title="Releasing Innovation by Breaking Paradigms: seeing what no one else can see">5</a></td><td><a href="http://frrl.wordpress.com/2011/03/06/" title="How to build an innovation machine">6</a></td>
+	</tr>
+	<tr>
+		<td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td><a href="http://frrl.wordpress.com/2011/03/12/" title="Creating life strategies and the road to continuous self-renewal">12</a></td><td>13</td>
+	</tr>
+	<tr>
+		<td>14</td><td>15</td><td>16</td><td><a href="http://frrl.wordpress.com/2011/03/17/" title="Riding the bus with “Spiffy”: forging informal networks of people 10 seconds at a time">17</a></td><td>18</td><td><a href="http://frrl.wordpress.com/2011/03/19/" title="America vs Japan – Does culture matter when it comes to looting?">19</a></td><td>20</td>
+	</tr>
+	<tr>
+		<td>21</td><td><a href="http://frrl.wordpress.com/2011/03/22/" title="The Technical Architecture Behind Facebook">22</a></td><td>23</td><td>24</td><td>25</td><td>26</td><td><a href="http://frrl.wordpress.com/2011/03/27/" title="Movie Review: The Social Network
+FCC Chairman Newton Minow 50 years later: a vaster wasteland">27</a></td>
+	</tr>
+	<tr>
+		<td>28</td><td>29</td><td>30</td><td><a href="http://frrl.wordpress.com/2011/03/31/" title="Go Make Something Happen">31</a></td>
+		<td class="pad" colspan="3">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div>					<h3>http://frrl.wordpress.com since Sept. 2008</h3>			<ul>
+			<li>322,320 page views</li>
+			</ul>
+		<h3><a href="http://twitter.com/arrl">ARRL on Twitter</a></h3><ul class="tweets">
+<li>Follow the happenings of the 2011 ARRL National Convention at Ham-Com via @<a href="http://twitter.com/ARRLexpo">ARRLexpo</a> <a href="http://twitter.com/search?q=%23hamradio">#hamradio</a> <a href="http://twitter.com/search?q=%23hamr">#hamr</a> <a href="http://twitter.com/arrl/statuses/78195578974126080" class="timesince">3&nbsp;hours&nbsp;ago</a></li>
+<li>Gene Zimmerman, W3ZZ, to Retire from “The World Above 50 MHz”: If you’re a VHF+ fan, you probably read “The Worl... <a href="http://bit.ly/jK3tEE" rel="nofollow">http://bit.ly/jK3tEE</a> <a href="http://twitter.com/arrl/statuses/78172333881294848" class="timesince">4&nbsp;hours&nbsp;ago</a></li>
+<li>DXCC Desk Approves Current VK0KEV Macquarie Island DXpedition: ARRL DXCC Manager Bill Moore, NC1L, reports that ... <a href="http://bit.ly/jAHlA7" rel="nofollow">http://bit.ly/jAHlA7</a> <a href="http://twitter.com/arrl/statuses/78116486509629440" class="timesince">8&nbsp;hours&nbsp;ago</a></li>
+<li>FCC Seeks Comments on Terminating Certain Docketed Proceedings: In a Public Notice (CG Docket No 11-99) released... <a href="http://bit.ly/m65l00" rel="nofollow">http://bit.ly/m65l00</a> <a href="http://twitter.com/arrl/statuses/78083926240935936" class="timesince">10&nbsp;hours&nbsp;ago</a></li>
+<li>FCC Takes Strong Stance Against Radio Jamming, Issues $24,000 Fine to California Man: On June 6, the FCC issued ... <a href="http://bit.ly/jhJgcr" rel="nofollow">http://bit.ly/jhJgcr</a> <a href="http://twitter.com/arrl/statuses/77786902383689728" class="timesince">1&nbsp;day&nbsp;ago</a></li>
+<li>SATERN Thanks Amateurs for Responding to Call for Assistance, All Slots Filled: In response to the EF5 tornado t... <a href="http://bit.ly/kztw77" rel="nofollow">http://bit.ly/kztw77</a> <a href="http://twitter.com/arrl/statuses/77729201528115200" class="timesince">1&nbsp;day&nbsp;ago</a></li>
+<li>SATERN Seeks Amateur Radio Volunteers for Joplin Operations: In accord with our Memorandum of Understanding with... <a href="http://bit.ly/kgpQB6" rel="nofollow">http://bit.ly/kgpQB6</a> <a href="http://twitter.com/arrl/statuses/76699869112307714" class="timesince">4&nbsp;days&nbsp;ago</a></li>
+<li>2010 ARRL Annual Report Now Available: The ARRL Annual Report for 2010 -- now available online and in print -- r... <a href="http://bit.ly/iA6hlf" rel="nofollow">http://bit.ly/iA6hlf</a> <a href="http://twitter.com/arrl/statuses/76675702593826817" class="timesince">4&nbsp;days&nbsp;ago</a></li>
+<li>US Proposes WRC-12 Allocations for HF Radars: The ARRL and its partners in the IARU have been involved in the pr... <a href="http://bit.ly/kQ9JII" rel="nofollow">http://bit.ly/kQ9JII</a> <a href="http://twitter.com/arrl/statuses/76651608120901633" class="timesince">4&nbsp;days&nbsp;ago</a></li>
+<li>The K7RA Solar Update: Sunspot activity is up sharply this week, with the average daily sunspot number increasin... <a href="http://bit.ly/j3GMn9" rel="nofollow">http://bit.ly/j3GMn9</a> <a href="http://twitter.com/arrl/statuses/76643388480430080" class="timesince">4&nbsp;days&nbsp;ago</a></li>
+<li>Surfin’: Hammin’ in Hawaii: By Stan Horzepa, WA1LOUContributing EditorThis week, Surfin’ revisits a website all ... <a href="http://bit.ly/j4ocUM" rel="nofollow">http://bit.ly/j4ocUM</a> <a href="http://twitter.com/arrl/statuses/76619303654391808" class="timesince">4&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/marmageek">marmageek</a> We are back on the air. <a href="http://twitter.com/arrl/statuses/76357038162186241" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/nb2j">nb2j</a> There were several but they are not managed by ARRL. Look around and you will find them. <a href="http://twitter.com/arrl/statuses/76356267471421440" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/ke9v">ke9v</a> Back on the air with the new website news feed. <a href="http://twitter.com/arrl/statuses/76355996204806144" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/themilnerd">themilnerd</a> Not sure about that.  You may want to ask @<a href="http://twitter.com/ARRL_PR">ARRL_PR</a> <a href="http://twitter.com/arrl/statuses/76355359001948160" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/Orozco_Adrian">Orozco_Adrian</a> Thanks for the mention! <a href="http://twitter.com/arrl/statuses/76354454445768704" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/ai4ri">ai4ri</a> You can get an answer to your question from @<a href="http://twitter.com/DXCC_Desk">DXCC_Desk</a>  or   <a href="mailto:lotw-help@arrl.org">lotw-help@arrl.org</a> <a href="http://twitter.com/arrl/statuses/76354213449449473" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/DavidHenderson">DavidHenderson</a> Thanks for the mention! <a href="http://twitter.com/arrl/statuses/76353318519177216" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/JonSM99">JonSM99</a> Congrats on your achievement. You could always check QST for low cost antenna tuners you can buy or build yourself. <a href="http://twitter.com/arrl/statuses/76353271614275584" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/northlandfox">northlandfox</a> Good points. Perhaps you might want to share them with the SM and Director for that particular Section. <a href="http://twitter.com/arrl/statuses/76352511660916737" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>FCC Issues Citation to Illinois Company for Illegal Marketing of Unauthorized Radio Frequency Devices: On June 2... <a href="http://bit.ly/jxjfdk" rel="nofollow">http://bit.ly/jxjfdk</a> <a href="http://twitter.com/arrl/statuses/76342067034460161" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>Central Massachusetts Experiences Rare Tornado, Area Hams Hasten to Help: At least two tornadoes touched down in... <a href="http://bit.ly/iXh0Nk" rel="nofollow">http://bit.ly/iXh0Nk</a> <a href="http://twitter.com/arrl/statuses/76342065730043904" class="timesince">5&nbsp;days&nbsp;ago</a></li>
+<li>ARRL In Action: What Have We Been Up to Lately?: Compiled by S. Khrystyne Keane, K1SFAARRL News Editork1sfa@arrl... <a href="http://bit.ly/kMLnvg" rel="nofollow">http://bit.ly/kMLnvg</a> <a href="http://twitter.com/arrl/statuses/76016679880101888" class="timesince">6&nbsp;days&nbsp;ago</a></li>
+<li>ARRL Headquarters Hosts Overseas Visitors: Where is Amateur Radio growing the fastest? The answer may surprise y... <a href="http://bit.ly/mDDVQK" rel="nofollow">http://bit.ly/mDDVQK</a> <a href="http://twitter.com/arrl/statuses/76016678735069184" class="timesince">6&nbsp;days&nbsp;ago</a></li>
+<li>Find Your Way Around the New ARRL Web Site <a href="http://bit.ly/c07H1G" rel="nofollow">http://bit.ly/c07H1G</a> <a href="http://twitter.com/arrl/statuses/12301799839" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+<li>ARRL Continuing Education Online Course Registration: Registration remains open through Sunday, April 25, 2010, fo... <a href="http://bit.ly/aViYZJ" rel="nofollow">http://bit.ly/aViYZJ</a> <a href="http://twitter.com/arrl/statuses/12183166861" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+<li>ARRL launches new website - <a href="http://www.arrl.org/news/welcome-to-the-new-arrl-web-site" rel="nofollow">http://www.arrl.org/news/welcome-to-the-new-arrl-web-site</a> <a href="http://twitter.com/arrl/statuses/12182354284" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/chrismatthieu">chrismatthieu</a> Writing for QST magazine - <a href="http://www.arrl.org/qst-author-guide" rel="nofollow">http://www.arrl.org/qst-author-guide</a> <a href="http://twitter.com/arrl/statuses/12182222509" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/ke4vcs">ke4vcs</a> I am hearing that there might be a "trial membership" if you wait about a month, when we launch the new website check it out then <a href="http://twitter.com/arrl/statuses/8511276995" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+<li>@<a href="http://twitter.com/N6DHZ">N6DHZ</a> Any ARRL member in a Division is welcome (and encouraged!) to run for either Director or SM positions.  SW elections coming next year <a href="http://twitter.com/arrl/statuses/5629638620" class="timesince">1&nbsp;year&nbsp;ago</a></li>
+</ul>
+<h3><a class="rsswidget" href="http://www.arrl.org/arrlletter/audio/aan.rss" title="Syndicate this content"><img style="background:orange;color:white;border:none;" width="14" height="14" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/rss.png" alt="RSS"></a> <a class="rsswidget" href="http://www.arrl.org/arrl-audio-news" title="ARRL&#39;s Audio News">ARRL Audio Feed</a></h3><ul><li>June 2, 2011<div class="rssSummary">In this edition: Hams in Massachusetts are ready for a rare tornado, while amateurs in Missouri assist with recovery; the FCC issues a citation to an Illinois company for illegally marketing of unauthorized radio frequency devices; gear up for the ARRL VHF QSO Party; if you’ve ever wanted to try foxhunting on the national and international stage, here’s your […]</div></li><li>May 26, 2011<div class="rssSummary">In this edition: Radio amateurs assist the American Red Cross and served agencies after tornados strike the Missouri town of Joplin; two senators introduce a “companion” bill to HR 607 that avoids impacting the amateur spectrum; the FEMA Administrator calls Amateur Radio “the last line of defense”; the National Hurricane Center’s WX4NHC schedules its annual  […]</div></li></ul>			<div class="textwidget"><a title="wordpress visitors" href="http://www.statcounter.com/wordpress.org/" target="_blank"><img src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/saved_resource" alt="wordpress visitors" border="0"></a></div>
+		<h3>Blogroll</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://citizenagency.com/" title="Internet consultancy that specializes in developing community-centric strategies around product research, design, development and marketing.">http://citizenagency.com</a></li>
+<li><a href="http://www.fistfuloftalent.com/" title="Recruiters, HR, Consultants and Corporate Types on all things Talent">http://www.fistfuloftalent.com/</a></li>
+<li><a href="http://www.horsepigcow.com/" title="Social Spelunking with Tara Hunt">http://www.horsepigcow.com</a></li>
+<li><a href="http://wordpress.com/">WordPress.org</a></li>
+
+	</ul>
+
+<h3>Meta</h3>			<ul>
+			<li><a href="http://frrl.wordpress.com/wp-login.php?action=register">Register</a></li>			<li><a href="http://frrl.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="http://frrl.wordpress.com/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://frrl.wordpress.com/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+						</ul>
+
+
+</div>
+
+</div>
+
+<div id="footer">
+	<p><a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>. Theme: <a href="http://theme.wordpress.com/themes/journalist/">The Journalist v1.9</a> by <a href="http://lucianmarin.com/" rel="designer">Lucian E. Marin</a>.</p>
+</div>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	/* <![CDATA[ */
+		jQuery( function() {
+			
+			jQuery('#wpl-button > a.like').click( function(e) {
+				e.preventDefault();
+				
+				jQuery('#wpl-mustlogin').remove();
+
+				jQuery.post( 'http://frrl.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_like_click'
+				} );
+
+				var tenMins = new Date();
+				tenMins.setTime( tenMins.getTime() + 600000 );
+				document.cookie = 'wpl_rand=9ba6af1351; expires=' + tenMins.toGMTString() + '; domain=wordpress.com; path=/;';
+				
+				jQuery('#wpl-count').after( '\
+					<div id="wpl-mustlogin"> \
+						<form action="http://frrl.wordpress.com/wp-login.php" method="post"> \
+							<p>Just one more step to like this post:</p> \
+							<label><span>Username</span> <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="80" /></label> \
+							<label><span>Password</span> <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="81" /></label> \
+							<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="Log In" tabindex="82" /> \
+							<input type="hidden" name="redirect_to" value="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/?like=1" /> \
+							<input type="hidden" name="wpl_rand" value="9ba6af1351" /> \
+							<p>Not a member yet? <a href="http://wordpress.com/signup/?ref=likebox" id="wpl-signup-link">Sign up with WordPress.com</a></p> \
+						</form> \
+					</div> \
+				');
+				
+				jQuery('#wpl-mustlogin').hide().slideDown('fast');
+			} );
+			
+			jQuery('#wpl-mustlogin input.input').live( 'focus', function() {
+				jQuery(this).prev().hide();
+			}).live( 'blur', function() {
+				if ( jQuery(this).val() == '' )
+					jQuery(this).prev().show();
+			});
+			
+			jQuery('#wpl-mustlogin input#wp-submit').live( 'click', function(e) {
+				e.preventDefault();
+				
+				jQuery.post( 'http://frrl.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_login_submit'
+				}, function() {
+					jQuery('#wpl-mustlogin form').submit();
+				} );
+			});			
+			
+			jQuery('#wpl-mustlogin a#wpl-signup-link').live( 'click', function(e) {
+				e.preventDefault();
+				
+				var link = jQuery(this).attr('href');
+				
+				jQuery.post( 'http://frrl.wordpress.com/wp-admin/admin-ajax.php', { 
+					'action': 'wpl_record_stat',
+					'stat_name': 'loggedout_signup_click'
+				}, function() {
+					location.href = link;
+				} );
+			});					
+			
+		});
+	/* ]]> */
+	</script>
+<script type="text/javascript">_qoptions={qacct:'p-18-mFEk4J448M',labels:'language.en,type.wpcom,posttag.facebook,posttag.mark-zuckerberg'};</script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/quant.js"></script>
+<noscript>&lt;p&gt;&lt;img class="robots-nocontent" src="http://pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=language.en%2Ctype.wpcom%2Cposttag.facebook%2Cposttag.mark-zuckerberg" style="display:none" height="1" width="1" alt="" /&gt;&lt;/p&gt;</noscript>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {
+	my_hash: ""
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/wpgroho.js"></script>
+	<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {
+	loggingInText: "Logging In&hellip;",
+	submittingText: "Posting Comment&hellip;",
+	postCommentText: "Post Comment",
+	connectingToText: "Connecting to %s",
+	commentingAsText: "Posting comment as:",
+	ofWPcomText: "%s of WordPress.com",
+	logoutText: "Log Out",
+	loginText: "Log In",
+	connectURL: "http://frrl.wordpress.com/public.api/connect/?action=request",
+	homeURL: "http://frrl.wordpress.com/",
+	postID: "10163",
+	gravDefault: "mystery",
+	enterACommentError: "Please enter a comment",
+	enterEmailError: "Email address required",
+	enterAuthorError: "Name required"
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/script.js"></script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/sharing.js"></script>
+	<div id="sharing_email" style="display: none;">
+		<form action="" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="text" name="target_email" id="target_email" value="">
+			
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+				
+				<label for="source_email">Your Email Address</label>
+				<input type="text" name="source_email" id="source_email" value="">
+
+						
+			<div class="recaptcha" id="sharing_recaptcha"></div>
+			<img style="float: right; display: none" class="loading" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/#cancel" class="sharing_cancel">Cancel</a>
+			
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+			
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js?ver=20110531"></script>
+<script type="text/javascript" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/beacon.js"></script><script type="text/javascript">try{COMSCORE.beacon({c1:2,c2:7518284});}catch(e){}</script><noscript>&lt;p class="robots-nocontent"&gt;&lt;img src="http://b.scorecardresearch.com/p?cj=1c1=2&amp;#038;c2=7518284" alt="" style="display:none" width="1" height="1" /&gt;&lt;/p&gt;</noscript><script src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'4387279','v':'wpcom','user_id':'0','post':'10163','subd':'frrl'});
+ex_go({'crypt':'UE5XaFBLcG9HLE5XPUhlbC8mTGtZYStmOGpLcV96UkpLeFE4clc/ZlJFRnxRbTFOeTUxbERheF96JTN+bVhPNml4bHlSUXYwSV9VYlZMPTJXOVRSalsrT09+OVRxZ0V3fDIzRFlNPTdwMi1wSWs5LVlrK0Rnbm1rU0JjOUdBd2JwTGpdLWguY01MJSVvX09vdFFJQk9OYk84RzdBJjBZTktzckNqLUpkaElTPS5xZHdILEYwLGdGTyxxdHNILUhra081eV1tY0tJcW1IV2dvYVMyPVdmWUI1R19wW0gtcmYmbzZ0VFZKSTg='});
+addLoadEvent(function(){linktracker_init('4387279',10163);});
+	</script><img id="wpstats" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/g.gif" alt=""><img id="wpstats2" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/g(1).gif" alt="" style="display:none">
+
+
+<div class="SkipThisFixedPosition top-iframe-wrapper" style="width: 100%; height: 34px; position: fixed; top: 0px !important; left: 0px; z-index: 99997; "><iframe style="width:100%;height:34px;top:0px;left:0px;" src="./The Technical Architecture Behind Facebook « http   frrl.wordpress.com_files/container.htm" scrolling="no" class="toolbarContainer" frameborder="0px" id="CWTBiframe0"></iframe></div><div id="mainContainer_CTID"><div class="fixedDiv SkipThisFixedPosition UrlGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; "></div><div class="fixedDiv SkipThisFixedPosition GeneralGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; width: 100%; "></div></div></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="http://frrl.wordpress.com/2011/03/22/the-technical-architecture-behind-facebook/" location.hostname="frrl.wordpress.com" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.toolbars.npplugin.4.2.0"></object></html>

@@ -1,0 +1,3993 @@
+From: "Saved by Windows Internet Explorer 8"
+Subject: Instructions on compiling the Kinect driver for Linux - MIPSInternal
+Date: Thu, 6 Jan 2011 22:55:20 -0500
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CBADF4.CB5E2000"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.1.7600.16543
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internal/Instructions_on_compiling_the_Kinect_driver_for_Linux
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML dir=3Dltr lang=3Den><HEAD><TITLE>Instructions on compiling the =
+Kinect driver for Linux - MIPSInternal</TITLE>
+<META content=3D"text/html; charset=3DUTF-8" http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.7600.16700"><LINK =
+rel=3D"shortcut icon"=20
+href=3D"/favicon.ico"><LINK title=3D"MIPSInternal (en)" rel=3Dsearch=20
+type=3Dapplication/opensearchdescription+xml=20
+href=3D"/internalwiki/opensearch_desc.php"><LINK title=3D"MIPSInternal =
+Atom feed"=20
+rel=3Dalternate type=3Dapplication/atom+xml=20
+href=3D"/internalwiki/index.php?title=3DSpecial:RecentChanges&amp;feed=3D=
+atom"><LINK=20
+rel=3Dstylesheet=20
+href=3D"http://mips.cs.pitt.edu/internalwiki/skins/common/shared.css?270"=
+=20
+media=3Dscreen><LINK rel=3Dstylesheet=20
+href=3D"http://mips.cs.pitt.edu/internalwiki/skins/common/commonPrint.css=
+?270"=20
+media=3Dprint><LINK rel=3Dstylesheet=20
+href=3D"http://mips.cs.pitt.edu/internalwiki/skins/monobook/main.css?270"=
+=20
+media=3Dscreen><!--[if lt IE 5.5000]><link rel=3D"stylesheet" =
+href=3D"/internalwiki/skins/monobook/IE50Fixes.css?270" media=3D"screen" =
+/><![endif]--><!--[if IE 5.5000]><link rel=3D"stylesheet" =
+href=3D"/internalwiki/skins/monobook/IE55Fixes.css?270" media=3D"screen" =
+/><![endif]--><!--[if IE 6]><link rel=3D"stylesheet" =
+href=3D"/internalwiki/skins/monobook/IE60Fixes.css?270" media=3D"screen" =
+/><![endif]--><!--[if IE 7]><link rel=3D"stylesheet" =
+href=3D"/internalwiki/skins/monobook/IE70Fixes.css?270" media=3D"screen" =
+/><![endif]--><LINK=20
+rel=3Dstylesheet=20
+href=3D"/internalwiki/index.php?title=3DMediaWiki:Common.css&amp;usemsgca=
+che=3Dyes&amp;ctype=3Dtext%2Fcss&amp;smaxage=3D18000&amp;action=3Draw&amp=
+;maxage=3D18000"><LINK=20
+rel=3Dstylesheet=20
+href=3D"/internalwiki/index.php?title=3DMediaWiki:Print.css&amp;usemsgcac=
+he=3Dyes&amp;ctype=3Dtext%2Fcss&amp;smaxage=3D18000&amp;action=3Draw&amp;=
+maxage=3D18000"=20
+media=3Dprint><LINK rel=3Dstylesheet=20
+href=3D"/internalwiki/index.php?title=3DMediaWiki:Monobook.css&amp;usemsg=
+cache=3Dyes&amp;ctype=3Dtext%2Fcss&amp;smaxage=3D18000&amp;action=3Draw&a=
+mp;maxage=3D18000"><LINK=20
+rel=3Dstylesheet=20
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3D-&amp;acti=
+on=3Draw&amp;maxage=3D18000&amp;gen=3Dcss">
+<SCRIPT>=0A=
+var skin=3D"monobook",=0A=
+stylepath=3D"/internalwiki/skins",=0A=
+wgUrlProtocols=3D"http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|=
+gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\=
+:|news\\:|svn\\:\\/\\/",=0A=
+wgArticlePath=3D"/internal/$1",=0A=
+wgScriptPath=3D"/internalwiki",=0A=
+wgScriptExtension=3D".php",=0A=
+wgScript=3D"/internalwiki/index.php",=0A=
+wgVariantArticlePath=3Dfalse,=0A=
+wgActionPaths=3D{},=0A=
+wgServer=3D"http://mips.cs.pitt.edu",=0A=
+wgCanonicalNamespace=3D"",=0A=
+wgCanonicalSpecialPageName=3Dfalse,=0A=
+wgNamespaceNumber=3D0,=0A=
+wgPageName=3D"Instructions_on_compiling_the_Kinect_driver_for_Linux",=0A=
+wgTitle=3D"Instructions on compiling the Kinect driver for Linux",=0A=
+wgAction=3D"view",=0A=
+wgArticleId=3D23,=0A=
+wgIsArticle=3Dtrue,=0A=
+wgUserName=3Dnull,=0A=
+wgUserGroups=3Dnull,=0A=
+wgUserLanguage=3D"en",=0A=
+wgContentLanguage=3D"en",=0A=
+wgBreakFrames=3Dfalse,=0A=
+wgCurRevisionId=3D125,=0A=
+wgVersion=3D"1.16.0",=0A=
+wgEnableAPI=3Dtrue,=0A=
+wgEnableWriteAPI=3Dtrue,=0A=
+wgSeparatorTransformTable=3D["", ""],=0A=
+wgDigitTransformTable=3D["", ""],=0A=
+wgMainPageTitle=3D"Main Page",=0A=
+wgFormattedNamespaces=3D{"-2": "Media", "-1": "Special", "0": "", "1": =
+"Talk", "2": "User", "3": "User talk", "4": "MIPSInternal", "5": =
+"MIPSInternal talk", "6": "File", "7": "File talk", "8": "MediaWiki", =
+"9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": =
+"Help", "13": "Help talk", "14": "Category", "15": "Category talk"},=0A=
+wgNamespaceIds=3D{"media": -2, "special": -1, "": 0, "talk": 1, "user": =
+2, "user_talk": 3, "mipsinternal": 4, "mipsinternal_talk": 5, "file": 6, =
+"file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, =
+"template_talk": 11, "help": 12, "help_talk": 13, "category": 14, =
+"category_talk": 15, "image": 6, "image_talk": 7},=0A=
+wgSiteName=3D"MIPSInternal",=0A=
+wgCategories=3D[],=0A=
+wgRestrictionEdit=3D[],=0A=
+wgRestrictionMove=3D[];=0A=
+</SCRIPT>
+
+<SCRIPT=20
+src=3D"http://mips.cs.pitt.edu/internalwiki/skins/common/wikibits.js?270"=
+></SCRIPT>
+
+<SCRIPT=20
+src=3D"http://mips.cs.pitt.edu/internalwiki/skins/common/ajax.js?270"></S=
+CRIPT>
+
+<SCRIPT=20
+src=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3D-&amp;actio=
+n=3Draw&amp;gen=3Djs&amp;useskin=3Dmonobook&amp;270"></SCRIPT>
+</HEAD>
+<BODY=20
+class=3D"mediawiki ltr ns-0 ns-subject =
+page-Instructions_on_compiling_the_Kinect_driver_for_Linux =
+skin-monobook">
+<DIV id=3DglobalWrapper>
+<DIV id=3Dcolumn-content>
+<DIV id=3Dcontent><A id=3Dtop></A>
+<H1 id=3DfirstHeading class=3DfirstHeading>Instructions on compiling the =
+Kinect=20
+driver for Linux</H1>
+<DIV id=3DbodyContent>
+<H3 id=3DsiteSub>From MIPSInternal</H3>
+<DIV id=3DcontentSub></DIV>
+<DIV id=3Djump-to-nav>Jump to: <A=20
+href=3D"http://mips.cs.pitt.edu/internal/Instructions_on_compiling_the_Ki=
+nect_driver_for_Linux#column-one">navigation</A>,=20
+<A=20
+href=3D"http://mips.cs.pitt.edu/internal/Instructions_on_compiling_the_Ki=
+nect_driver_for_Linux#searchInput">search</A></DIV><!-- start content =
+-->
+<P><BR></P>
+<H3><SPAN id=3DKinect_Driver_Compile_Instructions_for_Linux=20
+class=3Dmw-headline>Kinect Driver Compile Instructions for Linux =
+</SPAN></H3>
+<UL>
+  <LI>Acquire git, cmake, and libusb-1.0-0-dev. </LI></UL><PRE> sudo =
+apt-get install cmake libusb-1.0.0-dev git-core
+</PRE>
+<UL>
+  <LI>Clone the repository </LI></UL><PRE> git clone =
+git://git.marcansoft.com/libfreenect.git
+</PRE>
+<UL>
+  <LI>Compile </LI></UL><PRE> cd libfreenect
+ mkdir build
+ cd build
+ cmake ../
+ make
+</PRE>
+<UL>
+  <LI>You need super-user privileges to run the application: =
+</LI></UL><PRE> sudo ./examples/glview
+</PRE><!-- =0A=
+NewPP limit report=0A=
+Preprocessor node count: 3/1000000=0A=
+Post-expand include size: 0/2097152 bytes=0A=
+Template argument size: 0/2097152 bytes=0A=
+Expensive parser function count: 0/100=0A=
+--><!-- Saved in parser cache with key =
+wikidb-mips_:pcache:idhash:23-0!1!0!!en!2!edit=3D0 and timestamp =
+20110107035430 -->
+<DIV class=3Dprintfooter>Retrieved from "<A=20
+href=3D"http://mips.cs.pitt.edu/internal/Instructions_on_compiling_the_Ki=
+nect_driver_for_Linux">http://mips.cs.pitt.edu/internal/Instructions_on_c=
+ompiling_the_Kinect_driver_for_Linux</A>"</DIV>
+<DIV id=3Dcatlinks class=3D"catlinks catlinks-allhidden"></DIV><!-- end =
+content -->
+<DIV class=3DvisualClear></DIV></DIV></DIV></DIV>
+<DIV id=3Dcolumn-one>
+<DIV id=3Dp-cactions class=3Dportlet>
+<H5>Views</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dca-nstab-main class=3Dselected><A accessKey=3Dc=20
+  title=3D"View the content page [c]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/Instructions_on_compiling_the_Ki=
+nect_driver_for_Linux">Page</A></LI>
+  <LI id=3Dca-talk class=3Dnew><A accessKey=3Dt=20
+  title=3D"Discussion about the content page [t]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DTalk:Instr=
+uctions_on_compiling_the_Kinect_driver_for_Linux&amp;action=3Dedit&amp;re=
+dlink=3D1">Discussion</A></LI>
+  <LI id=3Dca-viewsource><A accessKey=3De=20
+  title=3D"This page is protected.&#10;You can view its source [e]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DInstructio=
+ns_on_compiling_the_Kinect_driver_for_Linux&amp;action=3Dedit">View=20
+  source</A></LI>
+  <LI id=3Dca-history><A accessKey=3Dh title=3D"Past revisions of this =
+page [h]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DInstructio=
+ns_on_compiling_the_Kinect_driver_for_Linux&amp;action=3Dhistory">History=
+</A></LI></UL></DIV></DIV>
+<DIV id=3Dp-personal class=3Dportlet>
+<H5>Personal tools</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dpt-login><A accessKey=3Do=20
+  title=3D"You are encouraged to log in; however, it is not mandatory =
+[o]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DSpecial:Us=
+erLogin&amp;returnto=3DInstructions_on_compiling_the_Kinect_driver_for_Li=
+nux">Log=20
+  in / create account</A></LI></UL></DIV></DIV>
+<DIV id=3Dp-logo class=3Dportlet><A=20
+style=3D"BACKGROUND-IMAGE: url(/internalwiki/mips.png)"=20
+title=3D"Visit the main page"=20
+href=3D"http://mips.cs.pitt.edu/internal/Main_Page"></A></DIV>
+<SCRIPT type=3Dtext/javascript> if (window.isMSIE55) fixalpha(); =
+</SCRIPT>
+
+<DIV id=3Dp-navigation class=3D"generated-sidebar portlet">
+<H5>Navigation</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dn-mainpage-description><A accessKey=3Dz title=3D"Visit the =
+main page [z]"=20
+  href=3D"http://mips.cs.pitt.edu/internal/Main_Page">Main page</A></LI>
+  <LI id=3Dn-HCI-Reading-Group><A=20
+  href=3D"http://mips.cs.pitt.edu/internal/HCI_Reading_Group">HCI =
+Reading=20
+  Group</A></LI>
+  <LI id=3Dn-MIPS-Resources><A=20
+  href=3D"http://mips.cs.pitt.edu/internal/MIPS_Resources">MIPS =
+Resources</A></LI>
+  <LI id=3Dn-MIPS-Howto><A =
+href=3D"http://mips.cs.pitt.edu/internal/MIPS_Howto">MIPS=20
+  Howto</A></LI>
+  <LI id=3Dn-Members><A=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/Special:ListUsers">Members</A></=
+LI>
+  <LI id=3Dn-recentchanges><A accessKey=3Dr=20
+  title=3D"The list of recent changes in the wiki [r]"=20
+  href=3D"http://mips.cs.pitt.edu/internal/Special:RecentChanges">Recent =
+
+  changes</A></LI>
+  <LI id=3Dn-help><A title=3D"The place to find out"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/Help:Contents">Help</A></LI></UL=
+></DIV></DIV>
+<DIV id=3Dp-search class=3Dportlet>
+<H5><LABEL for=3DsearchInput>Search</LABEL></H5>
+<DIV id=3DsearchBody class=3DpBody>
+<FORM id=3Dsearchform action=3D/internalwiki/index.php><INPUT =
+value=3DSpecial:Search=20
+type=3Dhidden name=3Dtitle> <INPUT accessKey=3Df id=3DsearchInput=20
+title=3D"Search MIPSInternal" type=3Dsearch name=3Dsearch> <INPUT =
+id=3DsearchGoButton class=3DsearchButton title=3D"Go to a page with this =
+exact name if exists" value=3DGo type=3Dsubmit name=3Dgo>&nbsp;=20
+<INPUT id=3Dmw-searchButton class=3DsearchButton title=3D"Search the =
+pages for this text" value=3DSearch type=3Dsubmit name=3Dfulltext>=20
+</FORM></DIV></DIV>
+<DIV id=3Dp-tb class=3Dportlet>
+<H5>Toolbox</H5>
+<DIV class=3DpBody>
+<UL>
+  <LI id=3Dt-whatlinkshere><A accessKey=3Dj=20
+  title=3D"List of all wiki pages that link here [j]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/Special:WhatLinksHere/Instructio=
+ns_on_compiling_the_Kinect_driver_for_Linux">What=20
+  links here</A></LI>
+  <LI id=3Dt-recentchangeslinked><A accessKey=3Dk=20
+  title=3D"Recent changes in pages linked from this page [k]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/Special:RecentChangesLinked/Inst=
+ructions_on_compiling_the_Kinect_driver_for_Linux">Related=20
+  changes</A></LI>
+  <LI id=3Dt-specialpages><A accessKey=3Dq title=3D"List of all special =
+pages [q]"=20
+  href=3D"http://mips.cs.pitt.edu/internal/Special:SpecialPages">Special =
+
+  pages</A></LI>
+  <LI id=3Dt-print><A accessKey=3Dp title=3D"Printable version of this =
+page [p]"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DInstructio=
+ns_on_compiling_the_Kinect_driver_for_Linux&amp;printable=3Dyes"=20
+  rel=3Dalternate>Printable version</A></LI>
+  <LI id=3Dt-permalink><A title=3D"Permanent link to this revision of =
+the page"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internalwiki/index.php?title=3DInstructio=
+ns_on_compiling_the_Kinect_driver_for_Linux&amp;oldid=3D125">Permanent=20
+  link</A></LI></UL></DIV></DIV></DIV><!-- end of the left (by default =
+at least) column -->
+<DIV class=3DvisualClear></DIV>
+<DIV id=3Dfooter>
+<DIV id=3Df-poweredbyico><A href=3D"http://www.mediawiki.org/"><IMG=20
+alt=3D"Powered by MediaWiki"=20
+src=3D"http://mips.cs.pitt.edu/internalwiki/skins/common/images/poweredby=
+_mediawiki_88x31.png"=20
+width=3D88 height=3D31></A></DIV>
+<UL id=3Df-list>
+  <LI id=3Dlastmod>This page was last modified on 15 November 2010, at =
+01:57.</LI>
+  <LI id=3Dviewcount>This page has been accessed 4 times.</LI>
+  <LI id=3Dprivacy><A title=3D"MIPSInternal:Privacy policy"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/MIPSInternal:Privacy_policy">Pri=
+vacy=20
+  policy</A></LI>
+  <LI id=3Dabout><A title=3DMIPSInternal:About=20
+  href=3D"http://mips.cs.pitt.edu/internal/MIPSInternal:About">About=20
+  MIPSInternal</A></LI>
+  <LI id=3Ddisclaimer><A title=3D"MIPSInternal:General disclaimer"=20
+  =
+href=3D"http://mips.cs.pitt.edu/internal/MIPSInternal:General_disclaimer"=
+>Disclaimers</A></LI></UL></DIV></DIV>
+<SCRIPT>if (window.runOnloadHook) runOnloadHook();</SCRIPT>
+<!-- Served in 0.183 secs. --></BODY></HTML>
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/common/images/poweredby_mediawiki_88x31.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAAAA3NCSVQICAjb4U/gAAAClFBMVEUC
+KWuqqtbmxQbRvxS1xc+BdgdzlKmEq76qqqpBeZ3HxHrt7OZbZ1LWxE0lX3hxeUWzq2nY3N5WhKPQ
+dQoAUIThyiSwrTY9RpT29vbGwqSjtsTHzdDAaQoAZplPepgATICdo6vp1Asyao7o59vO1NfQx2Ph
+2XiOkTeKjY3yzQnW1smGla7s2yNemLXflg06hK0wO3h2pLvm2D/1sgfn4akHV4uYscEbLHZEdphO
+hKauspWsrr4ObZ3q2RqqbRTWyS8haJa5xJuFhbgrS4Ipe6WrusXX0rXW1tY4cpfBztff2Zrlqg7w
+yhTIuEyFo7dSkbFskKjShg3Yyhj91geVrb7EvnPy3TXd0WchZZKHp7xmi6Ln1lLdxUWMm7ayv8fT
+zZbe3sm7w8/AcA7w8PDNtzQaW4YmJpoybZTOzcXe3taes8D0ywDh5OZAXIvo5Lzg14rk1zTPzr40
+gafr1RBJZJFCU1rbugvlziGWehNqnbd0nLWlvsv13hsIVIaRkqXF0NfwvANEiq0wToIYX4zgnRHm
+0A7UiRL36Efc4OJMf6PoxxqgpJXYzlX/yQYbdKGNkrv4xhHq4RLO1tzo0TKUbg5biqgGHXn31xDu
+3hnj12rHuUSclS1ijqzWzozm3IXsvxLZ2ebBag2ambbMfRU4dJvlpxG1chKdtcb05D3q6M2LpLXz
+3ynExc5ika/VnBnMzMze3t6mu8h8nbMiY42sv8ufq8AQWozGdBXgz0zWvQ6Oq77gsQlNepnDwMLo
+vQJSg6NGYY4XXIvc1644Q2fu2EdNVV31vAf3zwZ7p73m5uYpapTUfQ8AU4mboKarqK2UtMS6sEDR
+ymyVmYq5taFUWZrt0R/Hdg/L0dTBvnnOy4Hi2pLr2FEpPiAVAAAACXBIWXMAAArwAAAK8AFCrDSY
+AAAEiklEQVR42u3Q/1dTZRzA8dtczHkjvTQrmPMLTA0kT0NDSyRM8tkNGwv5MjTEdSVAn6FuJLAx
+5xyzOyLN0dq0panoZIy6406E+SWwYD2TXF9F8Z/pGUjQzukcz1F+6JzePzzP53yec18/XGL+HEXM
+/25O+h+eDY//o7rUurq68ScvAa4+dP/MoerqpwODWSX/mry4+q3qbV9nZWXNbEN6vTUE/iX95Lve
+l7BOhEtK2ptKKnKqtw1UzMhpMtCiBzGFVOoDPmlI6lNItSERwBcQ+WST7wosa7WJcCAQGB8P3Hxw
+GyQbDAKBwHBwVban4yYA2kAA4IKyFqtVYRUVgryQLHZCYVXoWwpFInzhURZ/1+NlrFiUCOsa10g3
+vfT2osUHOuyZ+wWCFR6P58qRPzZJ1zTqHsGicWsQyECxtdha2HJCr29pAfHLGgOTMAjmxYpPgESY
+OCYHv42kgvfmtQv2jx49ut996tTp06s/BeAYAXAmGT5iha/i3yGj834y4QnD8QsvZfF3faEe5BUn
+wBRFDFGgbK8n54Prt663tbUVjUYMBvuOr+5S1BBB4eSm+CmMnyZKKKdoE0XTFL7wEm/xu0lIiWRC
+alYY5jhCx9X/PLI3M/Oz0ePXrl27+O1oRNBTtuEkx+kI7nELm7jZTcO3z7x4sNWw49KdJfn5Sy6u
+i9jLFzy3fBp+/BLhIW7PghJPp6f9+L385ub8F4oinasefFz1hDDLEjqWfeaH5B73uXuXm59tvnzn
+UqSzgf3oJMvqCBZnrtnHsiC9Rsr+nf95bbqLmxzDvJZVb2TltWql358e36WYWRbDEBI6CO8uLG/N
+zFx7Pv8L/CuKIivKV44sh1BHQNzYmBfCtP7+AIQ0DXEWi9+mXeOPDxwU2sKcWANDtn19u421HCeH
+/qUQYhghYgg1nJlnt293u9feO3/+w7Zbh+09Kxe+iZCOQLjXJTyNvJJhOeXi+T4I+4ajfNSS5Id9
+tqjDERCnUJphuYq3qN/pE6MUJee/gdAU3Ii6F61e+WP7n62RdWvfb/vcPThY/uC1Cwg1TsEbeQWl
+3BiVe/tDlZLcYL8xGC0YV/bmmo1pUYmwsivE87kpXkqjUolV5jASS6bhrVp0YcP98sXZ2dvdnZ2j
+51o32z/5/cuTSLt1Clb3OSpd+HubptdlczkcCJmitNIYH0LDIYtGqQ6nDweRJhyWSCoR+n4arqq6
+Sn3zStmBzs1NTe6HVzIPbz6Yc+qXIxR1taoK4cbUTn5ZqS+qLYiaYq40r4ZCKo1FaXR1IRQzh5DY
+7KMlvBNi2MZ3sdMwSZIIl5ExcXrXRI5hYmBwsCl7/dmBBpKEkIw35iLfkDh9Nmeuzdhba3Fqal39
+BU5lryUq9trMQtLYT1PDDpLVhFUOOS8mvRKSxDDzKJJcP0HusndXzEs++/Ah9pjpbviZ0p2kMIVi
+cpfVhBiG5mtUKirJTwprakqTaEa4E8KkUgbu3J2mZvbxdO5ShpmBcRkk2dFBNnSsf7d7VQPzZM2G
+cWhLPcPc3pNaz5BPAZ6TMPzynPSfhOeovwCx6Xbt5tzVdAAAAABJRU5ErkJggg==
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/common/shared.css?270
+
+.mw-plusminus-pos {
+	COLOR: #006400
+}
+.mw-plusminus-neg {
+	COLOR: #8b0000
+}
+.mw-plusminus-null {
+	COLOR: #aaa
+}
+SPAN.comment {
+	FONT-STYLE: italic
+}
+SPAN.changedby {
+	FONT-SIZE: 95%
+}
+.texvc {
+	unicode-bidi: embed; DIRECTION: ltr
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+.ontop#wikiPreview {
+	MARGIN-BOTTOM: 1em
+}
+#editform {
+	CLEAR: both
+}
+#toolbar {
+	CLEAR: both
+}
+#wpTextbox1 {
+	CLEAR: both
+}
+DIV#mw-js-message {
+	BORDER-BOTTOM: #ddd 1px solid; BORDER-LEFT: #ddd 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #fcfcfc; MARGIN: 1em 5%; =
+PADDING-LEFT: 2.5%; PADDING-RIGHT: 2.5%; BORDER-TOP: #ddd 1px solid; =
+BORDER-RIGHT: #ddd 1px solid; PADDING-TOP: 0.5em
+}
+.editsection {
+	FLOAT: right; MARGIN-LEFT: 5px
+}
+H2#filehistory {
+	CLEAR: both
+}
+TABLE.filehistory TH {
+	VERTICAL-ALIGN: top
+}
+TABLE.filehistory TD {
+	VERTICAL-ALIGN: top
+}
+TABLE.filehistory TH {
+	TEXT-ALIGN: left
+}
+TABLE.filehistory TD.mw-imagepage-filesize {
+	WHITE-SPACE: nowrap
+}
+TABLE.filehistory TH.mw-imagepage-filesize {
+	WHITE-SPACE: nowrap
+}
+TABLE.filehistory TD.filehistory-selected {
+	FONT-WEIGHT: bold
+}
+LI SPAN.deleted {
+	FONT-STYLE: italic; COLOR: #888; TEXT-DECORATION: line-through
+}
+SPAN.history-deleted {
+	FONT-STYLE: italic; COLOR: #888; TEXT-DECORATION: line-through
+}
+.not-patrolled {
+	BACKGROUND-COLOR: #ffa
+}
+.unpatrolled {
+	COLOR: red; FONT-WEIGHT: bold
+}
+DIV.patrollink {
+	TEXT-ALIGN: right; FONT-SIZE: 75%
+}
+BODY.ltr TD.mw-label {
+	TEXT-ALIGN: right
+}
+BODY.ltr TD.mw-input {
+	TEXT-ALIGN: left
+}
+BODY.ltr TD.mw-submit {
+	TEXT-ALIGN: left
+}
+BODY.rtl TD.mw-label {
+	TEXT-ALIGN: left
+}
+BODY.rtl TD.mw-input {
+	TEXT-ALIGN: right
+}
+BODY.rtl TD.mw-submit {
+	TEXT-ALIGN: right
+}
+TD.mw-label {
+	VERTICAL-ALIGN: top
+}
+.prefsection TD.mw-label {
+	WIDTH: 20%
+}
+.prefsection TABLE {
+	WIDTH: 100%
+}
+TD.mw-submit {
+	WHITE-SPACE: nowrap
+}
+TABLE.mw-htmlform-nolabel TD.mw-label {
+	WIDTH: 0px !important
+}
+BODY.rtl .thumbcaption {
+	TEXT-ALIGN: right
+}
+BODY.rtl .magnify {
+	FLOAT: left
+}
+BODY.ltr .thumbcaption {
+	TEXT-ALIGN: left
+}
+BODY.ltr .magnify {
+	FLOAT: right
+}
+.mw-hidden-cats-hidden {
+	DISPLAY: none
+}
+.catlinks-allhidden {
+	DISPLAY: none
+}
+P.mw-ipb-conveniencelinks {
+	FLOAT: right; FONT-SIZE: 90%
+}
+P.mw-protect-editreasons {
+	FLOAT: right; FONT-SIZE: 90%
+}
+P.mw-filedelete-editreasons {
+	FLOAT: right; FONT-SIZE: 90%
+}
+P.mw-delete-editreasons {
+	FLOAT: right; FONT-SIZE: 90%
+}
+P.mw-revdel-editreasons {
+	FLOAT: right; FONT-SIZE: 90%
+}
+.searchresults {
+=09
+}
+.searchresults P {
+	MARGIN-TOP: 1em; MARGIN-BOTTOM: 1.2em; MARGIN-LEFT: 0.4em
+}
+DIV.searchresult {
+	WIDTH: 38em; FONT-SIZE: 95%
+}
+.mw-search-results {
+	MARGIN-LEFT: 0.4em
+}
+.mw-search-results LI {
+	PADDING-BOTTOM: 1em; LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+.mw-search-results LI A {
+	FONT-SIZE: 108%
+}
+.mw-search-result-data {
+	COLOR: green; FONT-SIZE: 97%
+}
+.mw-search-formheader {
+	BORDER-BOTTOM: silver 1px solid; BORDER-LEFT: silver 1px solid; =
+BACKGROUND-COLOR: #f3f3f3; MARGIN-TOP: 1em; BORDER-TOP: silver 1px =
+solid; BORDER-RIGHT: silver 1px solid
+}
+.mw-search-formheader DIV.search-types {
+	PADDING-LEFT: 0.25em; FLOAT: left
+}
+.rtl .mw-search-formheader DIV.search-types {
+	FLOAT: right
+}
+.mw-search-formheader DIV.search-types UL {
+	PADDING-BOTTOM: 0px !important; LIST-STYLE-TYPE: none !important; =
+MARGIN: 0px; PADDING-LEFT: 0px !important; PADDING-RIGHT: 0px =
+!important; LIST-STYLE-IMAGE: none !important; PADDING-TOP: 0px =
+!important
+}
+.mw-search-formheader DIV.search-types UL LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FLOAT: left; PADDING-TOP: 0px
+}
+.mw-search-formheader DIV.search-types UL LI A {
+	PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; =
+DISPLAY: block; PADDING-TOP: 0.5em
+}
+.mw-search-formheader DIV.search-types UL LI.current A {
+	COLOR: #333333; CURSOR: default
+}
+.mw-search-formheader DIV.search-types UL LI.current A:hover {
+	TEXT-DECORATION: none
+}
+.mw-search-formheader DIV.results-info {
+	PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.75em; =
+FLOAT: right; PADDING-TOP: 0.5em
+}
+.mw-search-formheader DIV.results-info UL {
+	PADDING-BOTTOM: 0px !important; LIST-STYLE-TYPE: none !important; =
+MARGIN: 0px; PADDING-LEFT: 0px !important; PADDING-RIGHT: 0px =
+!important; LIST-STYLE-IMAGE: none !important; PADDING-TOP: 0px =
+!important
+}
+.mw-search-formheader DIV.results-info UL LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FLOAT: right; PADDING-TOP: 0px
+}
+FIELDSET#mw-searchoptions {
+	BORDER-BOTTOM: silver 1px solid; BORDER-LEFT: silver 1px solid; =
+PADDING-BOTTOM: 0.5em !important; BACKGROUND-COLOR: #f9f9f9; MARGIN: =
+0px; PADDING-LEFT: 0.75em !important; PADDING-RIGHT: 0.75em !important; =
+BORDER-TOP: silver 0px solid; BORDER-RIGHT: silver 1px solid; =
+PADDING-TOP: 0.5em !important
+}
+FIELDSET#mw-searchoptions LEGEND {
+	DISPLAY: none
+}
+FIELDSET#mw-searchoptions H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FLOAT: left; PADDING-TOP: 0px
+}
+.rtl FIELDSET#mw-searchoptions H4 {
+	FLOAT: right
+}
+FIELDSET#mw-searchoptions DIV#mw-search-togglebox {
+	FLOAT: right
+}
+.rtl FIELDSET#mw-searchoptions DIV#mw-search-togglebox {
+	FLOAT: left
+}
+FIELDSET#mw-searchoptions DIV#mw-search-togglebox LABEL {
+	MARGIN-RIGHT: 0.25em
+}
+FIELDSET#mw-searchoptions DIV#mw-search-togglebox INPUT {
+	MARGIN-LEFT: 0.25em
+}
+FIELDSET#mw-searchoptions TABLE {
+	FLOAT: left; MARGIN-RIGHT: 3em
+}
+FIELDSET#mw-searchoptions TABLE TD {
+	PADDING-RIGHT: 1em
+}
+.rtl FIELDSET#mw-searchoptions TABLE TD {
+	PADDING-LEFT: 1em; PADDING-RIGHT: 0px
+}
+BODY.rtl FIELDSET#mw-searchoptions TABLE {
+	FLOAT: right; MARGIN-LEFT: 3em; MARGIN-RIGHT: 0px
+}
+FIELDSET#mw-searchoptions DIV.divider {
+	BORDER-BOTTOM: #dddddd 1px solid; MARGIN-BOTTOM: 0.5em; CLEAR: both; =
+PADDING-TOP: 0.5em
+}
+TD#mw-search-menu {
+	PADDING-LEFT: 6em; FONT-SIZE: 85%
+}
+DIV#mw-search-interwiki {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+MARGIN-TOP: 2ex; WIDTH: 18em; FLOAT: right; BORDER-TOP: #aaaaaa 1px =
+solid; BORDER-RIGHT: #aaaaaa 1px solid
+}
+.rtl DIV#mw-search-interwiki {
+	FLOAT: left
+}
+DIV#mw-search-interwiki LI {
+	FONT-SIZE: 95%
+}
+.mw-search-interwiki-more {
+	FLOAT: right; FONT-SIZE: 90%
+}
+.rtl .mw-search-interwiki-more {
+	FLOAT: left
+}
+DIV#mw-search-interwiki-caption {
+	TEXT-ALIGN: center; FONT-SIZE: 95%; FONT-WEIGHT: bold
+}
+.mw-search-interwiki-project {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: #ececec; =
+PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.15em; FONT-SIZE: 97%; BORDER-TOP: =
+#bbbbbb 1px solid; PADDING-TOP: 0.15em
+}
+.rtl .mw-search-interwiki-project {
+	TEXT-ALIGN: right
+}
+SPAN.searchalttitle {
+	FONT-SIZE: 95%
+}
+DIV.searchdidyoumean {
+	MARGIN-TOP: 0.8em; COLOR: #c00; FONT-SIZE: 127%
+}
+DIV.searchdidyoumean EM {
+	FONT-WEIGHT: bold
+}
+.searchmatch {
+	FONT-WEIGHT: bold
+}
+TABLE#mw-search-top-table {
+	BACKGROUND-COLOR: transparent
+}
+TD#mw-search-togglebox {
+	TEXT-ALIGN: right
+}
+TABLE#mw-search-powertable {
+	WIDTH: 100%
+}
+FORM#powersearch {
+	CLEAR: both
+}
+.mw-userrights-disabled {
+	COLOR: #888
+}
+TABLE.mw-userrights-groups * TD {
+	PADDING-RIGHT: 1.5em
+}
+TABLE.mw-userrights-groups * TH {
+	PADDING-RIGHT: 1.5em
+}
+.os-suggest {
+	Z-INDEX: 99; BORDER-BOTTOM: #aaaaaa 1px solid; POSITION: absolute; =
+BORDER-LEFT: #aaaaaa 1px solid; OVERFLOW-X: hidden; BACKGROUND-COLOR: =
+window; WIDTH: 0px; FONT-SIZE: 95%; OVERFLOW: auto; BORDER-TOP: #aaaaaa =
+1px solid; TOP: 0px; BORDER-RIGHT: #aaaaaa 1px solid; LEFT: 0px
+}
+TABLE.os-suggest-results {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; WIDTH: 100%; BORDER-COLLAPSE: =
+collapse; FONT-SIZE: 95%; BORDER-TOP: 0px; CURSOR: pointer; =
+BORDER-RIGHT: 0px
+}
+.os-suggest-result {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: window; PADDING-LEFT: 2px; =
+PADDING-RIGHT: 2px; WHITE-SPACE: nowrap; COLOR: windowtext; PADDING-TOP: =
+2px
+}
+.os-suggest-result-hl {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: window; PADDING-LEFT: 2px; =
+PADDING-RIGHT: 2px; WHITE-SPACE: nowrap; COLOR: windowtext; PADDING-TOP: =
+2px
+}
+.os-suggest-result-hl {
+	BACKGROUND-COLOR: #4c59a6; COLOR: white
+}
+.os-suggest-result-hl-webkit {
+	BACKGROUND-COLOR: #4c59a6; COLOR: white
+}
+.os-suggest-result-hl {
+	BACKGROUND-COLOR: highlight; COLOR: highlighttext
+}
+.os-suggest-toggle {
+	POSITION: relative; FONT-SIZE: 65%; LEFT: 1ex
+}
+.os-suggest-toggle-def {
+	POSITION: absolute; VISIBILITY: hidden; FONT-SIZE: 65%; TOP: 0px; LEFT: =
+0px
+}
+.autocomment {
+	COLOR: gray
+}
+#pagehistory .history-user {
+	MARGIN-LEFT: 0.4em; MARGIN-RIGHT: 0.2em
+}
+#pagehistory SPAN.minor {
+	FONT-WEIGHT: bold
+}
+#pagehistory LI {
+	BORDER-BOTTOM: white 1px solid; BORDER-LEFT: white 1px solid; =
+BORDER-TOP: white 1px solid; BORDER-RIGHT: white 1px solid
+}
+#pagehistory LI.selected {
+	BORDER-BOTTOM: #aaa 1px dashed; BORDER-LEFT: #aaa 1px dashed; =
+BACKGROUND-COLOR: #f9f9f9; BORDER-TOP: #aaa 1px dashed; BORDER-RIGHT: =
+#aaa 1px dashed
+}
+.newpage {
+	FONT-WEIGHT: bold
+}
+.minor {
+	FONT-WEIGHT: bold
+}
+.bot {
+	FONT-WEIGHT: bold
+}
+.mw-uctop {
+	FONT-WEIGHT: bold
+}
+TABLE.mw-listgrouprights-table TR {
+	VERTICAL-ALIGN: top
+}
+.listgrouprights-revoked {
+	TEXT-DECORATION: line-through
+}
+TD.mw-statistics-numbers {
+	TEXT-ALIGN: right
+}
+H4.mw-specialpagesgroup {
+	PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #dcdcdc; MARGIN: 0.3em 0em 0em; =
+PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.mw-specialpagerestricted {
+	FONT-WEIGHT: bold
+}
+#shared-image-dup {
+	FONT-STYLE: italic
+}
+#shared-image-conflict {
+	FONT-STYLE: italic
+}
+TABLE.mw-emailuser-table {
+	WIDTH: 98%
+}
+TD#mw-emailuser-sender {
+	FONT-WEIGHT: bold
+}
+TD#mw-emailuser-recipient {
+	FONT-WEIGHT: bold
+}
+TABLE.allpageslist {
+	BACKGROUND-COLOR: transparent
+}
+TABLE.mw-allpages-table-form {
+	BACKGROUND-COLOR: transparent; WIDTH: 100%
+}
+TABLE.mw-allpages-table-chunk {
+	BACKGROUND-COLOR: transparent; WIDTH: 100%
+}
+TD.mw-allpages-alphaindexline {
+	TEXT-ALIGN: right
+}
+TD.mw-allpages-nav {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 1em; FONT-SIZE: smaller
+}
+P.mw-allpages-nav {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 1em; FONT-SIZE: smaller
+}
+TABLE.mw-allpages-table-form TR {
+	VERTICAL-ALIGN: top
+}
+TABLE#mw-prefixindex-list-table {
+	BACKGROUND-COLOR: transparent; WIDTH: 98%
+}
+TABLE#mw-prefixindex-nav-table {
+	BACKGROUND-COLOR: transparent; WIDTH: 98%
+}
+TD#mw-prefixindex-nav-form {
+	TEXT-ALIGN: right; MARGIN-BOTTOM: 1em; FONT-SIZE: smaller; =
+VERTICAL-ALIGN: top
+}
+DIV.mw-warning-with-logexcerpt {
+	BORDER-BOTTOM: #2f6fab 2px solid; BORDER-LEFT: #2f6fab 2px solid; =
+PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; =
+MARGIN-BOTTOM: 3px; CLEAR: both; BORDER-TOP: #2f6fab 2px solid; =
+BORDER-RIGHT: #2f6fab 2px solid; PADDING-TOP: 3px
+}
+DIV.mw-warning-with-logexcerpt UL LI {
+	FONT-SIZE: 90%
+}
+SPAN.mw-revdelundel-link {
+	FONT-SIZE: 90%
+}
+STRONG.mw-revdelundel-link {
+	FONT-SIZE: 90%
+}
+SPAN.mw-revdelundel-hidden {
+	VISIBILITY: hidden
+}
+INPUT.mw-revdelundel-hidden {
+	VISIBILITY: hidden
+}
+TD.mw-revdel-checkbox {
+	TEXT-ALIGN: center; PADDING-RIGHT: 10px
+}
+TH.mw-revdel-checkbox {
+	TEXT-ALIGN: center; PADDING-RIGHT: 10px
+}
+A.feedlink {
+	PADDING-LEFT: 16px; BACKGROUND: url(images/feed-icon.png) no-repeat =
+left center
+}
+.plainlinks A {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 0px !important; =
+PADDING-RIGHT: 0px !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; PADDING-TOP: 0px !important
+}
+TABLE.wikitable {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; MARGIN: 1em =
+1em 1em 0px; BORDER-COLLAPSE: collapse; BACKGROUND: #f9f9f9; BORDER-TOP: =
+#aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+.wikitable TH {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TD {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 0.2em; PADDING-RIGHT: 0.2em; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+0.2em
+}
+.wikitable TH {
+	TEXT-ALIGN: center; BACKGROUND: #f2f2f2
+}
+.wikitable CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.collapsed TR.collapsable {
+	DISPLAY: none
+}
+.success {
+	COLOR: green; FONT-SIZE: larger
+}
+.error {
+	COLOR: red; FONT-SIZE: larger
+}
+.errorbox {
+	BORDER-BOTTOM: 2px solid; BORDER-LEFT: 2px solid; PADDING-BOTTOM: =
+0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; MARGIN-BOTTOM: 2em; FLOAT: =
+left; COLOR: #000; FONT-SIZE: larger; BORDER-TOP: 2px solid; =
+BORDER-RIGHT: 2px solid; PADDING-TOP: 0.5em
+}
+.successbox {
+	BORDER-BOTTOM: 2px solid; BORDER-LEFT: 2px solid; PADDING-BOTTOM: =
+0.5em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; MARGIN-BOTTOM: 2em; FLOAT: =
+left; COLOR: #000; FONT-SIZE: larger; BORDER-TOP: 2px solid; =
+BORDER-RIGHT: 2px solid; PADDING-TOP: 0.5em
+}
+.errorbox {
+	BORDER-BOTTOM-COLOR: red; BACKGROUND-COLOR: #fff2f2; BORDER-TOP-COLOR: =
+red; BORDER-RIGHT-COLOR: red; BORDER-LEFT-COLOR: red
+}
+.successbox {
+	BORDER-BOTTOM-COLOR: green; BACKGROUND-COLOR: #dfd; BORDER-TOP-COLOR: =
+green; BORDER-RIGHT-COLOR: green; BORDER-LEFT-COLOR: green
+}
+.errorbox H2 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px 0.5em =
+0px 0px; DISPLAY: inline; FONT-SIZE: 1em; BORDER-TOP: medium none; =
+FONT-WEIGHT: bold; BORDER-RIGHT: medium none
+}
+.successbox H2 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px 0.5em =
+0px 0px; DISPLAY: inline; FONT-SIZE: 1em; BORDER-TOP: medium none; =
+FONT-WEIGHT: bold; BORDER-RIGHT: medium none
+}
+.visualClear {
+	CLEAR: both
+}
+#mw_trackbacks {
+	BORDER-BOTTOM: #bbbbff 1px solid; BORDER-LEFT: #bbbbff 1px solid; =
+PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: #eeeeff; PADDING-LEFT: 0.2em; =
+PADDING-RIGHT: 0.2em; BORDER-TOP: #bbbbff 1px solid; BORDER-RIGHT: =
+#bbbbff 1px solid; PADDING-TOP: 0.2em
+}
+.TablePager {
+	MIN-WIDTH: 80%
+}
+.TablePager_nav A {
+	TEXT-DECORATION: none
+}
+.TablePager {
+	BORDER-COLLAPSE: collapse
+}
+.TablePager {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TD {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TH {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 0px; PADDING-LEFT: 0.15em; PADDING-RIGHT: 0.15em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid; =
+PADDING-TOP: 0px
+}
+.TablePager TH {
+	BACKGROUND-COLOR: #eeeeff
+}
+.TablePager TD {
+	BACKGROUND-COLOR: #ffffff
+}
+.TablePager TR:hover TD {
+	BACKGROUND-COLOR: #eeeeff
+}
+.imagelist TD {
+	WHITE-SPACE: nowrap
+}
+.imagelist TH {
+	WHITE-SPACE: nowrap
+}
+.imagelist .TablePager_col_links {
+	BACKGROUND-COLOR: #eeeeff
+}
+.imagelist .TablePager_col_img_description {
+	WHITE-SPACE: normal
+}
+.imagelist TH.TablePager_sort {
+	BACKGROUND-COLOR: #ccccff
+}
+#mw-allmessagestable .allmessages-customised TD.am_default {
+	BACKGROUND-COLOR: #fcffc4
+}
+#mw-allmessagestable TR.allmessages-customised:hover TD.am_default {
+	BACKGROUND-COLOR: #faff90
+}
+#mw-allmessagestable TD.am_actual {
+	BACKGROUND-COLOR: #e2ffe2
+}
+#mw-allmessagestable TR.allmessages-customised:hover + =
+TR.allmessages-customised TD.am_actual {
+	BACKGROUND-COLOR: #b1ffb1
+}
+UL#filetoc {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; MARGIN-BOTTOM: 0.5em; =
+MARGIN-LEFT: 0px; FONT-SIZE: 95%; BORDER-TOP: #aaaaaa 1px solid; =
+MARGIN-RIGHT: 0px; BORDER-RIGHT: #aaaaaa 1px solid; PADDING-TOP: 5px
+}
+#filetoc LI {
+	LIST-STYLE-TYPE: none; PADDING-RIGHT: 2em; DISPLAY: inline
+}
+TABLE.mw_metadata {
+	WIDTH: 300px; MARGIN-BOTTOM: 0.5em; MARGIN-LEFT: 0.5em; FONT-SIZE: =
+0.8em
+}
+TABLE.mw_metadata CAPTION {
+	FONT-WEIGHT: bold
+}
+TABLE.mw_metadata TH {
+	FONT-WEIGHT: normal
+}
+TABLE.mw_metadata TD {
+	PADDING-BOTTOM: 0.1em; PADDING-LEFT: 0.1em; PADDING-RIGHT: 0.1em; =
+PADDING-TOP: 0.1em
+}
+TABLE.mw_metadata {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-COLLAPSE: =
+collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+TABLE.mw_metadata TD {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-LEFT: 0.1em; PADDING-RIGHT: 0.1em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BORDER-BOTTOM: #aaaaaa 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#aaaaaa 1px solid; PADDING-LEFT: 0.1em; PADDING-RIGHT: 0.1em; =
+BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa 1px solid
+}
+TABLE.mw_metadata TH {
+	BACKGROUND-COLOR: #f9f9f9
+}
+TABLE.mw_metadata TD {
+	BACKGROUND-COLOR: #fcfcfc
+}
+TABLE.gallery {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; =
+PADDING-BOTTOM: 2px; BACKGROUND-COLOR: white; MARGIN: 2px; PADDING-LEFT: =
+2px; PADDING-RIGHT: 2px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc =
+1px solid; PADDING-TOP: 2px
+}
+TABLE.gallery TR {
+	VERTICAL-ALIGN: top
+}
+TABLE.gallery TD {
+	BORDER-BOTTOM: white 2px solid; BORDER-LEFT: white 2px solid; =
+BACKGROUND-COLOR: #f9f9f9; VERTICAL-ALIGN: top; BORDER-TOP: white 2px =
+solid; BORDER-RIGHT: white 2px solid
+}
+TABLE.gallery CAPTION {
+	FONT-WEIGHT: bold
+}
+DIV.gallerybox {
+	MARGIN: 2px
+}
+DIV.gallerybox DIV.thumb {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc =
+1px solid; MARGIN: 2px; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc =
+1px solid
+}
+DIV.gallerytext {
+	PADDING-BOTTOM: 2px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; FONT-SIZE: =
+94%; OVERFLOW: hidden; PADDING-TOP: 2px
+}
+TABLE.mw-enhanced-rc {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-SPACING: 0; BACKGROUND: =
+none transparent scroll repeat 0% 0%; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+TD.mw-enhanced-rc {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+FONT-FAMILY: monospace; WHITE-SPACE: nowrap; VERTICAL-ALIGN: top; =
+PADDING-TOP: 0px
+}
+#mw-addcategory-prompt {
+	DISPLAY: inline; MARGIN-LEFT: 1em
+}
+#mw-addcategory-prompt INPUT {
+	MARGIN-LEFT: 0.5em; MARGIN-RIGHT: 0.5em
+}
+.mw-remove-category {
+	BACKGROUND-IMAGE: url(images/remove.png); PADDING-BOTTOM: 8px; =
+PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: center center; PADDING-TOP: 8px
+}
+.mw-ajax-addcategory {
+	BACKGROUND-IMAGE: url(images/add.png); PADDING-LEFT: 20px; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: left center
+}
+.mw-ajax-loader {
+	BACKGROUND-IMAGE: url(images/ajax-loader.gif); POSITION: relative; =
+PADDING-BOTTOM: 16px; PADDING-LEFT: 16px; PADDING-RIGHT: 16px; =
+BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center center; TOP: =
+-16px; PADDING-TOP: 16px
+}
+.mw-small-spinner {
+	BACKGROUND-IMAGE: url(images/spinner.gif); PADDING-BOTTOM: 10px =
+!important; PADDING-LEFT: 10px !important; PADDING-RIGHT: 10px =
+!important; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center =
+center; MARGIN-RIGHT: 0.6em; PADDING-TOP: 10px !important
+}
+A.sortheader {
+	MARGIN: 0px 0.3em
+}
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/common/commonPrint.css?270
+
+A.stub {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+A.new {
+	COLOR: #ba0000; TEXT-DECORATION: none
+}
+#toc {
+	BORDER-BOTTOM: #aaaaaa 1px solid; BORDER-LEFT: #aaaaaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; BORDER-TOP: #aaaaaa 1px solid; BORDER-RIGHT: #aaaaaa =
+1px solid; PADDING-TOP: 5px
+}
+.tocindent {
+	MARGIN-LEFT: 2em
+}
+.tocline {
+	MARGIN-BOTTOM: 0px
+}
+DIV.floatright {
+	BORDER-BOTTOM: white 0.8em solid; POSITION: relative; BORDER-LEFT: =
+white 1.4em solid; MARGIN: 0px; FLOAT: right; CLEAR: right; BORDER-TOP: =
+white 0.5em solid; BORDER-RIGHT: white 0px solid
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	BORDER-BOTTOM: white 0.8em solid; POSITION: relative; BORDER-LEFT: =
+white 0px solid; MARGIN: 0.3em 0.5em 0.5em 0px; FLOAT: left; BORDER-TOP: =
+white 0.5em solid; BORDER-RIGHT: white 1.4em solid
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.thumb {
+	BORDER-BOTTOM-STYLE: solid; BORDER-BOTTOM-COLOR: white; =
+BORDER-RIGHT-STYLE: solid; BORDER-TOP-COLOR: white; WIDTH: auto; =
+BORDER-TOP-STYLE: solid; MARGIN-BOTTOM: 0.5em; BORDER-RIGHT-COLOR: =
+white; BORDER-LEFT-STYLE: solid; OVERFLOW: hidden; BORDER-LEFT-COLOR: =
+white
+}
+DIV.thumbinner {
+	BORDER-BOTTOM: #cccccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: =
+#cccccc 1px solid; PADDING-BOTTOM: 3px !important; BACKGROUND-COLOR: =
+#f9f9f9; PADDING-LEFT: 3px !important; PADDING-RIGHT: 3px !important; =
+FONT-SIZE: 94%; BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px =
+solid; PADDING-TOP: 3px !important
+}
+HTML .thumbimage {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+BORDER-TOP: #cccccc 1px solid; BORDER-RIGHT: #cccccc 1px solid
+}
+HTML .thumbcaption {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0.1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: medium none; =
+BORDER-RIGHT: medium none; PADDING-TOP: 0.3em
+}
+DIV.magnify {
+	DISPLAY: none
+}
+DIV.tright {
+	BORDER-RIGHT-WIDTH: 0px; FLOAT: right; BORDER-TOP-WIDTH: 0.5em; =
+BORDER-BOTTOM-WIDTH: 0.8em; CLEAR: right; BORDER-LEFT-WIDTH: 1.4em
+}
+DIV.tleft {
+	BORDER-RIGHT-WIDTH: 1.4em; FLOAT: left; BORDER-TOP-WIDTH: 0.5em; =
+BORDER-BOTTOM-WIDTH: 0.8em; BORDER-LEFT-WIDTH: 0px; MARGIN-RIGHT: 0.5em
+}
+IMG.thumbborder {
+	BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; =
+BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid
+}
+TABLE.rimage {
+	POSITION: relative; TEXT-ALIGN: center; WIDTH: 1pt; MARGIN-BOTTOM: 1em; =
+FLOAT: right; MARGIN-LEFT: 1em
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; BACKGROUND: white; COLOR: black; PADDING-TOP: 0px
+}
+.noprint {
+	DISPLAY: none
+}
+DIV#jump-to-nav {
+	DISPLAY: none
+}
+DIV.top {
+	DISPLAY: none
+}
+DIV#column-one {
+	DISPLAY: none
+}
+#colophon {
+	DISPLAY: none
+}
+.editsection {
+	DISPLAY: none
+}
+.toctoggle {
+	DISPLAY: none
+}
+.tochidden {
+	DISPLAY: none
+}
+DIV#f-poweredbyico {
+	DISPLAY: none
+}
+DIV#f-copyrightico {
+	DISPLAY: none
+}
+LI#viewcount {
+	DISPLAY: none
+}
+LI#about {
+	DISPLAY: none
+}
+LI#disclaimer {
+	DISPLAY: none
+}
+LI#privacy {
+	DISPLAY: none
+}
+#mw-hidden-catlinks {
+	DISPLAY: none
+}
+UL {
+	LIST-STYLE-TYPE: square
+}
+#content {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px !important; MARGIN: 0px; PADDING-LEFT: 0px !important; =
+PADDING-RIGHT: 0px !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; BORDER-TOP: medium none; BORDER-RIGHT: medium none; =
+PADDING-TOP: 0px !important
+}
+#footer {
+	BACKGROUND: white; COLOR: black; BORDER-TOP: black 1px solid
+}
+H1 {
+	FONT-WEIGHT: bold
+}
+H2 {
+	FONT-WEIGHT: bold
+}
+H3 {
+	FONT-WEIGHT: bold
+}
+H4 {
+	FONT-WEIGHT: bold
+}
+H5 {
+	FONT-WEIGHT: bold
+}
+H6 {
+	FONT-WEIGHT: bold
+}
+P {
+	LINE-HEIGHT: 1.2em; MARGIN: 1em 0px
+}
+.documentDescription {
+	LINE-HEIGHT: 1.2em; MARGIN: 1em 0px
+}
+.tocindent P {
+	MARGIN: 0px
+}
+PRE {
+	BORDER-BOTTOM: black 1pt dashed; BORDER-LEFT: black 1pt dashed; =
+PADDING-BOTTOM: 1em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WHITE-SPACE: =
+pre; BACKGROUND: white; COLOR: black; FONT-SIZE: 8pt; OVERFLOW: auto; =
+BORDER-TOP: black 1pt dashed; BORDER-RIGHT: black 1pt dashed; =
+PADDING-TOP: 1em
+}
+TABLE.listing {
+	BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; =
+BORDER-COLLAPSE: collapse; BORDER-TOP: black 1pt solid; BORDER-RIGHT: =
+black 1pt solid
+}
+TABLE.listing TD {
+	BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; =
+BORDER-COLLAPSE: collapse; BORDER-TOP: black 1pt solid; BORDER-RIGHT: =
+black 1pt solid
+}
+A {
+	PADDING-BOTTOM: 0px !important; PADDING-LEFT: 0px !important; =
+PADDING-RIGHT: 0px !important; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: black !important; PADDING-TOP: 0px !important
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #520; =
+TEXT-DECORATION: underline
+}
+#content A.text.external:after {
+	CONTENT: " (" attr(href) ") "
+}
+#content A.autonumber.external:after {
+	CONTENT: " (" attr(href) ") "
+}
+#globalWrapper {
+	MIN-WIDTH: 0px !important; WIDTH: 100% !important
+}
+#content {
+	BACKGROUND: white; COLOR: black
+}
+#column-content {
+	MARGIN: 0px
+}
+#column-content #content {
+	PADDING-BOTTOM: 1em; MARGIN: 0px; PADDING-LEFT: 1em; PADDING-RIGHT: =
+1em; PADDING-TOP: 1em
+}
+A {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.external {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.new {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A.stub {
+	COLOR: black !important; TEXT-DECORATION: none !important
+}
+A {
+	COLOR: inherit !important; TEXT-DECORATION: inherit !important
+}
+A.external {
+	COLOR: inherit !important; TEXT-DECORATION: inherit !important
+}
+A.new {
+	COLOR: inherit !important; TEXT-DECORATION: inherit !important
+}
+A.stub {
+	COLOR: inherit !important; TEXT-DECORATION: inherit !important
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: =
+medium none; BORDER-RIGHT: medium none
+}
+IMG.tex {
+	VERTICAL-ALIGN: middle
+}
+SPAN.texhtml {
+	FONT-FAMILY: serif
+}
+#siteNotice {
+	DISPLAY: none
+}
+DIV.gallerybox {
+	BORDER-BOTTOM: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; =
+BACKGROUND-COLOR: #f9f9f9; WIDTH: 150px; BORDER-TOP: #cccccc 1px solid; =
+BORDER-RIGHT: #cccccc 1px solid
+}
+DIV.gallerytext {
+	OVERFLOW: visible
+}
+TABLE.diff {
+	BACKGROUND: white
+}
+TD.diff-otitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-ntitle {
+	BACKGROUND: #ffffff
+}
+TD.diff-addedline {
+	BORDER-BOTTOM: black 2px solid; BORDER-LEFT: black 2px solid; =
+BACKGROUND: #ccffcc; FONT-SIZE: smaller; BORDER-TOP: black 2px solid; =
+BORDER-RIGHT: black 2px solid
+}
+TD.diff-deletedline {
+	BORDER-BOTTOM: black 2px dotted; BORDER-LEFT: black 2px dotted; =
+BACKGROUND: #ffffaa; FONT-SIZE: smaller; BORDER-TOP: black 2px dotted; =
+BORDER-RIGHT: black 2px dotted
+}
+TD.diff-context {
+	BACKGROUND: #eeeeee; FONT-SIZE: smaller
+}
+.diffchange {
+	COLOR: silver; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/monobook/main.css?270
+
+#column-content {
+	PADDING-BOTTOM: 0px; MARGIN: 0px 0px 0.6em -12.2em; PADDING-LEFT: 0px; =
+WIDTH: 100%; PADDING-RIGHT: 0px; FLOAT: right; PADDING-TOP: 0px
+}
+#content {
+	Z-INDEX: 2; POSITION: relative; PADDING-BOTTOM: 1em; MARGIN: 2.8em 0px =
+0px 12.2em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; PADDING-TOP: 0px
+}
+#column-one {
+	PADDING-TOP: 160px
+}
+#content {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+LINE-HEIGHT: 1.5em; BACKGROUND: white; COLOR: black; BORDER-TOP: #aaa =
+1px solid; BORDER-RIGHT: medium none
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; FONT: x-small sans-serif; BACKGROUND: url(headbg.jpg) #f9f9f9 =
+no-repeat 0px 0px; COLOR: black; PADDING-TOP: 0px
+}
+#globalWrapper {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; =
+PADDING-RIGHT: 0px; FONT-SIZE: 127%; PADDING-TOP: 0px
+}
+TABLE {
+	BACKGROUND-COLOR: white; COLOR: black; FONT-SIZE: 100%
+}
+FIELDSET TABLE {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+A {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #002bb8; =
+TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #5a3696
+}
+A:active {
+	COLOR: #faa700
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A.stub {
+	COLOR: #772233
+}
+A.new {
+	COLOR: #ba0000
+}
+#p-personal A.new {
+	COLOR: #ba0000
+}
+A.new:visited {
+	COLOR: #a55858
+}
+#p-personal A.new:visited {
+	COLOR: #a55858
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; VERTICAL-ALIGN: =
+middle; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+P {
+	LINE-HEIGHT: 1.5em; MARGIN: 0.4em 0px 0.5em
+}
+P IMG {
+	MARGIN: 0px
+}
+HR {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BACKGROUND-COLOR: #aaa; MARGIN: =
+0.2em 0px; HEIGHT: 1px; COLOR: #aaa; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+H1 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H2 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H3 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H4 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H5 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H6 {
+	BORDER-BOTTOM: #aaa 1px solid; PADDING-BOTTOM: 0.17em; MARGIN: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: black; =
+FONT-WEIGHT: normal; PADDING-TOP: 0.5em
+}
+H1 {
+	FONT-SIZE: 188%
+}
+H1 .editsection {
+	FONT-SIZE: 53%
+}
+H2 {
+	FONT-SIZE: 150%
+}
+H2 .editsection {
+	FONT-SIZE: 67%
+}
+H3 {
+	BORDER-BOTTOM: medium none; FONT-WEIGHT: bold
+}
+H4 {
+	BORDER-BOTTOM: medium none; FONT-WEIGHT: bold
+}
+H5 {
+	BORDER-BOTTOM: medium none; FONT-WEIGHT: bold
+}
+H6 {
+	BORDER-BOTTOM: medium none; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-SIZE: 132%
+}
+H3 .editsection {
+	FONT-SIZE: 76%; FONT-WEIGHT: normal
+}
+H4 {
+	FONT-SIZE: 116%
+}
+H4 .editsection {
+	FONT-SIZE: 86%; FONT-WEIGHT: normal
+}
+H5 {
+	FONT-SIZE: 100%
+}
+H5 .editsection {
+	FONT-WEIGHT: normal
+}
+H6 {
+	FONT-SIZE: 80%
+}
+H6 .editsection {
+	FONT-SIZE: 125%; FONT-WEIGHT: normal
+}
+UL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5em; LIST-STYLE-TYPE: square; =
+MARGIN: 0.3em 0px 0px 1.5em; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+LIST-STYLE-IMAGE: url(bullet.gif); PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5em; MARGIN: 0.3em 0px 0px 3.2em; =
+PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; =
+PADDING-TOP: 0px
+}
+LI {
+	MARGIN-BOTTOM: 0.1em
+}
+DT {
+	MARGIN-BOTTOM: 0.1em; FONT-WEIGHT: bold
+}
+DL {
+	MARGIN-TOP: 0.2em; MARGIN-BOTTOM: 0.5em
+}
+DD {
+	LINE-HEIGHT: 1.5em; MARGIN-BOTTOM: 0.1em; MARGIN-LEFT: 2em
+}
+FIELDSET {
+	BORDER-BOTTOM: #2f6fab 1px solid; BORDER-LEFT: #2f6fab 1px solid; =
+PADDING-BOTTOM: 1em; LINE-HEIGHT: 1.5em; MARGIN: 1em 0px; PADDING-LEFT: =
+1em; PADDING-RIGHT: 1em; BORDER-TOP: #2f6fab 1px solid; BORDER-RIGHT: =
+#2f6fab 1px solid; PADDING-TOP: 0px
+}
+FIELDSET.nested {
+	PADDING-BOTTOM: 0.5em; MARGIN: 0px 0px 0.5em; PADDING-LEFT: 0.5em; =
+PADDING-RIGHT: 0.5em; PADDING-TOP: 0px
+}
+LEGEND {
+	PADDING-BOTTOM: 0.5em; PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; =
+FONT-SIZE: 95%; PADDING-TOP: 0.5em
+}
+FORM {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: 0px; =
+BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+TEXTAREA {
+	PADDING-BOTTOM: 0.1em; PADDING-LEFT: 0.1em; WIDTH: 100%; PADDING-RIGHT: =
+0.1em; PADDING-TOP: 0.1em
+}
+INPUT.historysubmit {
+	PADDING-BOTTOM: 0.3em !important; PADDING-LEFT: 0.3em !important; =
+PADDING-RIGHT: 0.3em !important; HEIGHT: 1.7em !important; MARGIN-LEFT: =
+1.6em; FONT-SIZE: 94%; CURSOR: pointer; PADDING-TOP: 0px !important
+}
+SELECT {
+	VERTICAL-ALIGN: top
+}
+ABBR {
+	BORDER-BOTTOM: black 1px dotted; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: black; CURSOR: help
+}
+ACRONYM {
+	BORDER-BOTTOM: black 1px dotted; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: black; CURSOR: help
+}
+.explain {
+	BORDER-BOTTOM: black 1px dotted; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: black; CURSOR: help
+}
+Q {
+	FONT-STYLE: italic; FONT-FAMILY: Times, "Times New Roman", serif
+}
+CODE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+PRE {
+	BORDER-BOTTOM: #2f6fab 1px dashed; BORDER-LEFT: #2f6fab 1px dashed; =
+PADDING-BOTTOM: 1em; LINE-HEIGHT: 1.1em; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: black; BORDER-TOP: #2f6fab =
+1px dashed; BORDER-RIGHT: #2f6fab 1px dashed; PADDING-TOP: 1em
+}
+#siteSub {
+	DISPLAY: none
+}
+#jump-to-nav {
+	DISPLAY: none
+}
+#contentSub {
+	LINE-HEIGHT: 1.2em; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: =
+#7d7d7d; FONT-SIZE: 84%
+}
+#contentSub2 {
+	LINE-HEIGHT: 1.2em; MARGIN: 0px 0px 1.4em 1em; WIDTH: auto; COLOR: =
+#7d7d7d; FONT-SIZE: 84%
+}
+SPAN.subpages {
+	DISPLAY: block
+}
+#bodyContent H1 {
+	MARGIN-BOTTOM: 0.6em
+}
+#bodyContent H2 {
+	MARGIN-BOTTOM: 0.6em
+}
+#bodyContent H3 {
+	MARGIN-BOTTOM: 0.3em
+}
+#bodyContent H4 {
+	MARGIN-BOTTOM: 0.3em
+}
+#bodyContent H5 {
+	MARGIN-BOTTOM: 0.3em
+}
+#firstHeading {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.2em; MARGIN-BOTTOM: 0.1em
+}
+.usermessage {
+	BORDER-BOTTOM: #ffa500 1px solid; BORDER-LEFT: #ffa500 1px solid; =
+PADDING-BOTTOM: 0.5em; BACKGROUND-COLOR: #ffce7b; MARGIN: 2em 0px 1em; =
+PADDING-LEFT: 1em; PADDING-RIGHT: 1em; COLOR: black; VERTICAL-ALIGN: =
+middle; BORDER-TOP: #ffa500 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: =
+#ffa500 1px solid; PADDING-TOP: 0.5em
+}
+#siteNotice {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0.9em; =
+PADDING-RIGHT: 0.9em; FONT-SIZE: 95%; PADDING-TOP: 0px
+}
+#siteNotice P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.catlinks {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; MARGIN-TOP: 1em; =
+PADDING-LEFT: 5px; PADDING-RIGHT: 5px; CLEAR: both; BORDER-TOP: #aaa 1px =
+solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.documentDescription {
+	LINE-HEIGHT: 1.5em; MARGIN: 1em 0px; DISPLAY: block; FONT-WEIGHT: bold
+}
+.documentByLine {
+	TEXT-ALIGN: right; COLOR: #76797c; CLEAR: both; FONT-SIZE: 90%; =
+FONT-WEIGHT: normal
+}
+.center {
+	TEXT-ALIGN: center; WIDTH: 100%
+}
+*.center * {
+	MARGIN-LEFT: auto; MARGIN-RIGHT: auto
+}
+.small {
+	FONT-SIZE: 94%
+}
+.small * {
+	FONT-SIZE: 94%
+}
+TABLE.small {
+	FONT-SIZE: 100%
+}
+#toc {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.toc {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.mw-warning {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+#toc H2 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; FONT-SIZE: =
+100%; BORDER-TOP: medium none; FONT-WEIGHT: bold; BORDER-RIGHT: medium =
+none; PADDING-TOP: 0px
+}
+.toc H2 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline; FONT-SIZE: =
+100%; BORDER-TOP: medium none; FONT-WEIGHT: bold; BORDER-RIGHT: medium =
+none; PADDING-TOP: 0px
+}
+#toc #toctitle {
+	TEXT-ALIGN: center
+}
+.toc #toctitle {
+	TEXT-ALIGN: center
+}
+#toc .toctitle {
+	TEXT-ALIGN: center
+}
+.toc .toctitle {
+	TEXT-ALIGN: center
+}
+#toc UL {
+	TEXT-ALIGN: left; LIST-STYLE-TYPE: none; PADDING-LEFT: 0px; =
+MARGIN-LEFT: 0px; LIST-STYLE-IMAGE: none
+}
+.toc UL {
+	TEXT-ALIGN: left; LIST-STYLE-TYPE: none; PADDING-LEFT: 0px; =
+MARGIN-LEFT: 0px; LIST-STYLE-IMAGE: none
+}
+#toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+.toc UL UL {
+	MARGIN: 0px 0px 0px 2em
+}
+#toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.toc .toctoggle {
+	FONT-SIZE: 94%
+}
+.mw-warning {
+	TEXT-ALIGN: center; MARGIN-LEFT: 50px; MARGIN-RIGHT: 50px
+}
+DIV.floatright {
+	BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: 0px; MARGIN: 0px =
+0px 0.5em 0.5em; FLOAT: right; CLEAR: right; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px
+}
+TABLE.floatright {
+	BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: 0px; MARGIN: 0px =
+0px 0.5em 0.5em; FLOAT: right; CLEAR: right; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px
+}
+DIV.floatright P {
+	FONT-STYLE: italic
+}
+DIV.floatleft {
+	BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: 0px; MARGIN: 0px =
+0.5em 0.5em 0px; FLOAT: left; CLEAR: left; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px
+}
+TABLE.floatleft {
+	BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: 0px; MARGIN: 0px =
+0.5em 0.5em 0px; FLOAT: left; CLEAR: left; BORDER-TOP: 0px; =
+BORDER-RIGHT: 0px
+}
+DIV.floatleft P {
+	FONT-STYLE: italic
+}
+DIV.thumb {
+	BORDER-BOTTOM-STYLE: solid; BORDER-BOTTOM-COLOR: white; =
+BORDER-RIGHT-STYLE: solid; BORDER-TOP-COLOR: white; WIDTH: auto; =
+BORDER-TOP-STYLE: solid; MARGIN-BOTTOM: 0.5em; BORDER-RIGHT-COLOR: =
+white; BORDER-LEFT-STYLE: solid; BORDER-LEFT-COLOR: white
+}
+DIV.thumbinner {
+	BORDER-BOTTOM: #ccc 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ccc =
+1px solid; PADDING-BOTTOM: 3px !important; BACKGROUND-COLOR: #f9f9f9; =
+PADDING-LEFT: 3px !important; PADDING-RIGHT: 3px !important; FONT-SIZE: =
+94%; OVERFLOW: hidden; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: #ccc =
+1px solid; PADDING-TOP: 3px !important
+}
+HTML .thumbimage {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-TOP: =
+#ccc 1px solid; BORDER-RIGHT: #ccc 1px solid
+}
+HTML .thumbcaption {
+	BORDER-BOTTOM: medium none; TEXT-ALIGN: left; BORDER-LEFT: medium none; =
+PADDING-BOTTOM: 3px !important; LINE-HEIGHT: 1.4em; PADDING-LEFT: 3px =
+!important; PADDING-RIGHT: 3px !important; FONT-SIZE: 94%; BORDER-TOP: =
+medium none; BORDER-RIGHT: medium none; PADDING-TOP: 3px !important
+}
+DIV.magnify {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BACKGROUND: none =
+transparent scroll repeat 0% 0%; FLOAT: right; BORDER-TOP: medium none; =
+BORDER-RIGHT: medium none
+}
+DIV.magnify A {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block; =
+BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP: medium =
+none; BORDER-RIGHT: medium none
+}
+DIV.magnify IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; DISPLAY: block; =
+BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-TOP: medium =
+none; BORDER-RIGHT: medium none
+}
+DIV.tright {
+	BORDER-RIGHT-WIDTH: 0px; FLOAT: right; BORDER-TOP-WIDTH: 0.5em; =
+BORDER-BOTTOM-WIDTH: 0.8em; CLEAR: right; BORDER-LEFT-WIDTH: 1.4em
+}
+DIV.tleft {
+	BORDER-RIGHT-WIDTH: 1.4em; FLOAT: left; BORDER-TOP-WIDTH: 0.5em; =
+BORDER-BOTTOM-WIDTH: 0.8em; CLEAR: left; BORDER-LEFT-WIDTH: 0px; =
+MARGIN-RIGHT: 0.5em
+}
+IMG.thumbborder {
+	BORDER-BOTTOM: #dddddd 1px solid; BORDER-LEFT: #dddddd 1px solid; =
+BORDER-TOP: #dddddd 1px solid; BORDER-RIGHT: #dddddd 1px solid
+}
+.hiddenStructure {
+	DISPLAY: none
+}
+TABLE.rimage {
+	POSITION: relative; TEXT-ALIGN: center; MARGIN-BOTTOM: 1em; FLOAT: =
+right; MARGIN-LEFT: 1em
+}
+.toccolours {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #f9f9f9; PADDING-LEFT: 5px; =
+PADDING-RIGHT: 5px; FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; =
+BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 5px
+}
+.special LI {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.4em; MARGIN: 0px; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+#bodyContent A.external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(external.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href^=3D'gopher://'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(external.png) no-repeat right center; PADDING-TOP: 0px
+}
+.rtl #bodyContent A.external {
+	BACKGROUND-IMAGE: url(external-rtl.png)
+}
+.rtl #bodyContent A[href^=3D'gopher://'].external {
+	BACKGROUND-IMAGE: url(external-rtl.png)
+}
+#bodyContent A[href^=3D'https://'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 16px; PADDING-RIGHT: 16px; =
+BACKGROUND: url(lock_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+.link-https {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 16px; PADDING-RIGHT: 16px; =
+BACKGROUND: url(lock_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href^=3D'mailto:'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(mail_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+.link-mailto {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(mail_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href^=3D'news://'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(news_icon.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href^=3D'ftp://'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(file_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+.link-ftp {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(file_icon.gif) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href^=3D'irc://'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(discussionitem_icon.gif) no-repeat right center; =
+PADDING-TOP: 0px
+}
+.link-irc {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 18px; PADDING-RIGHT: 18px; =
+BACKGROUND: url(discussionitem_icon.gif) no-repeat right center; =
+PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.ogg'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.OGG'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.mid'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.MID'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.midi'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.MIDI'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.mp3'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.MP3'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.wav'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.WAV'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.wma'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.WMA'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+.link-audio {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(audio.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.ogm'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.OGM'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.avi'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.AVI'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.mpeg'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.MPEG'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.mpg'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.MPG'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+.link-video {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 13px; PADDING-RIGHT: 13px; =
+BACKGROUND: url(video.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.pdf'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href$=3D'.PDF'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href*=3D'.pdf#'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href*=3D'.PDF#'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href*=3D'.pdf?'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+#bodyContent A[href*=3D'.PDF?'].external {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+.link-document {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 12px; PADDING-RIGHT: 12px; =
+BACKGROUND: url(document.png) no-repeat right center; PADDING-TOP: 0px
+}
+.rtl #bodyContent A.external {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: left 50%
+}
+.rtl A.feedlink {
+	PADDING-LEFT: 0px; PADDING-RIGHT: 16px; BACKGROUND-POSITION: right 50%
+}
+.ltr #bodyContent A.external {
+	PADDING-LEFT: 0px
+}
+#bodyContent A.extiw {
+	COLOR: #36b
+}
+#bodyContent A.extiw:active {
+	COLOR: #36b
+}
+#bodyContent A.external {
+	COLOR: #36b
+}
+.portlet {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; MARGIN: 0px 0px 0.5em; PADDING-LEFT: 0px; WIDTH: 11.6em; =
+PADDING-RIGHT: 0px; FLOAT: none; OVERFLOW: hidden; BORDER-TOP: medium =
+none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+.portlet H4 {
+	WHITE-SPACE: nowrap; FONT-SIZE: 95%; FONT-WEIGHT: normal
+}
+.portlet H5 {
+	PADDING-BOTTOM: 0px; TEXT-TRANSFORM: lowercase; PADDING-LEFT: 0.5em; =
+PADDING-RIGHT: 1em; DISPLAY: inline; WHITE-SPACE: nowrap; BACKGROUND: =
+none transparent scroll repeat 0% 0%; HEIGHT: 1em; FONT-SIZE: 91%; =
+FONT-WEIGHT: normal; PADDING-TOP: 0px
+}
+.portlet H6 {
+	BORDER-BOTTOM: #2f6fab 1px; BORDER-LEFT: #2f6fab 1px solid; =
+PADDING-BOTTOM: 0px; TEXT-TRANSFORM: lowercase; PADDING-LEFT: 1em; =
+PADDING-RIGHT: 1em; DISPLAY: block; WHITE-SPACE: nowrap; BACKGROUND: =
+#ffae2e; HEIGHT: 1.2em; FONT-SIZE: 1em; BORDER-TOP: #2f6fab 1px solid; =
+FONT-WEIGHT: normal; BORDER-RIGHT: #2f6fab 1px solid; PADDING-TOP: 0px
+}
+.pBody {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.3em; BACKGROUND-COLOR: white; PADDING-LEFT: 0.5em; =
+PADDING-RIGHT: 0.8em; BORDER-COLLAPSE: collapse; COLOR: black; =
+FONT-SIZE: 95%; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px =
+solid; PADDING-TOP: 0px
+}
+.portlet H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.portlet H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.portlet H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.portlet H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+.portlet UL {
+	LINE-HEIGHT: 1.5em; LIST-STYLE-TYPE: square; FONT-SIZE: 95%; =
+LIST-STYLE-IMAGE: url(bullet.gif)
+}
+.portlet LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: =
+0px; PADDING-TOP: 0px
+}
+#p-logo {
+	Z-INDEX: 3; POSITION: absolute; WIDTH: 12em; HEIGHT: 155px; OVERFLOW: =
+visible; TOP: 0px; LEFT: 0px
+}
+#p-logo H5 {
+	DISPLAY: none
+}
+#p-logo A {
+	WIDTH: 12.2em; DISPLAY: block; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: 35% 50%; HEIGHT: 155px; TEXT-DECORATION: none
+}
+#p-logo A:hover {
+	WIDTH: 12.2em; DISPLAY: block; BACKGROUND-REPEAT: no-repeat; =
+BACKGROUND-POSITION: 35% 50%; HEIGHT: 155px; TEXT-DECORATION: none
+}
+#p-search {
+	Z-INDEX: 3; POSITION: relative
+}
+INPUT.searchButton {
+	MARGIN-TOP: 1px; FONT-SIZE: 95%
+}
+#searchGoButton {
+	PADDING-LEFT: 0.5em; PADDING-RIGHT: 0.5em; FONT-WEIGHT: bold
+}
+#searchInput {
+	MARGIN: 0px; WIDTH: 10.9em; FONT-SIZE: 95%
+}
+#p-search .pBody {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0.4em; PADDING-LEFT: 0.4em; =
+PADDING-RIGHT: 0.4em; PADDING-TOP: 0.5em
+}
+#p-search #searchform DIV DIV {
+	MARGIN-TOP: 0.4em; FONT-SIZE: 95%
+}
+#p-personal {
+	Z-INDEX: 0; POSITION: absolute; TOP: 0px; LEFT: 0px
+}
+#p-personal {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; LINE-HEIGHT: 1.2em; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; =
+PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; BACKGROUND: none transparent =
+scroll repeat 0% 0%; OVERFLOW: visible; BORDER-TOP: medium none; =
+BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+#p-personal H5 {
+	DISPLAY: none
+}
+#p-personal .portlet {
+	Z-INDEX: 0; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: visible; =
+BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+#p-personal .pBody {
+	Z-INDEX: 0; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; =
+PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+BACKGROUND: none transparent scroll repeat 0% 0%; OVERFLOW: visible; =
+BORDER-TOP: medium none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+#p-personal UL {
+	Z-INDEX: 0; BORDER-BOTTOM: medium none; TEXT-ALIGN: right; BORDER-LEFT: =
+medium none; PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.4em; LIST-STYLE-TYPE: =
+none; MARGIN: 0px; PADDING-LEFT: 3em; PADDING-RIGHT: 2em; BACKGROUND: =
+none transparent scroll repeat 0% 0%; COLOR: #2f6fab; BORDER-TOP: medium =
+none; CURSOR: default; LIST-STYLE-IMAGE: none; BORDER-RIGHT: medium =
+none; PADDING-TOP: 0px
+}
+#p-personal LI {
+	Z-INDEX: 0; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; =
+PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.2em; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; DISPLAY: inline; BACKGROUND: none transparent scroll =
+repeat 0% 0%; COLOR: #2f6fab; MARGIN-LEFT: 1em; BORDER-TOP: medium none; =
+BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+#p-personal LI A {
+	PADDING-BOTTOM: 0.2em; BACKGROUND: none transparent scroll repeat 0% =
+0%; COLOR: #005896; TEXT-DECORATION: none
+}
+#p-personal LI A:hover {
+	PADDING-BOTTOM: 0.2em; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+#p-personal LI.active A:hover {
+	BACKGROUND-COLOR: transparent
+}
+LI#pt-userpage {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 20px; BACKGROUND: url(user.gif) =
+no-repeat left top
+}
+LI#pt-anonuserpage {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 20px; BACKGROUND: url(user.gif) =
+no-repeat left top
+}
+LI#pt-login {
+	TEXT-TRANSFORM: none; PADDING-LEFT: 20px; BACKGROUND: url(user.gif) =
+no-repeat left top
+}
+#p-personal UL {
+	TEXT-TRANSFORM: lowercase
+}
+#p-personal LI.active {
+	FONT-WEIGHT: bold
+}
+#p-cactions {
+	POSITION: absolute; LINE-HEIGHT: 1.1em; LIST-STYLE-TYPE: none; MARGIN: =
+0px; PADDING-LEFT: 1em; WIDTH: 76%; BORDER-COLLAPSE: collapse; =
+WHITE-SPACE: nowrap; BACKGROUND: none transparent scroll repeat 0% 0%; =
+FONT-SIZE: 95%; OVERFLOW: visible; TOP: 1.3em; LIST-STYLE-IMAGE: none; =
+LEFT: 11.5em
+}
+#p-cactions UL {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+#p-cactions LI {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 0.1em; MARGIN: 0px 0.3em 0px 0px; PADDING-LEFT: 0px; =
+PADDING-RIGHT: 0px; DISPLAY: inline; BACKGROUND: white; OVERFLOW: =
+visible; BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; =
+PADDING-TOP: 0px
+}
+#p-cactions LI.selected {
+	BORDER-BOTTOM-COLOR: #fabd23; PADDING-BOTTOM: 0.2em; BORDER-TOP-COLOR: =
+#fabd23; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-RIGHT-COLOR: =
+#fabd23; BORDER-LEFT-COLOR: #fabd23; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+#p-cactions LI A {
+	Z-INDEX: 0; BORDER-BOTTOM: medium none; POSITION: relative; =
+BORDER-LEFT: medium none; PADDING-BOTTOM: 0.3em; BACKGROUND-COLOR: =
+#fbfbfb; MARGIN: 0px; PADDING-LEFT: 0.8em; PADDING-RIGHT: 0.8em; COLOR: =
+#002bb8; BORDER-TOP: medium none; BORDER-RIGHT: medium none; =
+TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+#p-cactions LI.selected A {
+	Z-INDEX: 3; PADDING-BOTTOM: 0.2em !important; BACKGROUND-COLOR: white; =
+PADDING-LEFT: 1em !important; PADDING-RIGHT: 1em !important; =
+PADDING-TOP: 0px !important
+}
+#p-cactions .new A {
+	COLOR: #ba0000
+}
+#p-cactions LI A:hover {
+	Z-INDEX: 3; BACKGROUND-COLOR: white; TEXT-DECORATION: none
+}
+#p-cactions H5 {
+	DISPLAY: none
+}
+#p-cactions LI.istalk {
+	MARGIN-RIGHT: 0px
+}
+#p-cactions LI.istalk A {
+	PADDING-RIGHT: 0.5em
+}
+#p-cactions #ca-addsection A {
+	PADDING-LEFT: 0.4em; PADDING-RIGHT: 0.4em
+}
+LI#ca-talk {
+	MARGIN-RIGHT: 1.6em
+}
+LI#ca-watch {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-unwatch {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-varlang-0 {
+	MARGIN-LEFT: 1.6em
+}
+LI#ca-print {
+	MARGIN-LEFT: 1.6em
+}
+#p-cactions .pBody {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; PADDING-BOTTOM: 0px; =
+BACKGROUND-COLOR: transparent; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; =
+BORDER-COLLAPSE: inherit; COLOR: inherit; FONT-SIZE: 1em; BORDER-TOP: =
+0px; BORDER-RIGHT: 0px; PADDING-TOP: 0px
+}
+#p-cactions .hiddenStructure {
+	DISPLAY: none
+}
+#p-cactions LI A {
+	TEXT-TRANSFORM: lowercase
+}
+#p-lang {
+	Z-INDEX: 3; POSITION: relative
+}
+.capitalize-all-nouns .portlet H5 {
+	TEXT-TRANSFORM: none
+}
+.capitalize-all-nouns .portlet H6 {
+	TEXT-TRANSFORM: none
+}
+.capitalize-all-nouns #p-personal UL {
+	TEXT-TRANSFORM: none
+}
+.capitalize-all-nouns #p-cactions UL LI A {
+	TEXT-TRANSFORM: none
+}
+#t-ispermalink {
+	COLOR: #999
+}
+#t-iscite {
+	COLOR: #999
+}
+#footer {
+	BORDER-BOTTOM: #fabd23 1px solid; TEXT-ALIGN: center; PADDING-BOTTOM: =
+1.2em; BACKGROUND-COLOR: white; MARGIN: 0.6em 0px 1em; PADDING-LEFT: =
+0px; PADDING-RIGHT: 0px; FONT-SIZE: 90%; BORDER-TOP: #fabd23 1px solid; =
+PADDING-TOP: 0.4em
+}
+#footer LI {
+	MARGIN: 0px 1.3em; DISPLAY: inline
+}
+#f-poweredbyico {
+	POSITION: relative; MARGIN: 0px 8px; TOP: -2px
+}
+#f-copyrightico {
+	POSITION: relative; MARGIN: 0px 8px; TOP: -2px
+}
+#f-poweredbyico {
+	FLOAT: right; HEIGHT: 1%
+}
+#f-copyrightico {
+	FLOAT: left; HEIGHT: 1%
+}
+.mw-htmlform-submit {
+	PADDING-LEFT: 0.3em; PADDING-RIGHT: 0.3em; FONT-WEIGHT: bold; =
+MARGIN-RIGHT: 2em
+}
+#preftoc {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 100%; =
+PADDING-RIGHT: 0px; CLEAR: both; PADDING-TOP: 0px
+}
+#preftoc LI {
+	BACKGROUND-COLOR: #f0f0f0; COLOR: #000
+}
+#preftoc LI {
+	Z-INDEX: 3; BORDER-BOTTOM: 0px; POSITION: relative; BORDER-LEFT: #fff =
+1px solid; PADDING-BOTTOM: 3px; LIST-STYLE-TYPE: none; MARGIN: 1px -2px =
+1px 2px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WHITE-SPACE: nowrap; =
+FLOAT: left; BORDER-TOP: #fff 1px solid; LIST-STYLE-IMAGE: none; =
+BORDER-RIGHT: #716f64 1px solid; PADDING-TOP: 2px
+}
+#preftoc LI.selected {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: #aaa 1px solid; =
+BACKGROUND-COLOR: #f9f9f9; BORDER-TOP: #aaa 1px solid; TOP: 1px; CURSOR: =
+default; FONT-WEIGHT: bold; MARGIN-RIGHT: -3px; BORDER-RIGHT: #aaa 1px =
+solid; PADDING-TOP: 2px
+}
+#preftoc > LI.selected {
+	TOP: 2px
+}
+#preftoc A {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0.7em; =
+PADDING-RIGHT: 0.7em; DISPLAY: block; COLOR: #000; TEXT-DECORATION: =
+none; PADDING-TOP: 0px
+}
+#preftoc A:active {
+	POSITION: relative; PADDING-BOTTOM: 0px; PADDING-LEFT: 0.7em; =
+PADDING-RIGHT: 0.7em; DISPLAY: block; COLOR: #000; TEXT-DECORATION: =
+none; PADDING-TOP: 0px
+}
+#preftoc LI.selected A {
+	CURSOR: default; TEXT-DECORATION: none
+}
+#preferences {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 1.5em; BACKGROUND-COLOR: #f9f9f9; MARGIN: 0px; =
+PADDING-LEFT: 1.5em; PADDING-RIGHT: 1.5em; CLEAR: both; BORDER-TOP: #aaa =
+1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: 1.5em
+}
+.prefsection {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; PADDING-BOTTOM: =
+0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: =
+medium none; BORDER-RIGHT: medium none; PADDING-TOP: 0px
+}
+.prefsection LEGEND {
+	FONT-WEIGHT: bold
+}
+.prefsection TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.prefsection LEGEND {
+	BACKGROUND-COLOR: #f9f9f9
+}
+.mainLegend {
+	DISPLAY: none
+}
+TD.htmlform-tip {
+	PADDING-BOTTOM: 0.2em; PADDING-LEFT: 2em; PADDING-RIGHT: 2em; COLOR: =
+#666; FONT-SIZE: x-small; PADDING-TOP: 0.2em
+}
+.preferences-login {
+	MARGIN-BOTTOM: 1.5em; CLEAR: both
+}
+.prefcache {
+	MARGIN-TOP: 2em; FONT-SIZE: 90%
+}
+DIV#userloginForm FORM {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 1.5em; BACKGROUND-COLOR: #f9f9f9; MARGIN: 0px 3em 1em =
+0px; PADDING-LEFT: 2em; PADDING-RIGHT: 2em; FLOAT: left; CLEAR: both; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+1.5em
+}
+DIV#userlogin FORM#userlogin2 {
+	BORDER-BOTTOM: #aaa 1px solid; BORDER-LEFT: #aaa 1px solid; =
+PADDING-BOTTOM: 1.5em; BACKGROUND-COLOR: #f9f9f9; MARGIN: 0px 3em 1em =
+0px; PADDING-LEFT: 2em; PADDING-RIGHT: 2em; FLOAT: left; CLEAR: both; =
+BORDER-TOP: #aaa 1px solid; BORDER-RIGHT: #aaa 1px solid; PADDING-TOP: =
+1.5em
+}
+.rtl DIV#userloginForm FORM {
+	FLOAT: right
+}
+.rtl DIV#userlogin FORM#userlogin2 {
+	FLOAT: right
+}
+DIV#userloginForm TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userlogin FORM#userlogin2 TABLE {
+	BACKGROUND-COLOR: #f9f9f9
+}
+DIV#userloginForm H2 {
+	PADDING-TOP: 0px
+}
+DIV#userlogin FORM#userlogin2 H2 {
+	PADDING-TOP: 0px
+}
+DIV#userlogin .captcha {
+	BORDER-BOTTOM: #bbb 1px solid; BORDER-LEFT: #bbb 1px solid; =
+PADDING-BOTTOM: 1.5em; BACKGROUND-COLOR: white; PADDING-LEFT: 2em; =
+PADDING-RIGHT: 2em; BORDER-TOP: #bbb 1px solid; BORDER-RIGHT: #bbb 1px =
+solid; PADDING-TOP: 1.5em
+}
+DIV#userloginForm .captcha {
+	BORDER-BOTTOM: #bbb 1px solid; BORDER-LEFT: #bbb 1px solid; =
+PADDING-BOTTOM: 1.5em; BACKGROUND-COLOR: white; PADDING-LEFT: 2em; =
+PADDING-RIGHT: 2em; BORDER-TOP: #bbb 1px solid; BORDER-RIGHT: #bbb 1px =
+solid; PADDING-TOP: 1.5em
+}
+#loginend {
+	CLEAR: both
+}
+#signupend {
+	CLEAR: both
+}
+#userloginprompt {
+	FONT-SIZE: 85%
+}
+#languagelinks {
+	FONT-SIZE: 85%
+}
+#login-sectiontip {
+	LINE-HEIGHT: 1.2; FONT-SIZE: 85%; PADDING-TOP: 2em
+}
+#userlogin .loginText {
+	WIDTH: 12em
+}
+#userlogin .loginPassword {
+	WIDTH: 12em
+}
+#userloginlink A {
+	FONT-WEIGHT: bold
+}
+#wpLoginattempt {
+	FONT-WEIGHT: bold
+}
+#wpCreateaccount {
+	FONT-WEIGHT: bold
+}
+* > HTML #p-cactions LI {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: =
+medium none; BORDER-RIGHT: medium none
+}
+* > HTML #p-cactions LI A {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: #aaa 1px solid; BORDER-TOP: =
+#aaa 1px solid; BORDER-RIGHT: #aaa 1px solid
+}
+* > HTML #p-cactions LI.selected A {
+	BORDER-BOTTOM-COLOR: #fabd23; BORDER-TOP-COLOR: #fabd23; =
+BORDER-RIGHT-COLOR: #fabd23; BORDER-LEFT-COLOR: #fabd23
+}
+* > HTML #f-poweredbyico {
+	WIDTH: 88px
+}
+* > HTML #f-copyrightico {
+	WIDTH: 88px
+}
+* > HTML #bodyContent {
+	PADDING-BOTTOM: 25px; OVERFLOW-X: auto; WIDTH: 100%
+}
+* > HTML #bodyContent PRE {
+	PADDING-BOTTOM: 25px; OVERFLOW-X: auto; WIDTH: 100%
+}
+* HTML #footer {
+	MARGIN-TOP: 0px
+}
+* HTML #column-content {
+	DISPLAY: inline; MARGIN-BOTTOM: 0px
+}
+* HTML DIV.editsection {
+	FONT-SIZE: smaller
+}
+#pagehistory LI.selected {
+	POSITION: relative
+}
+* > HTML #column-content {
+	FLOAT: none
+}
+* > HTML #column-one {
+	POSITION: absolute; TOP: 0px; LEFT: 0px
+}
+* > HTML #footer {
+	MARGIN-LEFT: 13.2em
+}
+.redirectText {
+	MARGIN: 5px; FONT-SIZE: 150%
+}
+.printfooter {
+	DISPLAY: none
+}
+DIV.patrollink {
+	CLEAR: both
+}
+.sharedUploadNotice {
+	FONT-STYLE: italic
+}
+SPAN.updatedmarker {
+	BACKGROUND-COLOR: #0f0; COLOR: black
+}
+.previewnote {
+	MARGIN-BOTTOM: 1em; COLOR: #c00
+}
+.previewnote P {
+	TEXT-INDENT: 3em; MARGIN: 0.8em 0px
+}
+.editExternally {
+	BORDER-BOTTOM: gray 1px solid; TEXT-ALIGN: center; BORDER-LEFT: gray =
+1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #ffffff; MARGIN-TOP: =
+0.5em; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; FLOAT: left; FONT-SIZE: =
+small; BORDER-TOP: gray 1px solid; BORDER-RIGHT: gray 1px solid; =
+PADDING-TOP: 3px
+}
+.editExternallyHelp {
+	FONT-STYLE: italic; COLOR: gray
+}
+.toggle {
+	TEXT-INDENT: -2em; MARGIN-LEFT: 2em
+}
+INPUT#wpSummary {
+	WIDTH: 80%
+}
+INPUT#wpSave {
+	MARGIN-RIGHT: 0.33em
+}
+INPUT#wpDiff {
+	MARGIN-RIGHT: 0.33em
+}
+#wpSave {
+	FONT-WEIGHT: bold
+}
+TABLE.revisionform_default {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; =
+BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid
+}
+TABLE.revisionform_focus {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; =
+BACKGROUND-COLOR: #00bbff; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: =
+#000000 1px solid
+}
+TR.revision_tr_default {
+	BACKGROUND-COLOR: #eeeeee
+}
+TR.revision_tr_first {
+	BACKGROUND-COLOR: #dddddd
+}
+P.revision_saved {
+	COLOR: green; FONT-WEIGHT: bold
+}
+DIV.noarticletext {
+	BORDER-BOTTOM: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; =
+PADDING-BOTTOM: 0.2em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em; =
+BACKGROUND: #fff; COLOR: #000; BORDER-TOP: #ccc 1px solid; BORDER-RIGHT: =
+#ccc 1px solid; PADDING-TOP: 0.2em
+}
+DIV#searchTargetContainer {
+	WIDTH: 90%; BACKGROUND: white; TOP: 10px; LEFT: 10px
+}
+DIV#searchTarget {
+	BORDER-BOTTOM: blue 1px solid; BORDER-LEFT: blue 1px solid; =
+PADDING-BOTTOM: 3px; MARGIN: 5px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; =
+BACKGROUND: #f0f0f0; BORDER-TOP: blue 1px solid; BORDER-RIGHT: blue 1px =
+solid; PADDING-TOP: 3px
+}
+DIV#searchTarget UL LI {
+	LIST-STYLE-TYPE: none; LIST-STYLE-IMAGE: none
+}
+DIV#searchTarget UL LI:before {
+	COLOR: orange; CONTENT: "\00BB \0020"
+}
+DIV#searchTargetHide {
+	BORDER-BOTTOM: black 1px solid; BORDER-LEFT: black 1px solid; =
+PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: =
+#dcdcdc; FLOAT: right; BORDER-TOP: black 1px solid; BORDER-RIGHT: black =
+1px solid; PADDING-TOP: 2px
+}
+#powersearch P {
+	MARGIN-TOP: 0px
+}
+DIV.multipageimagenavbox {
+	BORDER-BOTTOM: silver 1px solid; BORDER-LEFT: silver 1px solid; =
+PADDING-BOTTOM: 4px; MARGIN: 1em; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; =
+BACKGROUND: #f0f0f0; BORDER-TOP: silver 1px solid; BORDER-RIGHT: silver =
+1px solid; PADDING-TOP: 4px
+}
+DIV.multipageimagenavbox DIV.thumb {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN-LEFT: 2em; =
+BORDER-TOP: medium none; MARGIN-RIGHT: 2em; BORDER-RIGHT: medium none
+}
+DIV.multipageimagenavbox HR {
+	MARGIN: 6px
+}
+TABLE.multipageimage TD {
+	TEXT-ALIGN: center
+}
+.templatesUsed {
+	MARGIN-TOP: 1.5em
+}
+.mw-summary-preview {
+	MARGIN: 0.1em 0px
+}
+DIV.mw-lag-warn-normal {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; MARGIN: 3px auto; =
+PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+DIV.mw-lag-warn-high {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 3px; MARGIN: 3px auto; =
+PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+DIV.mw-lag-warn-normal {
+	BORDER-BOTTOM: #ffcc66 1px solid; BORDER-LEFT: #ffcc66 1px solid; =
+BACKGROUND-COLOR: #ffffcc; BORDER-TOP: #ffcc66 1px solid; BORDER-RIGHT: =
+#ffcc66 1px solid
+}
+DIV.mw-lag-warn-high {
+	BORDER-BOTTOM: #ff0033 2px solid; BORDER-LEFT: #ff0033 2px solid; =
+BACKGROUND-COLOR: #ffcccc; BORDER-TOP: #ff0033 2px solid; FONT-WEIGHT: =
+bold; BORDER-RIGHT: #ff0033 2px solid
+}
+.MediaTransformError {
+	PADDING-BOTTOM: 0.1em; BACKGROUND-COLOR: #ccc; PADDING-LEFT: 0.1em; =
+PADDING-RIGHT: 0.1em; PADDING-TOP: 0.1em
+}
+.MediaTransformError TD {
+	TEXT-ALIGN: center; FONT-SIZE: 90%; VERTICAL-ALIGN: middle
+}
+.os-suggest {
+	FONT-SIZE: 127%
+}
+.no-text-transform {
+	TEXT-TRANSFORM: none
+}
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-Location: http://mips.cs.pitt.edu/internalwiki/index.php?title=-&action=raw&maxage=18000&gen=css
+
+A.new {
+	COLOR: #cc2200
+}
+#quickbar A.new {
+	COLOR: #cc2200
+}
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/common/wikibits.js?270
+
+// MediaWiki JavaScript support functions=0A=
+=0A=
+var clientPC =3D navigator.userAgent.toLowerCase(); // Get client info=0A=
+var is_gecko =3D /gecko/.test( clientPC ) &&=0A=
+	!/khtml|spoofer|netscape\/7\.0/.test(clientPC);=0A=
+var webkit_match =3D clientPC.match(/applewebkit\/(\d+)/);=0A=
+if (webkit_match) {=0A=
+	var is_safari =3D clientPC.indexOf('applewebkit') !=3D -1 &&=0A=
+		clientPC.indexOf('spoofer') =3D=3D -1;=0A=
+	var is_safari_win =3D is_safari && clientPC.indexOf('windows') !=3D -1;=0A=
+	var webkit_version =3D parseInt(webkit_match[1]);=0A=
+}=0A=
+// For accesskeys; note that FF3+ is included here!=0A=
+var is_ff2 =3D /firefox\/[2-9]|minefield\/3/.test( clientPC );=0A=
+var ff2_bugs =3D /firefox\/2/.test( clientPC );=0A=
+// These aren't used here, but some custom scripts rely on them=0A=
+var is_ff2_win =3D is_ff2 && clientPC.indexOf('windows') !=3D -1;=0A=
+var is_ff2_x11 =3D is_ff2 && clientPC.indexOf('x11') !=3D -1;=0A=
+if (clientPC.indexOf('opera') !=3D -1) {=0A=
+	var is_opera =3D true;=0A=
+	var is_opera_preseven =3D window.opera && !document.childNodes;=0A=
+	var is_opera_seven =3D window.opera && document.childNodes;=0A=
+	var is_opera_95 =3D /opera\/(9\.[5-9]|[1-9][0-9])/.test( clientPC );=0A=
+	var opera6_bugs =3D is_opera_preseven;=0A=
+	var opera7_bugs =3D is_opera_seven && !is_opera_95;=0A=
+	var opera95_bugs =3D /opera\/(9\.5)/.test( clientPC );=0A=
+}=0A=
+// As recommended by =
+<http://msdn.microsoft.com/en-us/library/ms537509.aspx>,=0A=
+// avoiding false positives from moronic extensions that append to the =
+IE UA=0A=
+// string (bug 23171)=0A=
+var ie6_bugs =3D false;=0A=
+if ( /MSIE ([0-9]{1,}[\.0-9]{0,})/.exec( clientPC ) !=3D null=0A=
+&& parseFloat( RegExp.$1 ) <=3D 6.0 ) {=0A=
+	ie6_bugs =3D true;=0A=
+}=0A=
+=0A=
+// Global external objects used by this script.=0A=
+/*extern ta, stylepath, skin */=0A=
+=0A=
+// add any onload functions in this hook (please don't hard-code any =
+events in the xhtml source)=0A=
+var doneOnloadHook;=0A=
+=0A=
+if (!window.onloadFuncts) {=0A=
+	var onloadFuncts =3D [];=0A=
+}=0A=
+=0A=
+function addOnloadHook( hookFunct ) {=0A=
+	// Allows add-on scripts to add onload functions=0A=
+	if( !doneOnloadHook ) {=0A=
+		onloadFuncts[onloadFuncts.length] =3D hookFunct;=0A=
+	} else {=0A=
+		hookFunct();  // bug in MSIE script loading=0A=
+	}=0A=
+}=0A=
+=0A=
+function hookEvent( hookName, hookFunct ) {=0A=
+	addHandler( window, hookName, hookFunct );=0A=
+}=0A=
+=0A=
+function importScript( page ) {=0A=
+	// TODO: might want to introduce a utility function to match =
+wfUrlencode() in PHP=0A=
+	var uri =3D wgScript + '?title=3D' +=0A=
+		encodeURIComponent(page.replace(/ =
+/g,'_')).replace(/%2F/ig,'/').replace(/%3A/ig,':') +=0A=
+		'&action=3Draw&ctype=3Dtext/javascript';=0A=
+	return importScriptURI( uri );=0A=
+}=0A=
+=0A=
+var loadedScripts =3D {}; // included-scripts tracker=0A=
+function importScriptURI( url ) {=0A=
+	if ( loadedScripts[url] ) {=0A=
+		return null;=0A=
+	}=0A=
+	loadedScripts[url] =3D true;=0A=
+	var s =3D document.createElement( 'script' );=0A=
+	s.setAttribute( 'src', url );=0A=
+	s.setAttribute( 'type', 'text/javascript' );=0A=
+	document.getElementsByTagName('head')[0].appendChild( s );=0A=
+	return s;=0A=
+}=0A=
+=0A=
+function importStylesheet( page ) {=0A=
+	return importStylesheetURI( wgScript + =
+'?action=3Draw&ctype=3Dtext/css&title=3D' + encodeURIComponent( =
+page.replace(/ /g,'_') ) );=0A=
+}=0A=
+=0A=
+function importStylesheetURI( url, media ) {=0A=
+	var l =3D document.createElement( 'link' );=0A=
+	l.type =3D 'text/css';=0A=
+	l.rel =3D 'stylesheet';=0A=
+	l.href =3D url;=0A=
+	if( media ) {=0A=
+		l.media =3D media;=0A=
+	}=0A=
+	document.getElementsByTagName('head')[0].appendChild( l );=0A=
+	return l;=0A=
+}=0A=
+=0A=
+function appendCSS( text ) {=0A=
+	var s =3D document.createElement( 'style' );=0A=
+	s.type =3D 'text/css';=0A=
+	s.rel =3D 'stylesheet';=0A=
+	if ( s.styleSheet ) {=0A=
+		s.styleSheet.cssText =3D text; // IE=0A=
+	} else {=0A=
+		s.appendChild( document.createTextNode( text + '' ) ); // Safari =
+sometimes borks on null=0A=
+	}=0A=
+	document.getElementsByTagName('head')[0].appendChild( s );=0A=
+	return s;=0A=
+}=0A=
+=0A=
+// Special stylesheet links for Monobook only (see bug 14717)=0A=
+if ( typeof stylepath !=3D 'undefined' && skin =3D=3D 'monobook' ) {=0A=
+	if ( opera6_bugs ) {=0A=
+		importStylesheetURI( stylepath + '/' + skin + '/Opera6Fixes.css' );=0A=
+	} else if ( opera7_bugs ) {=0A=
+		importStylesheetURI( stylepath + '/' + skin + '/Opera7Fixes.css' );=0A=
+	} else if ( opera95_bugs ) {=0A=
+		importStylesheetURI( stylepath + '/' + skin + '/Opera9Fixes.css' );=0A=
+	} else if ( ff2_bugs ) {=0A=
+		importStylesheetURI( stylepath + '/' + skin + '/FF2Fixes.css' );=0A=
+	}=0A=
+}=0A=
+=0A=
+=0A=
+if ( wgBreakFrames ) {=0A=
+	// Un-trap us from framesets=0A=
+	if ( window.top !=3D window ) {=0A=
+		window.top.location =3D window.location;=0A=
+	}=0A=
+}=0A=
+=0A=
+function showTocToggle() {=0A=
+	if ( document.createTextNode ) {=0A=
+		// Uses DOM calls to avoid document.write + XHTML issues=0A=
+=0A=
+		var linkHolder =3D document.getElementById( 'toctitle' );=0A=
+		var existingLink =3D document.getElementById( 'togglelink' );=0A=
+		if ( !linkHolder || existingLink ) {=0A=
+			// Don't add the toggle link twice=0A=
+			return;=0A=
+		}=0A=
+=0A=
+		var outerSpan =3D document.createElement( 'span' );=0A=
+		outerSpan.className =3D 'toctoggle';=0A=
+=0A=
+		var toggleLink =3D document.createElement( 'a' );=0A=
+		toggleLink.id =3D 'togglelink';=0A=
+		toggleLink.className =3D 'internal';=0A=
+		toggleLink.href =3D 'javascript:toggleToc()';=0A=
+		toggleLink.appendChild( document.createTextNode( tocHideText ) );=0A=
+=0A=
+		outerSpan.appendChild( document.createTextNode( '[' ) );=0A=
+		outerSpan.appendChild( toggleLink );=0A=
+		outerSpan.appendChild( document.createTextNode( ']' ) );=0A=
+=0A=
+		linkHolder.appendChild( document.createTextNode( ' ' ) );=0A=
+		linkHolder.appendChild( outerSpan );=0A=
+=0A=
+		var cookiePos =3D document.cookie.indexOf( "hidetoc=3D" );=0A=
+		if ( cookiePos > -1 && document.cookie.charAt( cookiePos + 8 ) =3D=3D =
+1 ) {=0A=
+			toggleToc();=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+function changeText( el, newText ) {=0A=
+	// Safari work around=0A=
+	if ( el.innerText ) {=0A=
+		el.innerText =3D newText;=0A=
+	} else if ( el.firstChild && el.firstChild.nodeValue ) {=0A=
+		el.firstChild.nodeValue =3D newText;=0A=
+	}=0A=
+}=0A=
+=0A=
+function toggleToc() {=0A=
+	var tocmain =3D document.getElementById( 'toc' );=0A=
+	var toc =3D =
+document.getElementById('toc').getElementsByTagName('ul')[0];=0A=
+	var toggleLink =3D document.getElementById( 'togglelink' );=0A=
+=0A=
+	if ( toc && toggleLink && toc.style.display =3D=3D 'none' ) {=0A=
+		changeText( toggleLink, tocHideText );=0A=
+		toc.style.display =3D 'block';=0A=
+		document.cookie =3D "hidetoc=3D0";=0A=
+		tocmain.className =3D 'toc';=0A=
+	} else {=0A=
+		changeText( toggleLink, tocShowText );=0A=
+		toc.style.display =3D 'none';=0A=
+		document.cookie =3D "hidetoc=3D1";=0A=
+		tocmain.className =3D 'toc tochidden';=0A=
+	}=0A=
+}=0A=
+=0A=
+var mwEditButtons =3D [];=0A=
+var mwCustomEditButtons =3D []; // eg to add in MediaWiki:Common.js=0A=
+=0A=
+function escapeQuotes( text ) {=0A=
+	var re =3D new RegExp( "'", "g" );=0A=
+	text =3D text.replace( re, "\\'" );=0A=
+	re =3D new RegExp( "\\n", "g" );=0A=
+	text =3D text.replace( re, "\\n" );=0A=
+	return escapeQuotesHTML( text );=0A=
+}=0A=
+=0A=
+function escapeQuotesHTML( text ) {=0A=
+	var re =3D new RegExp( '&', "g" );=0A=
+	text =3D text.replace( re, "&amp;" );=0A=
+	re =3D new RegExp( '"', "g" );=0A=
+	text =3D text.replace( re, "&quot;" );=0A=
+	re =3D new RegExp( '<', "g" );=0A=
+	text =3D text.replace( re, "&lt;" );=0A=
+	re =3D new RegExp( '>', "g" );=0A=
+	text =3D text.replace( re, "&gt;" );=0A=
+	return text;=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Set the accesskey prefix based on browser detection.=0A=
+ */=0A=
+var tooltipAccessKeyPrefix =3D 'alt-';=0A=
+if ( is_opera ) {=0A=
+	tooltipAccessKeyPrefix =3D 'shift-esc-';=0A=
+} else if ( !is_safari_win && is_safari && webkit_version > 526 ) {=0A=
+	tooltipAccessKeyPrefix =3D 'ctrl-alt-';=0A=
+} else if ( !is_safari_win && ( is_safari=0A=
+		|| clientPC.indexOf('mac') !=3D -1=0A=
+		|| clientPC.indexOf('konqueror') !=3D -1 ) ) {=0A=
+	tooltipAccessKeyPrefix =3D 'ctrl-';=0A=
+} else if ( is_ff2 ) {=0A=
+	tooltipAccessKeyPrefix =3D 'alt-shift-';=0A=
+}=0A=
+var tooltipAccessKeyRegexp =3D /\[(ctrl-)?(alt-)?(shift-)?(esc-)?(.)\]$/;=0A=
+=0A=
+/**=0A=
+ * Add the appropriate prefix to the accesskey shown in the tooltip.=0A=
+ * If the nodeList parameter is given, only those nodes are updated;=0A=
+ * otherwise, all the nodes that will probably have accesskeys by=0A=
+ * default are updated.=0A=
+ *=0A=
+ * @param Array nodeList -- list of elements to update=0A=
+ */=0A=
+function updateTooltipAccessKeys( nodeList ) {=0A=
+	if ( !nodeList ) {=0A=
+		// Rather than scan all links on the whole page, we can just scan these=0A=
+		// containers which contain the relevant links. This is really just an=0A=
+		// optimization technique.=0A=
+		var linkContainers =3D [=0A=
+			'column-one', // Monobook and Modern=0A=
+			'mw-head', 'mw-panel', 'p-logo' // Vector=0A=
+		];=0A=
+		for ( var i in linkContainers ) {=0A=
+			var linkContainer =3D document.getElementById( linkContainers[i] );=0A=
+			if ( linkContainer ) {=0A=
+				updateTooltipAccessKeys( linkContainer.getElementsByTagName( 'a' ) );=0A=
+			}=0A=
+		}=0A=
+		// these are rare enough that no such optimization is needed=0A=
+		updateTooltipAccessKeys( document.getElementsByTagName( 'input' ) );=0A=
+		updateTooltipAccessKeys( document.getElementsByTagName( 'label' ) );=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	for ( var i =3D 0; i < nodeList.length; i++ ) {=0A=
+		var element =3D nodeList[i];=0A=
+		var tip =3D element.getAttribute( 'title' );=0A=
+		if ( tip && tooltipAccessKeyRegexp.exec( tip ) ) {=0A=
+			tip =3D tip.replace(tooltipAccessKeyRegexp,=0A=
+					  '[' + tooltipAccessKeyPrefix + "$5]");=0A=
+			element.setAttribute( 'title', tip );=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Add a link to one of the portlet menus on the page, including:=0A=
+ *=0A=
+ * p-cactions: Content actions (shown as tabs above the main content in =
+Monobook)=0A=
+ * p-personal: Personal tools (shown at the top right of the page in =
+Monobook)=0A=
+ * p-navigation: Navigation=0A=
+ * p-tb: Toolbox=0A=
+ *=0A=
+ * This function exists for the convenience of custom JS authors.  All=0A=
+ * but the first three parameters are optional, though providing at=0A=
+ * least an id and a tooltip is recommended.=0A=
+ *=0A=
+ * By default the new link will be added to the end of the list.  To=0A=
+ * add the link before a given existing item, pass the DOM node of=0A=
+ * that item (easily obtained with document.getElementById()) as the=0A=
+ * nextnode parameter; to add the link _after_ an existing item, pass=0A=
+ * the node's nextSibling instead.=0A=
+ *=0A=
+ * @param String portlet -- id of the target portlet ("p-cactions", =
+"p-personal", "p-navigation" or "p-tb")=0A=
+ * @param String href -- link URL=0A=
+ * @param String text -- link text (will be automatically lowercased by =
+CSS for p-cactions in Monobook)=0A=
+ * @param String id -- id of the new item, should be unique and =
+preferably have the appropriate prefix ("ca-", "pt-", "n-" or "t-")=0A=
+ * @param String tooltip -- text to show when hovering over the link, =
+without accesskey suffix=0A=
+ * @param String accesskey -- accesskey to activate this link (one =
+character, try to avoid conflicts)=0A=
+ * @param Node nextnode -- the DOM node before which the new item should =
+be added, should be another item in the same list=0A=
+ *=0A=
+ * @return Node -- the DOM node of the new item (an LI element) or null=0A=
+ */=0A=
+function addPortletLink( portlet, href, text, id, tooltip, accesskey, =
+nextnode ) {=0A=
+	var root =3D document.getElementById( portlet );=0A=
+	if ( !root ) {=0A=
+		return null;=0A=
+	}=0A=
+	var node =3D root.getElementsByTagName( 'ul' )[0];=0A=
+	if ( !node ) {=0A=
+		return null;=0A=
+	}=0A=
+=0A=
+	// unhide portlet if it was hidden before=0A=
+	root.className =3D root.className.replace( /(^| )emptyPortlet( |$)/, =
+"$2" );=0A=
+=0A=
+	var span =3D document.createElement( 'span' );=0A=
+	span.appendChild( document.createTextNode( text ) );=0A=
+=0A=
+	var link =3D document.createElement( 'a' );=0A=
+	link.appendChild( span );=0A=
+	link.href =3D href;=0A=
+=0A=
+	var item =3D document.createElement( 'li' );=0A=
+	item.appendChild( link );=0A=
+	if ( id ) {=0A=
+		item.id =3D id;=0A=
+	}=0A=
+=0A=
+	if ( accesskey ) {=0A=
+		link.setAttribute( 'accesskey', accesskey );=0A=
+		tooltip +=3D ' [' + accesskey + ']';=0A=
+	}=0A=
+	if ( tooltip ) {=0A=
+		link.setAttribute( 'title', tooltip );=0A=
+	}=0A=
+	if ( accesskey && tooltip ) {=0A=
+		updateTooltipAccessKeys( new Array( link ) );=0A=
+	}=0A=
+=0A=
+	if ( nextnode && nextnode.parentNode =3D=3D node ) {=0A=
+		node.insertBefore( item, nextnode );=0A=
+	} else {=0A=
+		node.appendChild( item );  // IE compatibility (?)=0A=
+	}=0A=
+=0A=
+	return item;=0A=
+}=0A=
+=0A=
+function getInnerText( el ) {=0A=
+	if ( typeof el =3D=3D 'string' ) {=0A=
+		return el;=0A=
+	}=0A=
+	if ( typeof el =3D=3D 'undefined' ) {=0A=
+		return el;=0A=
+	}=0A=
+	if ( el.textContent ) {=0A=
+		return el.textContent; // not needed but it is faster=0A=
+	}=0A=
+	if ( el.innerText ) {=0A=
+		return el.innerText; // IE doesn't have textContent=0A=
+	}=0A=
+	var str =3D '';=0A=
+=0A=
+	var cs =3D el.childNodes;=0A=
+	var l =3D cs.length;=0A=
+	for ( var i =3D 0; i < l; i++ ) {=0A=
+		switch ( cs[i].nodeType ) {=0A=
+			case 1: // ELEMENT_NODE=0A=
+				str +=3D ts_getInnerText( cs[i] );=0A=
+				break;=0A=
+			case 3:	// TEXT_NODE=0A=
+				str +=3D cs[i].nodeValue;=0A=
+				break;=0A=
+		}=0A=
+	}=0A=
+	return str;=0A=
+}=0A=
+=0A=
+/* Dummy for deprecated function */=0A=
+window.ta =3D [];=0A=
+function akeytt( doId ) {=0A=
+}=0A=
+=0A=
+var checkboxes;=0A=
+var lastCheckbox;=0A=
+=0A=
+function setupCheckboxShiftClick() {=0A=
+	checkboxes =3D [];=0A=
+	lastCheckbox =3D null;=0A=
+	var inputs =3D document.getElementsByTagName( 'input' );=0A=
+	addCheckboxClickHandlers( inputs );=0A=
+}=0A=
+=0A=
+function addCheckboxClickHandlers( inputs, start ) {=0A=
+	if ( !start ) {=0A=
+		start =3D 0;=0A=
+	}=0A=
+=0A=
+	var finish =3D start + 250;=0A=
+	if ( finish > inputs.length ) {=0A=
+		finish =3D inputs.length;=0A=
+	}=0A=
+=0A=
+	for ( var i =3D start; i < finish; i++ ) {=0A=
+		var cb =3D inputs[i];=0A=
+		if ( !cb.type || cb.type.toLowerCase() !=3D 'checkbox' ) {=0A=
+			continue;=0A=
+		}=0A=
+		var end =3D checkboxes.length;=0A=
+		checkboxes[end] =3D cb;=0A=
+		cb.index =3D end;=0A=
+		cb.onclick =3D checkboxClickHandler;=0A=
+	}=0A=
+=0A=
+	if ( finish < inputs.length ) {=0A=
+		setTimeout( function() {=0A=
+			addCheckboxClickHandlers( inputs, finish );=0A=
+		}, 200 );=0A=
+	}=0A=
+}=0A=
+=0A=
+function checkboxClickHandler( e ) {=0A=
+	if ( typeof e =3D=3D 'undefined' ) {=0A=
+		e =3D window.event;=0A=
+	}=0A=
+	if ( !e.shiftKey || lastCheckbox =3D=3D=3D null ) {=0A=
+		lastCheckbox =3D this.index;=0A=
+		return true;=0A=
+	}=0A=
+	var endState =3D this.checked;=0A=
+	var start, finish;=0A=
+	if ( this.index < lastCheckbox ) {=0A=
+		start =3D this.index + 1;=0A=
+		finish =3D lastCheckbox;=0A=
+	} else {=0A=
+		start =3D lastCheckbox;=0A=
+		finish =3D this.index - 1;=0A=
+	}=0A=
+	for ( var i =3D start; i <=3D finish; ++i ) {=0A=
+		checkboxes[i].checked =3D endState;=0A=
+		if( i > start && typeof checkboxes[i].onchange =3D=3D 'function' ) {=0A=
+			checkboxes[i].onchange(); // fire triggers=0A=
+		}=0A=
+	}=0A=
+	lastCheckbox =3D this.index;=0A=
+	return true;=0A=
+}=0A=
+=0A=
+=0A=
+/*=0A=
+	Written by Jonathan Snook, http://www.snook.ca/jonathan=0A=
+	Add-ons by Robert Nyman, http://www.robertnyman.com=0A=
+	Author says "The credit comment is all it takes, no license. Go crazy =
+with it!:-)"=0A=
+	From =
+http://www.robertnyman.com/2005/11/07/the-ultimate-getelementsbyclassname=
+/=0A=
+*/=0A=
+function getElementsByClassName( oElm, strTagName, oClassNames ) {=0A=
+	var arrReturnElements =3D new Array();=0A=
+	if ( typeof( oElm.getElementsByClassName ) =3D=3D 'function' ) {=0A=
+		/* Use a native implementation where possible FF3, Saf3.2, Opera 9.5 */=0A=
+		var arrNativeReturn =3D oElm.getElementsByClassName( oClassNames );=0A=
+		if ( strTagName =3D=3D '*' ) {=0A=
+			return arrNativeReturn;=0A=
+		}=0A=
+		for ( var h =3D 0; h < arrNativeReturn.length; h++ ) {=0A=
+			if( arrNativeReturn[h].tagName.toLowerCase() =3D=3D =
+strTagName.toLowerCase() ) {=0A=
+				arrReturnElements[arrReturnElements.length] =3D arrNativeReturn[h];=0A=
+			}=0A=
+		}=0A=
+		return arrReturnElements;=0A=
+	}=0A=
+	var arrElements =3D ( strTagName =3D=3D '*' && oElm.all ) ? oElm.all : =
+oElm.getElementsByTagName( strTagName );=0A=
+	var arrRegExpClassNames =3D new Array();=0A=
+	if( typeof oClassNames =3D=3D 'object' ) {=0A=
+		for( var i =3D 0; i < oClassNames.length; i++ ) {=0A=
+			arrRegExpClassNames[arrRegExpClassNames.length] =3D=0A=
+				new RegExp("(^|\\s)" + oClassNames[i].replace(/\-/g, "\\-") + =
+"(\\s|$)");=0A=
+		}=0A=
+	} else {=0A=
+		arrRegExpClassNames[arrRegExpClassNames.length] =3D=0A=
+			new RegExp("(^|\\s)" + oClassNames.replace(/\-/g, "\\-") + "(\\s|$)");=0A=
+	}=0A=
+	var oElement;=0A=
+	var bMatchesAll;=0A=
+	for( var j =3D 0; j < arrElements.length; j++ ) {=0A=
+		oElement =3D arrElements[j];=0A=
+		bMatchesAll =3D true;=0A=
+		for( var k =3D 0; k < arrRegExpClassNames.length; k++ ) {=0A=
+			if( !arrRegExpClassNames[k].test( oElement.className ) ) {=0A=
+				bMatchesAll =3D false;=0A=
+				break;=0A=
+			}=0A=
+		}=0A=
+		if( bMatchesAll ) {=0A=
+			arrReturnElements[arrReturnElements.length] =3D oElement;=0A=
+		}=0A=
+	}=0A=
+	return ( arrReturnElements );=0A=
+}=0A=
+=0A=
+function redirectToFragment( fragment ) {=0A=
+	var match =3D navigator.userAgent.match(/AppleWebKit\/(\d+)/);=0A=
+	if ( match ) {=0A=
+		var webKitVersion =3D parseInt( match[1] );=0A=
+		if ( webKitVersion < 420 ) {=0A=
+			// Released Safari w/ WebKit 418.9.1 messes up horribly=0A=
+			// Nightlies of 420+ are ok=0A=
+			return;=0A=
+		}=0A=
+	}=0A=
+	if ( is_gecko ) {=0A=
+		// Mozilla needs to wait until after load, otherwise the window =
+doesn't scroll=0A=
+		addOnloadHook(function() {=0A=
+			if ( window.location.hash =3D=3D '' ) {=0A=
+				window.location.hash =3D fragment;=0A=
+			}=0A=
+		});=0A=
+	} else {=0A=
+		if ( window.location.hash =3D=3D '' ) {=0A=
+			window.location.hash =3D fragment;=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+/*=0A=
+ * Table sorting script based on one (c) 1997-2006 Stuart Langridge and =
+Joost=0A=
+ * de Valk:=0A=
+ * http://www.joostdevalk.nl/code/sortable-table/=0A=
+ * http://www.kryogenix.org/code/browser/sorttable/=0A=
+ *=0A=
+ * @todo don't break on colspans/rowspans (bug 8028)=0A=
+ * @todo language-specific digit grouping/decimals (bug 8063)=0A=
+ * @todo support all accepted date formats (bug 8226)=0A=
+ */=0A=
+=0A=
+var ts_image_path =3D stylepath + '/common/images/';=0A=
+var ts_image_up =3D 'sort_up.gif';=0A=
+var ts_image_down =3D 'sort_down.gif';=0A=
+var ts_image_none =3D 'sort_none.gif';=0A=
+var ts_europeandate =3D wgContentLanguage !=3D 'en'; // The =
+non-American-inclined can change to "true"=0A=
+var ts_alternate_row_colors =3D false;=0A=
+var ts_number_transform_table =3D null;=0A=
+var ts_number_regex =3D null;=0A=
+=0A=
+function sortables_init() {=0A=
+	var idnum =3D 0;=0A=
+	// Find all tables with class sortable and make them sortable=0A=
+	var tables =3D getElementsByClassName( document, 'table', 'sortable' );=0A=
+	for ( var ti =3D 0; ti < tables.length ; ti++ ) {=0A=
+		if ( !tables[ti].id ) {=0A=
+			tables[ti].setAttribute( 'id', 'sortable_table_id_' + idnum );=0A=
+			++idnum;=0A=
+		}=0A=
+		ts_makeSortable( tables[ti] );=0A=
+	}=0A=
+}=0A=
+=0A=
+function ts_makeSortable( table ) {=0A=
+	var firstRow;=0A=
+	if ( table.rows && table.rows.length > 0 ) {=0A=
+		if ( table.tHead && table.tHead.rows.length > 0 ) {=0A=
+			firstRow =3D table.tHead.rows[table.tHead.rows.length-1];=0A=
+		} else {=0A=
+			firstRow =3D table.rows[0];=0A=
+		}=0A=
+	}=0A=
+	if ( !firstRow ) {=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	// We have a first row: assume it's the header, and make its contents =
+clickable links=0A=
+	for ( var i =3D 0; i < firstRow.cells.length; i++ ) {=0A=
+		var cell =3D firstRow.cells[i];=0A=
+		if ( (' ' + cell.className + ' ').indexOf(' unsortable ') =3D=3D -1 ) {=0A=
+			cell.innerHTML +=3D '<a href=3D"#" class=3D"sortheader" '=0A=
+				+ 'onclick=3D"ts_resortTable(this);return false;">'=0A=
+				+ '<span class=3D"sortarrow">'=0A=
+				+ '<img src=3D"'=0A=
+				+ ts_image_path=0A=
+				+ ts_image_none=0A=
+				+ '" alt=3D"&darr;"/></span></a>';=0A=
+		}=0A=
+	}=0A=
+	if ( ts_alternate_row_colors ) {=0A=
+		ts_alternate( table );=0A=
+	}=0A=
+}=0A=
+=0A=
+function ts_getInnerText( el ) {=0A=
+	return getInnerText( el );=0A=
+}=0A=
+=0A=
+function ts_resortTable( lnk ) {=0A=
+	// get the span=0A=
+	var span =3D lnk.getElementsByTagName('span')[0];=0A=
+=0A=
+	var td =3D lnk.parentNode;=0A=
+	var tr =3D td.parentNode;=0A=
+	var column =3D td.cellIndex;=0A=
+=0A=
+	var table =3D tr.parentNode;=0A=
+	while ( table && !( table.tagName && table.tagName.toLowerCase() =3D=3D =
+'table' ) ) {=0A=
+		table =3D table.parentNode;=0A=
+	}=0A=
+	if ( !table ) {=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	if ( table.rows.length <=3D 1 ) {=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	// Generate the number transform table if it's not done already=0A=
+	if ( ts_number_transform_table =3D=3D=3D null ) {=0A=
+		ts_initTransformTable();=0A=
+	}=0A=
+=0A=
+	// Work out a type for the column=0A=
+	// Skip the first row if that's where the headings are=0A=
+	var rowStart =3D ( table.tHead && table.tHead.rows.length > 0 ? 0 : 1 );=0A=
+=0A=
+	var itm =3D '';=0A=
+	for ( var i =3D rowStart; i < table.rows.length; i++ ) {=0A=
+		if ( table.rows[i].cells.length > column ) {=0A=
+			itm =3D ts_getInnerText(table.rows[i].cells[column]);=0A=
+			itm =3D itm.replace(/^[\s\xa0]+/, '').replace(/[\s\xa0]+$/, '');=0A=
+			if ( itm !=3D '' ) {=0A=
+				break;=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+=0A=
+	// TODO: bug 8226, localised date formats=0A=
+	var sortfn =3D ts_sort_generic;=0A=
+	var preprocessor =3D ts_toLowerCase;=0A=
+	if ( /^\d\d[\/. -][a-zA-Z]{3}[\/. -]\d\d\d\d$/.test( itm ) ) {=0A=
+		preprocessor =3D ts_dateToSortKey;=0A=
+	} else if ( /^\d\d[\/.-]\d\d[\/.-]\d\d\d\d$/.test( itm ) ) {=0A=
+		preprocessor =3D ts_dateToSortKey;=0A=
+	} else if ( /^\d\d[\/.-]\d\d[\/.-]\d\d$/.test( itm ) ) {=0A=
+		preprocessor =3D ts_dateToSortKey;=0A=
+		// (minus sign)([pound dollar euro yen currency]|cents)=0A=
+	} else if ( /(^([-\u2212] =
+*)?[\u00a3$\u20ac\u00a4\u00a5]|\u00a2$)/.test( itm ) ) {=0A=
+		preprocessor =3D ts_currencyToSortKey;=0A=
+	} else if ( ts_number_regex.test( itm ) ) {=0A=
+		preprocessor =3D ts_parseFloat;=0A=
+	}=0A=
+=0A=
+	var reverse =3D ( span.getAttribute( 'sortdir' ) =3D=3D 'down' );=0A=
+=0A=
+	var newRows =3D new Array();=0A=
+	var staticRows =3D new Array();=0A=
+	for ( var j =3D rowStart; j < table.rows.length; j++ ) {=0A=
+		var row =3D table.rows[j];=0A=
+		if( (' ' + row.className + ' ').indexOf(' unsortable ') < 0 ) {=0A=
+			var keyText =3D ts_getInnerText( row.cells[column] );=0A=
+			if( keyText =3D=3D=3D undefined ) {=0A=
+				keyText =3D ''; =0A=
+			}=0A=
+			var oldIndex =3D ( reverse ? -j : j );=0A=
+			var preprocessed =3D preprocessor( keyText.replace(/^[\s\xa0]+/, =
+'').replace(/[\s\xa0]+$/, '') );=0A=
+=0A=
+			newRows[newRows.length] =3D new Array( row, preprocessed, oldIndex );=0A=
+		} else {=0A=
+			staticRows[staticRows.length] =3D new Array( row, false, j-rowStart );=0A=
+		}=0A=
+	}=0A=
+=0A=
+	newRows.sort( sortfn );=0A=
+=0A=
+	var arrowHTML;=0A=
+	if ( reverse ) {=0A=
+		arrowHTML =3D '<img src=3D"' + ts_image_path + ts_image_down + '" =
+alt=3D"&darr;"/>';=0A=
+		newRows.reverse();=0A=
+		span.setAttribute( 'sortdir', 'up' );=0A=
+	} else {=0A=
+		arrowHTML =3D '<img src=3D"' + ts_image_path + ts_image_up + '" =
+alt=3D"&uarr;"/>';=0A=
+		span.setAttribute( 'sortdir', 'down' );=0A=
+	}=0A=
+=0A=
+	for ( var i =3D 0; i < staticRows.length; i++ ) {=0A=
+		var row =3D staticRows[i];=0A=
+		newRows.splice( row[2], 0, row );=0A=
+	}=0A=
+=0A=
+	// We appendChild rows that already exist to the tbody, so it moves =
+them rather than creating new ones=0A=
+	// don't do sortbottom rows=0A=
+	for ( var i =3D 0; i < newRows.length; i++ ) {=0A=
+		if ( ( ' ' + newRows[i][0].className + ' ').indexOf(' sortbottom ') =
+=3D=3D -1 ) {=0A=
+			table.tBodies[0].appendChild( newRows[i][0] );=0A=
+		}=0A=
+	}=0A=
+	// do sortbottom rows only=0A=
+	for ( var i =3D 0; i < newRows.length; i++ ) {=0A=
+		if ( ( ' ' + newRows[i][0].className + ' ').indexOf(' sortbottom ') =
+!=3D -1 ) {=0A=
+			table.tBodies[0].appendChild( newRows[i][0] );=0A=
+		}=0A=
+	}=0A=
+=0A=
+	// Delete any other arrows there may be showing=0A=
+	var spans =3D getElementsByClassName( tr, 'span', 'sortarrow' );=0A=
+	for ( var i =3D 0; i < spans.length; i++ ) {=0A=
+		spans[i].innerHTML =3D '<img src=3D"' + ts_image_path + ts_image_none =
++ '" alt=3D"&darr;"/>';=0A=
+	}=0A=
+	span.innerHTML =3D arrowHTML;=0A=
+=0A=
+	if ( ts_alternate_row_colors ) {=0A=
+		ts_alternate( table );=0A=
+	}=0A=
+}=0A=
+=0A=
+function ts_initTransformTable() {=0A=
+	if ( typeof wgSeparatorTransformTable =3D=3D 'undefined'=0A=
+			|| ( wgSeparatorTransformTable[0] =3D=3D '' && =
+wgDigitTransformTable[2] =3D=3D '' ) )=0A=
+	{=0A=
+		digitClass =3D "[0-9,.]";=0A=
+		ts_number_transform_table =3D false;=0A=
+	} else {=0A=
+		ts_number_transform_table =3D {};=0A=
+		// Unpack the transform table=0A=
+		// Separators=0A=
+		ascii =3D wgSeparatorTransformTable[0].split("\t");=0A=
+		localised =3D wgSeparatorTransformTable[1].split("\t");=0A=
+		for ( var i =3D 0; i < ascii.length; i++ ) {=0A=
+			ts_number_transform_table[localised[i]] =3D ascii[i];=0A=
+		}=0A=
+		// Digits=0A=
+		ascii =3D wgDigitTransformTable[0].split("\t");=0A=
+		localised =3D wgDigitTransformTable[1].split("\t");=0A=
+		for ( var i =3D 0; i < ascii.length; i++ ) {=0A=
+			ts_number_transform_table[localised[i]] =3D ascii[i];=0A=
+		}=0A=
+=0A=
+		// Construct regex for number identification=0A=
+		digits =3D ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', =
+'\\.'];=0A=
+		maxDigitLength =3D 1;=0A=
+		for ( var digit in ts_number_transform_table ) {=0A=
+			// Escape regex metacharacters=0A=
+			digits.push(=0A=
+				digit.replace( /[\\\\$\*\+\?\.\(\)\|\{\}\[\]\-]/,=0A=
+					function( s ) { return '\\' + s; } )=0A=
+			);=0A=
+			if ( digit.length > maxDigitLength ) {=0A=
+				maxDigitLength =3D digit.length;=0A=
+			}=0A=
+		}=0A=
+		if ( maxDigitLength > 1 ) {=0A=
+			digitClass =3D '[' + digits.join( '', digits ) + ']';=0A=
+		} else {=0A=
+			digitClass =3D '(' + digits.join( '|', digits ) + ')';=0A=
+		}=0A=
+	}=0A=
+=0A=
+	// We allow a trailing percent sign, which we just strip.  This works =
+fine=0A=
+	// if percents and regular numbers aren't being mixed.=0A=
+	ts_number_regex =3D new RegExp(=0A=
+		"^(" +=0A=
+			"[-+\u2212]?[0-9][0-9,]*(\\.[0-9,]*)?(E[-+\u2212]?[0-9][0-9,]*)?" + =
+// Fortran-style scientific=0A=
+			"|" +=0A=
+			"[-+\u2212]?" + digitClass + "+%?" + // Generic localised=0A=
+		")$", "i"=0A=
+	);=0A=
+}=0A=
+=0A=
+function ts_toLowerCase( s ) {=0A=
+	return s.toLowerCase();=0A=
+}=0A=
+=0A=
+function ts_dateToSortKey( date ) {=0A=
+	// y2k notes: two digit years less than 50 are treated as 20XX, greater =
+than 50 are treated as 19XX=0A=
+	if ( date.length =3D=3D 11 ) {=0A=
+		switch ( date.substr( 3, 3 ).toLowerCase() ) {=0A=
+			case 'jan':=0A=
+				var month =3D '01';=0A=
+				break;=0A=
+			case 'feb':=0A=
+				var month =3D '02';=0A=
+				break;=0A=
+			case 'mar':=0A=
+				var month =3D '03';=0A=
+				break;=0A=
+			case 'apr':=0A=
+				var month =3D '04';=0A=
+				break;=0A=
+			case 'may':=0A=
+				var month =3D '05';=0A=
+				break;=0A=
+			case 'jun':=0A=
+				var month =3D '06';=0A=
+				break;=0A=
+			case 'jul':=0A=
+				var month =3D '07';=0A=
+				break;=0A=
+			case 'aug':=0A=
+				var month =3D '08';=0A=
+				break;=0A=
+			case 'sep':=0A=
+				var month =3D '09';=0A=
+				break;=0A=
+			case 'oct':=0A=
+				var month =3D '10';=0A=
+				break;=0A=
+			case 'nov':=0A=
+				var month =3D '11';=0A=
+				break;=0A=
+			case 'dec':=0A=
+				var month =3D '12';=0A=
+				break;=0A=
+			// default: var month =3D '00';=0A=
+		}=0A=
+		return date.substr( 7, 4 ) + month + date.substr( 0, 2 );=0A=
+	} else if ( date.length =3D=3D 10 ) {=0A=
+		if ( ts_europeandate =3D=3D false ) {=0A=
+			return date.substr( 6, 4 ) + date.substr( 0, 2 ) + date.substr( 3, 2 =
+);=0A=
+		} else {=0A=
+			return date.substr( 6, 4 ) + date.substr( 3, 2 ) + date.substr( 0, 2 =
+);=0A=
+		}=0A=
+	} else if ( date.length =3D=3D 8 ) {=0A=
+		yr =3D date.substr( 6, 2 );=0A=
+		if ( parseInt( yr ) < 50 ) {=0A=
+			yr =3D '20' + yr;=0A=
+		} else {=0A=
+			yr =3D '19' + yr;=0A=
+		}=0A=
+		if ( ts_europeandate =3D=3D true ) {=0A=
+			return yr + date.substr( 3, 2 ) + date.substr( 0, 2 );=0A=
+		} else {=0A=
+			return yr + date.substr( 0, 2 ) + date.substr( 3, 2 );=0A=
+		}=0A=
+	}=0A=
+	return '00000000';=0A=
+}=0A=
+=0A=
+function ts_parseFloat( s ) {=0A=
+	if ( !s ) {=0A=
+		return 0;=0A=
+	}=0A=
+	if ( ts_number_transform_table !=3D false ) {=0A=
+		var newNum =3D '', c;=0A=
+=0A=
+		for ( var p =3D 0; p < s.length; p++ ) {=0A=
+			c =3D s.charAt( p );=0A=
+			if ( c in ts_number_transform_table ) {=0A=
+				newNum +=3D ts_number_transform_table[c];=0A=
+			} else {=0A=
+				newNum +=3D c;=0A=
+			}=0A=
+		}=0A=
+		s =3D newNum;=0A=
+	}=0A=
+	num =3D parseFloat( s.replace(/[, ]/g, '').replace("\u2212", '-') );=0A=
+	return ( isNaN( num ) ? -Infinity : num );=0A=
+}=0A=
+=0A=
+function ts_currencyToSortKey( s ) {=0A=
+	return ts_parseFloat(s.replace(/[^-\u22120-9.,]/g,''));=0A=
+}=0A=
+=0A=
+function ts_sort_generic( a, b ) {=0A=
+	return a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : a[2] - b[2];=0A=
+}=0A=
+=0A=
+function ts_alternate( table ) {=0A=
+	// Take object table and get all it's tbodies.=0A=
+	var tableBodies =3D table.getElementsByTagName( 'tbody' );=0A=
+	// Loop through these tbodies=0A=
+	for ( var i =3D 0; i < tableBodies.length; i++ ) {=0A=
+		// Take the tbody, and get all it's rows=0A=
+		var tableRows =3D tableBodies[i].getElementsByTagName( 'tr' );=0A=
+		// Loop through these rows=0A=
+		// Start at 1 because we want to leave the heading row untouched=0A=
+		for ( var j =3D 0; j < tableRows.length; j++ ) {=0A=
+			// Check if j is even, and apply classes for both possible results=0A=
+			var oldClasses =3D tableRows[j].className.split(' ');=0A=
+			var newClassName =3D '';=0A=
+			for ( var k =3D 0; k < oldClasses.length; k++ ) {=0A=
+				if ( oldClasses[k] !=3D '' && oldClasses[k] !=3D 'even' && =
+oldClasses[k] !=3D 'odd' ) {=0A=
+					newClassName +=3D oldClasses[k] + ' ';=0A=
+				}=0A=
+			}=0A=
+			tableRows[j].className =3D newClassName + ( j % 2 =3D=3D 0 ? 'even' : =
+'odd' );=0A=
+		}=0A=
+	}=0A=
+}=0A=
+=0A=
+/*=0A=
+ * End of table sorting code=0A=
+ */=0A=
+=0A=
+=0A=
+/**=0A=
+ * Add a cute little box at the top of the screen to inform the user of=0A=
+ * something, replacing any preexisting message.=0A=
+ *=0A=
+ * @param String -or- Dom Object message HTML to be put inside the right =
+div=0A=
+ * @param String className   Used in adding a class; should be different =
+for each=0A=
+ *   call to allow CSS/JS to hide different boxes.  null =3D no class =
+used.=0A=
+ * @return Boolean       True on success, false on failure=0A=
+ */=0A=
+function jsMsg( message, className ) {=0A=
+	if ( !document.getElementById ) {=0A=
+		return false;=0A=
+	}=0A=
+	// We special-case skin structures provided by the software.  Skins that=0A=
+	// choose to abandon or significantly modify our formatting can just =
+define=0A=
+	// an mw-js-message div to start with.=0A=
+	var messageDiv =3D document.getElementById( 'mw-js-message' );=0A=
+	if ( !messageDiv ) {=0A=
+		messageDiv =3D document.createElement( 'div' );=0A=
+		if ( document.getElementById( 'column-content' )=0A=
+		&& document.getElementById( 'content' ) ) {=0A=
+			// MonoBook, presumably=0A=
+			document.getElementById( 'content' ).insertBefore(=0A=
+				messageDiv,=0A=
+				document.getElementById( 'content' ).firstChild=0A=
+			);=0A=
+		} else if ( document.getElementById( 'content' )=0A=
+		&& document.getElementById( 'article' ) ) {=0A=
+			// Non-Monobook but still recognizable (old-style)=0A=
+			document.getElementById( 'article').insertBefore(=0A=
+				messageDiv,=0A=
+				document.getElementById( 'article' ).firstChild=0A=
+			);=0A=
+		} else {=0A=
+			return false;=0A=
+		}=0A=
+	}=0A=
+=0A=
+	messageDiv.setAttribute( 'id', 'mw-js-message' );=0A=
+	messageDiv.style.display =3D 'block';=0A=
+	if( className ) {=0A=
+		messageDiv.setAttribute( 'class', 'mw-js-message-' + className );=0A=
+	}=0A=
+=0A=
+	if ( typeof message =3D=3D=3D 'object' ) {=0A=
+		while ( messageDiv.hasChildNodes() ) { // Remove old content=0A=
+			messageDiv.removeChild( messageDiv.firstChild );=0A=
+		}=0A=
+		messageDiv.appendChild( message ); // Append new content=0A=
+	} else {=0A=
+		messageDiv.innerHTML =3D message;=0A=
+	}=0A=
+	return true;=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Inject a cute little progress spinner after the specified element=0A=
+ *=0A=
+ * @param element Element to inject after=0A=
+ * @param id Identifier string (for use with removeSpinner(), below)=0A=
+ */=0A=
+function injectSpinner( element, id ) {=0A=
+	var spinner =3D document.createElement( 'img' );=0A=
+	spinner.id =3D 'mw-spinner-' + id;=0A=
+	spinner.src =3D stylepath + '/common/images/spinner.gif';=0A=
+	spinner.alt =3D spinner.title =3D '...';=0A=
+	if( element.nextSibling ) {=0A=
+		element.parentNode.insertBefore( spinner, element.nextSibling );=0A=
+	} else {=0A=
+		element.parentNode.appendChild( spinner );=0A=
+	}=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Remove a progress spinner added with injectSpinner()=0A=
+ *=0A=
+ * @param id Identifier string=0A=
+ */=0A=
+function removeSpinner( id ) {=0A=
+	var spinner =3D document.getElementById( 'mw-spinner-' + id );=0A=
+	if( spinner ) {=0A=
+		spinner.parentNode.removeChild( spinner );=0A=
+	}=0A=
+}=0A=
+=0A=
+function runOnloadHook() {=0A=
+	// don't run anything below this for non-dom browsers=0A=
+	if ( doneOnloadHook || !( document.getElementById && =
+document.getElementsByTagName ) ) {=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	// set this before running any hooks, since any errors below=0A=
+	// might cause the function to terminate prematurely=0A=
+	doneOnloadHook =3D true;=0A=
+=0A=
+	updateTooltipAccessKeys( null );=0A=
+	setupCheckboxShiftClick();=0A=
+	sortables_init();=0A=
+=0A=
+	// Run any added-on functions=0A=
+	for ( var i =3D 0; i < onloadFuncts.length; i++ ) {=0A=
+		onloadFuncts[i]();=0A=
+	}=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Add an event handler to an element=0A=
+ *=0A=
+ * @param Element element Element to add handler to=0A=
+ * @param String attach Event to attach to=0A=
+ * @param callable handler Event handler callback=0A=
+ */=0A=
+function addHandler( element, attach, handler ) {=0A=
+	if( window.addEventListener ) {=0A=
+		element.addEventListener( attach, handler, false );=0A=
+	} else if( window.attachEvent ) {=0A=
+		element.attachEvent( 'on' + attach, handler );=0A=
+	}=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Add a click event handler to an element=0A=
+ *=0A=
+ * @param Element element Element to add handler to=0A=
+ * @param callable handler Event handler callback=0A=
+ */=0A=
+function addClickHandler( element, handler ) {=0A=
+	addHandler( element, 'click', handler );=0A=
+}=0A=
+=0A=
+/**=0A=
+ * Removes an event handler from an element=0A=
+ *=0A=
+ * @param Element element Element to remove handler from=0A=
+ * @param String remove Event to remove=0A=
+ * @param callable handler Event handler callback to remove=0A=
+ */=0A=
+function removeHandler( element, remove, handler ) {=0A=
+	if( window.removeEventListener ) {=0A=
+		element.removeEventListener( remove, handler, false );=0A=
+	} else if( window.detachEvent ) {=0A=
+		element.detachEvent( 'on' + remove, handler );=0A=
+	}=0A=
+}=0A=
+// note: all skins should call runOnloadHook() at the end of html output,=0A=
+//      so the below should be redundant. It's there just in case.=0A=
+hookEvent( 'load', runOnloadHook );=0A=
+=0A=
+if ( ie6_bugs ) {=0A=
+	importScriptURI( stylepath + '/common/IEFixes.js' );=0A=
+}=0A=
+=0A=
+// For future use.=0A=
+mw =3D {};=0A=
+=0A=
+=0A=
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/skins/common/ajax.js?270
+
+// remote scripting library=0A=
+// (c) copyright 2005 modernmethod, inc=0A=
+var sajax_debug_mode =3D false;=0A=
+var sajax_request_type =3D "GET";=0A=
+=0A=
+/**=0A=
+* if sajax_debug_mode is true, this function outputs given the message =
+into =0A=
+* the element with id =3D sajax_debug; if no such element exists in the =
+document, =0A=
+* it is injected.=0A=
+*/=0A=
+function sajax_debug(text) {=0A=
+	if (!sajax_debug_mode) return false;=0A=
+=0A=
+	var e=3D document.getElementById('sajax_debug');=0A=
+=0A=
+	if (!e) {=0A=
+		e=3D document.createElement("p");=0A=
+		e.className=3D 'sajax_debug';=0A=
+		e.id=3D 'sajax_debug';=0A=
+=0A=
+		var b=3D document.getElementsByTagName("body")[0];=0A=
+=0A=
+		if (b.firstChild) b.insertBefore(e, b.firstChild);=0A=
+		else b.appendChild(e);=0A=
+	}=0A=
+=0A=
+	var m=3D document.createElement("div");=0A=
+	m.appendChild( document.createTextNode( text ) );=0A=
+=0A=
+	e.appendChild( m );=0A=
+=0A=
+	return true;=0A=
+}=0A=
+=0A=
+/**=0A=
+* compatibility wrapper for creating a new XMLHttpRequest object.=0A=
+*/=0A=
+function sajax_init_object() {=0A=
+	sajax_debug("sajax_init_object() called..")=0A=
+	var A;=0A=
+	try {=0A=
+		// Try the new style before ActiveX so we don't=0A=
+		// unnecessarily trigger warnings in IE 7 when=0A=
+		// set to prompt about ActiveX usage=0A=
+		A =3D new XMLHttpRequest();=0A=
+	} catch (e) {=0A=
+		try {=0A=
+			A=3Dnew ActiveXObject("Msxml2.XMLHTTP");=0A=
+		} catch (e) {=0A=
+			try {=0A=
+				A=3Dnew ActiveXObject("Microsoft.XMLHTTP");=0A=
+			} catch (oc) {=0A=
+				A=3Dnull;=0A=
+			}=0A=
+		}=0A=
+	}=0A=
+	if (!A)=0A=
+		sajax_debug("Could not create connection object.");=0A=
+=0A=
+	return A;=0A=
+}=0A=
+=0A=
+/**=0A=
+* Perform an ajax call to mediawiki. Calls are handeled by =
+AjaxDispatcher.php=0A=
+*   func_name - the name of the function to call. Must be registered in =
+$wgAjaxExportList=0A=
+*   args - an array of arguments to that function=0A=
+*   target - the target that will handle the result of the call. If this =
+is a function,=0A=
+*            if will be called with the XMLHttpRequest as a parameter; =
+if it's an input=0A=
+*            element, its value will be set to the resultText; if it's =
+another type of=0A=
+*            element, its innerHTML will be set to the resultText.=0A=
+*=0A=
+* Example:=0A=
+*    sajax_do_call('doFoo', [1, 2, 3], =
+document.getElementById("showFoo"));=0A=
+*=0A=
+* This will call the doFoo function via MediaWiki's AjaxDispatcher, with=0A=
+* (1, 2, 3) as the parameter list, and will show the result in the =
+element=0A=
+* with id =3D showFoo=0A=
+*/=0A=
+function sajax_do_call(func_name, args, target) {=0A=
+	var i, x, n;=0A=
+	var uri;=0A=
+	var post_data;=0A=
+	uri =3D wgServer +=0A=
+		((wgScript =3D=3D null) ? (wgScriptPath + "/index.php") : wgScript) +=0A=
+		"?action=3Dajax";=0A=
+	if (sajax_request_type =3D=3D "GET") {=0A=
+		if (uri.indexOf("?") =3D=3D -1)=0A=
+			uri =3D uri + "?rs=3D" + encodeURIComponent(func_name);=0A=
+		else=0A=
+			uri =3D uri + "&rs=3D" + encodeURIComponent(func_name);=0A=
+		for (i =3D 0; i < args.length; i++)=0A=
+			uri =3D uri + "&rsargs[]=3D" + encodeURIComponent(args[i]);=0A=
+		//uri =3D uri + "&rsrnd=3D" + new Date().getTime();=0A=
+		post_data =3D null;=0A=
+	} else {=0A=
+		post_data =3D "rs=3D" + encodeURIComponent(func_name);=0A=
+		for (i =3D 0; i < args.length; i++)=0A=
+			post_data =3D post_data + "&rsargs[]=3D" + =
+encodeURIComponent(args[i]);=0A=
+	}=0A=
+	x =3D sajax_init_object();=0A=
+	if (!x) {=0A=
+		alert("AJAX not supported");=0A=
+		return false;=0A=
+	}=0A=
+=0A=
+	try {=0A=
+		x.open(sajax_request_type, uri, true);=0A=
+	} catch (e) {=0A=
+		if (window.location.hostname =3D=3D "localhost") {=0A=
+			alert("Your browser blocks XMLHttpRequest to 'localhost', try using a =
+real hostname for development/testing.");=0A=
+		}=0A=
+		throw e;=0A=
+	}=0A=
+	if (sajax_request_type =3D=3D "POST") {=0A=
+		x.setRequestHeader("Method", "POST " + uri + " HTTP/1.1");=0A=
+		x.setRequestHeader("Content-Type", =
+"application/x-www-form-urlencoded");=0A=
+	}=0A=
+	x.setRequestHeader("Pragma", "cache=3Dyes");=0A=
+	x.setRequestHeader("Cache-Control", "no-transform");=0A=
+	x.onreadystatechange =3D function() {=0A=
+		if (x.readyState !=3D 4)=0A=
+			return;=0A=
+=0A=
+		sajax_debug("received (" + x.status + " " + x.statusText + ") " + =
+x.responseText);=0A=
+=0A=
+		//if (x.status !=3D 200)=0A=
+		//	alert("Error: " + x.status + " " + x.statusText + ": " + =
+x.responseText);=0A=
+		//else=0A=
+=0A=
+		if ( typeof( target ) =3D=3D 'function' ) {=0A=
+			target( x );=0A=
+		}=0A=
+		else if ( typeof( target ) =3D=3D 'object' ) {=0A=
+			if ( target.tagName =3D=3D 'INPUT' ) {=0A=
+				if (x.status =3D=3D 200) target.value=3D x.responseText;=0A=
+				//else alert("Error: " + x.status + " " + x.statusText + " (" + =
+x.responseText + ")");=0A=
+			}=0A=
+			else {=0A=
+				if (x.status =3D=3D 200) target.innerHTML =3D x.responseText;=0A=
+				else target.innerHTML=3D "<div class=3D'error'>Error: " + x.status + =
+" " + x.statusText + " (" + x.responseText + ")</div>";=0A=
+			}=0A=
+		}=0A=
+		else {=0A=
+			alert("bad target for sajax_do_call: not a function or object: " + =
+target);=0A=
+		}=0A=
+=0A=
+		return;=0A=
+	}=0A=
+=0A=
+	sajax_debug(func_name + " uri =3D " + uri + " / post =3D " + post_data);=0A=
+	x.send(post_data);=0A=
+	sajax_debug(func_name + " waiting..");=0A=
+	delete x;=0A=
+=0A=
+	return true;=0A=
+}=0A=
+=0A=
+/**=0A=
+ * @return boolean whether the browser supports XMLHttpRequest=0A=
+ */=0A=
+function wfSupportsAjax() {=0A=
+	var request =3D sajax_init_object();=0A=
+	var supportsAjax =3D request ? true : false;=0A=
+	delete request;=0A=
+	return supportsAjax;=0A=
+}=0A=
+=0A=
+
+------=_NextPart_000_0000_01CBADF4.CB5E2000
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://mips.cs.pitt.edu/internalwiki/index.php?title=-&action=raw&gen=js&useskin=monobook&270
+
+=0A=
+/* generated javascript */=0A=
+var skin =3D 'monobook';=0A=
+var stylepath =3D '/internalwiki/skins';=0A=
+=0A=
+/* MediaWiki:Common.js */=0A=
+/* Any JavaScript here will be loaded for all users on every page load. =
+*/=0A=
+=0A=
+/* MediaWiki:Monobook.js */=0A=
+/* Any JavaScript here will be loaded for users using the MonoBook skin =
+*/
+------=_NextPart_000_0000_01CBADF4.CB5E2000--

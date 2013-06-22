@@ -1,0 +1,72 @@
+<project name="HdfsOverFtp" basedir="." default="distr">
+
+    <property name="src.dir" value="src"/>
+
+    <property name="build.dir" value="build"/>
+    <property name="jar.dir" value="${build.dir}"/>
+
+    <property name="main-class" value="org.apache.hadoop.contrib.ftp.HdfsOverFtpServer"/>
+
+    <property name="lib.dir" value="lib"/>
+    <property name="build.lib.dir" value="${build.dir}/lib"/>
+	<property name="build.src.dir" value="${build.dir}/src"/>
+    <property name="tmp.dir" value="tmp"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <property name="jar-all" location="${lib.dir}"/>
+
+    <pathconvert property="cp" refid="classpath" pathsep=" " dirsep="/">
+        <map from="${jar-all}" to="${lib.dir}"/>
+    </pathconvert>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${tmp.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${tmp.dir}"/>
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${tmp.dir}" debug="on" classpathref="classpath"/>
+    </target>
+
+    <target name="distr" depends="jar">
+        <mkdir dir="${build.lib.dir}"/>
+        <copy todir="${build.lib.dir}">
+            <fileset dir="${lib.dir}"/>
+        </copy>
+        <copy todir="${build.src.dir}">
+            <fileset dir="${src.dir}"/>
+        </copy>
+        <delete dir="${tmp.dir}"/>
+        <copy file="ftp.jks" todir="${build.dir}"/>
+        <copy file="hdfs-over-ftp.sh" todir="${build.dir}"/>
+        <copy file="users.conf" todir="${build.dir}"/>
+        <copy file="log4j.conf" todir="${build.dir}"/>
+        <copy file="hdfs-over-ftp.conf" todir="${build.dir}"/>
+        <copy file="register-user.sh" todir="${build.dir}"/>
+        <copy file="readme.txt" todir="${build.dir}"/>
+        <copy file="build.xml" todir="${build.dir}"/>
+    	<exec executable="chmod">
+           <arg value="+x"/>
+           <arg value="${build.dir}/hdfs-over-ftp.sh"/>
+        </exec>
+    	<exec executable="chmod">
+           <arg value="+x"/>
+           <arg value="${build.dir}/register-user.sh"/>
+        </exec>
+    </target>
+
+    <target name="jar" depends="clean, compile">
+        <jar destfile="${build.dir}/hdfs-over-ftp.jar" basedir="${tmp.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="${cp}"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
